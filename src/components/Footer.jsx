@@ -1,11 +1,12 @@
 import React from 'react'
 
 function Footer() {
+  const currentYear = new Date().getFullYear();
   return (
     <div style={{backgroundColor:'#4890fc', width:'100%', minHeight:"40px", color:'white', textAlign:'center', bottom:'0', left: '0', position:'fixed'}}>
         <div style={{marginTop:'12px'}}>
-        All rights reselved. Made with <span style={{color:'white', height:'36px'}}> ♥</span> by
-         <a href='https://iitech.rw/' style={{ color: 'white', borderBottom: '2px solid white', paddingBottom: '3px', display: 'inline-block', textDecoration:'none', marginLeft:'4px' }}> IITECH RWANDA </a>
+          Copyright &copy; {currentYear} all rights reserved. Made by
+         <a href='https://iitech.rw/'  target='_blank' style={{ color: 'white', textDecoration:'none', marginLeft:'2px', fontWeight:'bold' }}> IITECH RWANDA </a>
 
 
         </div>
