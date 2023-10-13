@@ -165,8 +165,8 @@ const Sandbox = () => {
         autoResize
         value={value}
         onChange={(e) => setValue(e.target.value)}
-        rows={5}
-        cols={136}
+        rows={3}
+        style={{width:'96%'}}
       />
       <SignsField>
         {renderSignImages()}
