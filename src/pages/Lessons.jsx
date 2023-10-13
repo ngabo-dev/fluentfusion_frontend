@@ -7,7 +7,7 @@ function Lessons() {
     <div>
 
     <Container>
-        Lessons page
+        Lessons feature is under construction!
     </Container>
     </div>
   )
