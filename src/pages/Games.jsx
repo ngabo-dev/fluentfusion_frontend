@@ -6,7 +6,7 @@ function Games() {
     <div>
 
     <Container>
-        Games page
+        Games feature is under construction
     </Container>
     </div>
   )
