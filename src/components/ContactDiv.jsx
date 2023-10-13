@@ -2,7 +2,7 @@ import React from 'react'
 
 function ContactDiv() {
   return (
-    <div style={{width:'96%',height:'100%', padding:'18px', borderLeft:'black 2px solid'}}>
+    <div style={{width:'96%',height:'100%', paddingLeft:'18px', paddingRight:'18px', borderLeft:'black 2px solid'}}>
     <h3 style={{ textDecoration:'underline'}}>
         TWIGE URURIME RW'AMARENGA
       </h3>
@@ -21,10 +21,7 @@ function ContactDiv() {
     +(250) 788 737 639 <br /><br />
 
     <b> Website:</b> <br/>
-    www.iitech.rw <br /><br />
-
-
-
+    www.iitech.rw
     </div>
   )
 }
