@@ -225,7 +225,7 @@ function Lessons() {
           </div>
 
         </div>
-          <button onClick={updateImage} style={{backgroundColor:'blue', color:'white'}}> Next  </button>
+          <button onClick={updateImage} style={{backgroundColor:'#4890fc', color:'white', fontWeight:'bold', height:'38px', padding:'12px', marginTop:'12%', borderRadius:'4px'}}> Next  </button>
       </div>
     </Container>
   )
