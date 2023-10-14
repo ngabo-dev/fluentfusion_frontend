@@ -14,11 +14,12 @@ function ContactDiv() {
       CONTACTS
     </h4>
     <b> Email:</b> <br/>
-    info@iitech.rw <br /><br />
+    <a href='mailto:info@iitech.rw' style={{color:'black', textDecoration:'none'}} target='_blank'>
+      info@iitech.rw  </a> <br /><br />
 
 
     <b> Telephone:</b> <br/>
-    +(250) 788 737 639 <br /><br />
+    <a href='https://wa.me/250788737639' style={{color:'black', textDecoration:'none'}} target='_blank'> +(250) 788 737 639 </a> <br /><br />
 
     <b> Website:</b> <br/>
     <a href='https://www.iitech.rw/' style={{color:'black', textDecoration:'none'}} target='_blank'>www.iitech.rw </a>
