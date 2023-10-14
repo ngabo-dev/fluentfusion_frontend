@@ -10,7 +10,7 @@ function Contact() {
     <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between' }}>
         <div style={{ flex: '1 0 70%' }}>
           <div style={{width:'92%', paddingLeft:'4%'}}>
-            <h3 style={{textDecoration:'underline', width:'100%', textAlign:'center'}} > TWOHEREZE IGITEKEREZO </h3>
+            <h3 style={{textDecoration:'underline', width:'100%', textAlign:'center'}} > OHEREZA IGITEKEREZO </h3>
             <p style={{fontSize:'18px'}}> Amazina yombi:</p>
             <input type='text' style={{width:'90%', backgroundColor:'#EEEEEE', borderRadius:'4px', height:'32px'}} />
             <p style={{fontSize:'18px'}}> Email:</p>

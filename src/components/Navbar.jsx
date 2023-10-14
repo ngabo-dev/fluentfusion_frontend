@@ -71,7 +71,9 @@ const Navbar = () => {
         id="contact"
         style={{ width: "30%", display: "flex", justifyContent: "end" }}
       >
+        <a href="https://wa.me/250788737639" >
         <Button label="Duhamagare" severity="info" icon="pi pi-phone" />
+        </a>
       </div>
     </Nav>
   );
