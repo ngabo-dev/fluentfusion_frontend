@@ -11,8 +11,20 @@ function Lessons() {
   const [number, setNumber] = useState(2);
   const [key, setKey] =useState('A');
 
-  const updateImage =() => {
+
+  const increment =() =>{
     setNumber(number+1);
+    updateImage()
+  }
+
+  const deincrement =() =>{
+    updateImage()
+    setNumber(number-1);
+
+
+  }
+
+  const updateImage =() => {
     switch (number) {
       case 1:
         setImage(a);
@@ -218,15 +230,17 @@ function Lessons() {
 
         </div>
 
-        <div style={{ width: '100%', display: 'flex', justifyContent: 'center' }}>
+        <button onClick={deincrement} style={{backgroundColor:'#4890fc', color:'white', fontWeight:'bold', height:'38px', padding:'12px', marginTop:'12%', borderRadius:'4px', marginLeft:'12px'}}> Previous  </button>
+
+        <div style={{ width: '72%', display: 'flex', justifyContent: 'center' }}>
         <span style={{ fontSize: '120px' }}> {key} : </span>
 
         <div>
-          <img key={number} src={image} alt="a" style={{marginLeft:'12px'}}/>
+          <img key={number} src={image} alt="a" style={{marginLeft:'24px'}}/>
         </div>
       </div>
 
-          <button onClick={updateImage} style={{backgroundColor:'#4890fc', color:'white', fontWeight:'bold', height:'38px', padding:'12px', marginTop:'12%', borderRadius:'4px'}}> Next  </button>
+          <button onClick={increment} style={{backgroundColor:'#4890fc', color:'white', fontWeight:'bold', height:'38px', padding:'12px', marginTop:'12%', borderRadius:'4px'}}> Next  </button>
       </div>
     </Container>
   )
