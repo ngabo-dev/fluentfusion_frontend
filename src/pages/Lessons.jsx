@@ -1,14 +1,14 @@
 import React, { useState } from 'react'
 import styled from "styled-components"
 import { one, two, three, four, five, six, seven, eight, nine, zero } from "../constants";
-import { a, b, c, d, e, f, g, h, i as I, j, k, l, m, n, o, p, q, r, s, t, u, v, w, x, y, z } from "../constants/alphabets"
+import { a, b, c, d, e, f, g, h, i as I, j, k, l, m, n, o, p, q, r, s, t, u, v, w, x, y, z } from "../constants/bigletters"
 
 
 
 function Lessons() {
   var i = 1;
   const [image, setImage] = useState(a);
-  const [number, setNumber] = useState(1);
+  const [number, setNumber] = useState(2);
   const [key, setKey] =useState('A');
 
   const updateImage =() => {
@@ -217,14 +217,15 @@ function Lessons() {
           </ul>
 
         </div>
-        <div style={{width:'76%', padding:'4%', display:'flex', float:'center'}}>
-         <span style={{fontSize:'120px'}}> {key} : </span>
 
-          <div style={{width:'200px'}}>
-            <img className="sign-img" key={number} src={image} alt="a" style={{width:'100%'}}/>
-          </div>
+        <div style={{ width: '100%', display: 'flex', justifyContent: 'center' }}>
+        <span style={{ fontSize: '120px' }}> {key} : </span>
 
+        <div>
+          <img key={number} src={image} alt="a" style={{marginLeft:'12px'}}/>
         </div>
+      </div>
+
           <button onClick={updateImage} style={{backgroundColor:'#4890fc', color:'white', fontWeight:'bold', height:'38px', padding:'12px', marginTop:'12%', borderRadius:'4px'}}> Next  </button>
       </div>
     </Container>
