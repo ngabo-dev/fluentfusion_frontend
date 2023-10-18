@@ -107,57 +107,58 @@ function Lessons() {
       break;
 
       case 17:
-        setImage( r);
-        setKey('R');
-      break;
-
-      case 18:
-        setImage(s);
-        setKey('S');
-      break;
-
-      case 19:
-        setImage( t);
-        setKey('T');
-      break;
-
-      case 20:
-        setImage( u);
-        setKey('U');
-      break;
-
-      case 21:
-        setImage( v);
-        setKey('V');
-      break;
-
-      case 22:
-        setImage( w);
-        setKey('W');
-      break;
-
-      case 23:
-        setImage( y);
-        setKey('Y');
-      break;
-
-      case 24:
-        setImage( z);
-        setKey('Z');
-      break;
-
-      case 25:
         setImage( q);
         setKey('Q');
       break;
 
-      case 26:
+
+      case 18:
+        setImage( r);
+        setKey('R');
+      break;
+
+      case 19:
+        setImage(s);
+        setKey('S');
+      break;
+
+      case 20:
+        setImage( t);
+        setKey('T');
+      break;
+
+      case 21:
+        setImage( u);
+        setKey('U');
+      break;
+
+      case 22:
+        setImage( v);
+        setKey('V');
+      break;
+
+      case 23:
+        setImage( w);
+        setKey('W');
+      break;
+
+      case 24:
         setImage( x);
         setKey('X');
       break;
 
+      case 25:
+        setImage( y);
+        setKey('Y');
+      break;
+
+      case 26:
+        setImage( z);
+        setKey('Z');
+      break;
+
       case 27:
-        setImage( zero);
+        setImage( zero );
         setKey('0');
       break;
 
