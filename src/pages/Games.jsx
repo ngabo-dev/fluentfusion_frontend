@@ -2,10 +2,11 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import { one, two, three, four, five, six, seven, eight, nine, zero } from "../constants";
 import { a, b, c, d, e, f, g, h, i as I, j, k, l, m, n, o, p, q, r, s, t, u, v, w, x, y, z } from "../constants/bigletters"
+import ask from "../assets/logos/ask.png"
 
 function Games() {
   var i = 1;
-  const [image, setImage] = useState(a);
+  const [image, setImage] = useState(ask);
   const [number, setNumber] = useState(0);
   const [key, setKey] = useState("?");
   var newnumber;
@@ -18,10 +19,13 @@ function Games() {
   const [lesson7class, setLesson7class] = useState("sidelink");
 
 
-  const [image1, setImage1] = useState();
-  const [image2, setImage2] = useState();
-  const [image3, setImage3] = useState();
-  const [image4, setImage4] = useState();
+  const [image1, setImage1] = useState(ask);
+  const [image2, setImage2] = useState(ask);
+  const [image3, setImage3] = useState(ask);
+  const [image4, setImage4] = useState(ask);
+
+  const [radio, setRadio] = useState(1);
+
 
 
   const increment = () => {
@@ -36,14 +40,19 @@ function Games() {
     const randomNum = Math.floor(Math.random() * (max - min + 1)) + min;
     console.log(randomNum)
 
-    for (let i = 0; i < 4; i++) {
+    let i = 0;
+    while ( i < 4) {
       if (randomNum == i){
         randomLetters.push(letters[newnumber-1]);
         console.log(letters[newnumber-1])
+        i++;
 
       }else {
         const randomIndex = Math.floor(Math.random() * letters.length);
-        randomLetters.push(letters[randomIndex]);
+        if(newnumber-1 !=randomIndex){
+          randomLetters.push(letters[randomIndex]);
+        i++
+        }
       }
 
     }
@@ -379,7 +388,7 @@ function Games() {
             <div style={{ marginLeft: "8%", width:'50%' }}>
               <div style={{ display: "flex" }}>
                 <div>
-                  <input type="radio" name="answer" />
+                  <input type="radio" name="answer"  value={1} />
                   <img
                     key={number}
                     src={image1}
@@ -388,7 +397,7 @@ function Games() {
                   />
                 </div>
                 <div style={{ marginLeft: "42px" }}>
-                  <input type="radio" name="answer" />
+                  <input type="radio" name="answer" value={2}  />
                   <img
                     key={number}
                     src={image2}
@@ -400,18 +409,16 @@ function Games() {
 
               <div style={{ marginTop: "52px", display: "flex" }}>
                 <div>
-                  <input type="radio" name="answer" />
+                  <input type="radio" name="answer" value={3} />
                   <img
-                    key={number}
                     src={image3}
                     alt="a"
                     style={{ marginLeft: "8px", height: "120px" }}
                   />
                 </div>
                 <div style={{ marginLeft: "42px" }}>
-                  <input type="radio" name="answer" />
+                  <input type="radio" name="answer" value={4} />
                   <img
-                    key={number}
                     src={image4}
                     alt="a"
                     style={{ marginLeft: "8px", height: "120px" }}
@@ -444,7 +451,7 @@ function Games() {
               }}
             >
               {" "}
-              Submit{" "}
+              {number == 0 ? ('Start Exercises'):('Submit') }{" "}
             </button>
           </div>
         </div>
