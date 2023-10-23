@@ -1,51 +1,13 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import {
-  one,
-  two,
-  three,
-  four,
-  five,
-  six,
-  seven,
-  eight,
-  nine,
-  zero,
-} from "../constants";
-import {
-  a,
-  b,
-  c,
-  d,
-  e,
-  f,
-  g,
-  h,
-  i as I,
-  j,
-  k,
-  l,
-  m,
-  n,
-  o,
-  p,
-  q,
-  r,
-  s,
-  t,
-  u,
-  v,
-  w,
-  x,
-  y,
-  z,
-} from "../constants/bigletters";
+import { one, two, three, four, five, six, seven, eight, nine, zero } from "../constants";
+import { a, b, c, d, e, f, g, h, i as I, j, k, l, m, n, o, p, q, r, s, t, u, v, w, x, y, z } from "../constants/bigletters"
 
 function Games() {
   var i = 1;
   const [image, setImage] = useState(a);
-  const [number, setNumber] = useState(1);
-  const [key, setKey] = useState("A");
+  const [number, setNumber] = useState(0);
+  const [key, setKey] = useState("?");
   var newnumber;
   const [lesson1class, setLesson1class] = useState(["sidelink-active"]);
   const [lesson2class, setLesson2class] = useState("sidelink");
@@ -55,209 +17,240 @@ function Games() {
   const [lesson6class, setLesson6class] = useState("sidelink");
   const [lesson7class, setLesson7class] = useState("sidelink");
 
+
+  const [image1, setImage1] = useState();
+  const [image2, setImage2] = useState();
+  const [image3, setImage3] = useState();
+  const [image4, setImage4] = useState();
+
+
   const increment = () => {
     newnumber = number + 1;
     setNumber(newnumber);
-    updateImage(newnumber);
+    updateNavigators(newnumber);
+    const letters = [ a, b, c, d, e, f, g, h, I, j, k, l, m, n, o, p, q, r, s, t, u, v, w, x, y, z,one, two, three, four, five, six, seven, eight, nine, zero ];
+    const randomLetters = [];
+
+    const min = 0;
+    const max = 4;
+    const randomNum = Math.floor(Math.random() * (max - min + 1)) + min;
+    console.log(randomNum)
+
+    for (let i = 0; i < 4; i++) {
+      if (randomNum == i){
+        randomLetters.push(letters[newnumber-1]);
+        console.log(letters[newnumber-1])
+
+      }else {
+        const randomIndex = Math.floor(Math.random() * letters.length);
+        randomLetters.push(letters[randomIndex]);
+      }
+
+    }
+
+    console.log(randomLetters)
+    setImage1(randomLetters[0]);
+    setImage2(randomLetters[1]);
+    setImage3(randomLetters[2]);
+    setImage4(randomLetters[3]);
+
   };
 
-  const deincrement = () => {
-    newnumber = number - 1;
-    setNumber(newnumber);
-    updateImage(newnumber);
-  };
 
   const setlesson = (les) => {
     setNumber(les);
-    updateImage(les);
+    updateNavigators(les);
   };
 
-  const updateImage = (newnumber) => {
+  const updateNavigators = (newnumber) => {
+
     switch (newnumber) {
       case 1:
         setImage(a);
-        setKey("A");
-        break;
+        setKey('A');
+      break;
 
       case 2:
-        setImage(b);
-        setKey("B");
-        break;
+        setImage( b);
+        setKey('B');
+      break;
 
       case 3:
-        setImage(c);
-        setKey("C");
-        break;
+        setImage( c);
+        setKey('C');
+      break;
 
       case 4:
-        setImage(d);
-        setKey("D");
-        break;
+        setImage( d);
+        setKey('D');
+      break;
 
       case 5:
-        setImage(e);
-        setKey("E");
-        break;
+        setImage( e);
+        setKey('E');
+      break;
 
       case 6:
-        setImage(f);
-        setKey("F");
-        break;
+        setImage( f);
+        setKey('F');
+      break;
 
       case 7:
-        setImage(g);
-        setKey("G");
-        break;
+        setImage( g);
+        setKey('G');
+      break;
 
       case 8:
-        setImage(h);
-        setKey("H");
-        break;
+        setImage( h);
+        setKey('H');
+      break;
 
       case 9:
         setImage(I);
-        setKey("I");
-        break;
+        setKey('I');
+      break;
 
       case 10:
-        setImage(j);
-        setKey("J");
-        break;
+        setImage( j);
+        setKey('J');
+      break;
 
       case 11:
-        setImage(k);
-        setKey("K");
-        break;
+        setImage( k);
+        setKey('K');
+      break;
 
       case 12:
-        setImage(l);
-        setKey("L");
-        break;
+        setImage( l);
+        setKey('L');
+      break;
 
       case 13:
-        setImage(m);
-        setKey("M");
-        break;
+        setImage( m);
+        setKey('M');
+      break;
 
       case 14:
-        setImage(n);
-        setKey("N");
-        break;
+        setImage( n);
+        setKey('N');
+      break;
 
       case 15:
-        setImage(o);
-        setKey("O");
-        break;
+        setImage( o);
+        setKey('O');
+      break;
 
       case 16:
-        setImage(p);
-        setKey("P");
-        break;
+        setImage( p);
+        setKey('P');
+      break;
 
       case 17:
-        setImage(q);
-        setKey("Q");
-        break;
+        setImage( q);
+        setKey('Q');
+      break;
+
 
       case 18:
-        setImage(r);
-        setKey("R");
-        break;
+        setImage( r);
+        setKey('R');
+      break;
 
       case 19:
         setImage(s);
-        setKey("S");
-        break;
+        setKey('S');
+      break;
 
       case 20:
-        setImage(t);
-        setKey("T");
-        break;
+        setImage( t);
+        setKey('T');
+      break;
 
       case 21:
-        setImage(u);
-        setKey("U");
-        break;
+        setImage( u);
+        setKey('U');
+      break;
 
       case 22:
-        setImage(v);
-        setKey("V");
-        break;
+        setImage( v);
+        setKey('V');
+      break;
 
       case 23:
-        setImage(w);
-        setKey("W");
-        break;
+        setImage( w);
+        setKey('W');
+      break;
 
       case 24:
-        setImage(x);
-        setKey("X");
-        break;
+        setImage( x);
+        setKey('X');
+      break;
 
       case 25:
-        setImage(y);
-        setKey("Y");
-        break;
+        setImage( y);
+        setKey('Y');
+      break;
 
       case 26:
-        setImage(z);
-        setKey("Z");
-        break;
+        setImage( z);
+        setKey('Z');
+      break;
 
       case 27:
-        setImage(zero);
-        setKey("0");
-        break;
+        setImage( zero );
+        setKey('0');
+      break;
 
       case 28:
-        setImage(one);
-        setKey("1");
-        break;
+        setImage( one);
+        setKey('1');
+      break;
 
       case 29:
-        setImage(two);
-        setKey("2");
-        break;
+        setImage( two);
+        setKey('2');
+      break;
 
       case 30:
-        setImage(three);
-        setKey("3");
-        break;
+        setImage( three);
+        setKey('3');
+      break;
 
       case 31:
-        setImage(four);
-        setKey("4");
-        break;
+        setImage( four);
+        setKey('4');
+      break;
 
       case 32:
-        setImage(five);
-        setKey("5");
-        break;
+        setImage( five);
+        setKey('5');
+      break;
 
       case 33:
-        setImage(six);
-        setKey("6");
-        break;
+        setImage( six);
+        setKey('6');
+      break;
 
       case 34:
-        setImage(seven);
-        setKey("7");
-        break;
+        setImage( seven);
+        setKey('7');
+      break;
 
       case 35:
-        setImage(eight);
-        setKey("8");
-        break;
+        setImage( eight);
+        setKey('8');
+      break;
 
       case 36:
-        setImage(nine);
-        setKey("9");
-        break;
+        setImage( nine);
+        setKey('9');
+      break;
 
       default:
-        // If the character is not a number, skip it or display an error message
-        break;
+      // If the character is not a number, skip it or display an error message
+      break;
     }
+
     if (newnumber < 5) {
       setLesson1class("sidelink-active");
       setLesson2class("sidelink");
@@ -362,7 +355,7 @@ function Games() {
 
           {/* main div */}
         <div style={{ width: "72%", paddingLeft:'32px'}}>
-          <div style={{textAlign:'center'}}><h3> HITAMO</h3></div>
+          <div style={{textAlign:'center', textDecoration:'underline', textUnderlineOffset:'6px'}}><h3> HITAMO</h3></div>
 
           <div style={{display:'flex'}}>
 
@@ -389,7 +382,7 @@ function Games() {
                   <input type="radio" name="answer" />
                   <img
                     key={number}
-                    src={image}
+                    src={image1}
                     alt="a"
                     style={{ marginLeft: "8px", height: "120px" }}
                   />
@@ -398,7 +391,7 @@ function Games() {
                   <input type="radio" name="answer" />
                   <img
                     key={number}
-                    src={image}
+                    src={image2}
                     alt="a"
                     style={{ marginLeft: "8px", height: "120px" }}
                   />
@@ -410,7 +403,7 @@ function Games() {
                   <input type="radio" name="answer" />
                   <img
                     key={number}
-                    src={image}
+                    src={image3}
                     alt="a"
                     style={{ marginLeft: "8px", height: "120px" }}
                   />
@@ -419,7 +412,7 @@ function Games() {
                   <input type="radio" name="answer" />
                   <img
                     key={number}
-                    src={image}
+                    src={image4}
                     alt="a"
                     style={{ marginLeft: "8px", height: "120px" }}
                   />
