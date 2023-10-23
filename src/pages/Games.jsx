@@ -11,12 +11,12 @@ function Games() {
     <div style={{width:'20%', borderRight:'gray 2px solid', minHeight:'420px'}} >
       <h3 style={{textAlign:'center', }}> IMYITOZO </h3>
       <ul>
-        <li style={{textDecoration:'none', marginTop:'26px'}}> Icyiciro cya 1 (A - D)</li>
-        <li style={{textDecoration:'none', marginTop:'18px'}}> Icyiciro cya 2 (E - G)</li>
-        <li style={{textDecoration:'none', marginTop:'18px'}}> Icyiciro cya 3 (H - K)</li>
-        <li style={{textDecoration:'none', marginTop:'18px'}}> Icyiciro cya 4 (L - O)</li>
-        <li style={{textDecoration:'none', marginTop:'18px'}}> Icyiciro cya 5 (P - T)</li>
-        <li style={{textDecoration:'none', marginTop:'18px'}}> Icyiciro cya 6 (U - Z)</li>
+        <li  className='sidelink'> Icyiciro cya 1 (A - D)</li>
+        <li  className='sidelink'> Icyiciro cya 2 (E - G)</li>
+        <li  className='sidelink'> Icyiciro cya 3 (H - K)</li>
+        <li  className='sidelink'> Icyiciro cya 4 (L - O)</li>
+        <li  className='sidelink'> Icyiciro cya 5 (P - T)</li>
+        <li  className='sidelink'> Icyiciro cya 6 (U - Z)</li>
       </ul>
 
     </div>

@@ -1,6 +1,6 @@
 body {
   font-family: var(--font-family);
-}           
+}
 
 
 .sign-img {
@@ -8,4 +8,15 @@ body {
   max-height: 60px;
   margin-left: 12px;
   object-fit: contain;
+}
+
+.sidelink {
+  text-decoration: none;
+  margin-top: 26px;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 1px;
+}
+.sidelink:hover {
+  background: #b7c4ff;
 }

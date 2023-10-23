@@ -227,13 +227,13 @@ function Lessons() {
         <div style={{width:'20%', borderRight:'gray 2px solid', minHeight:'420px'}} >
           <h3 style={{textAlign:'center', }}> IBYICIRO </h3>
           <ul>
-            <li style={{textDecoration:'none', marginTop:'26px'}} onClick={()=> setlesson(1)}> Icyiciro cya 1 (A - D)</li>
-            <li style={{textDecoration:'none', marginTop:'18px'}} onClick={()=> setlesson(5)}> Icyiciro cya 2 (E - G)</li>
-            <li style={{textDecoration:'none', marginTop:'18px'}} onClick={()=> setlesson(8)}> Icyiciro cya 3 (H - K)</li>
-            <li style={{textDecoration:'none', marginTop:'18px'}} onClick={()=> setlesson(12)}> Icyiciro cya 4 (L - O)</li>
-            <li style={{textDecoration:'none', marginTop:'18px'}} onClick={()=> setlesson(16)}> Icyiciro cya 5 (P - T)</li>
-            <li style={{textDecoration:'none', marginTop:'18px'}} onClick={()=> setlesson(21)}> Icyiciro cya 6 (U - Z)</li>
-            <li style={{textDecoration:'none', marginTop:'18px'}} onClick={()=> setlesson(27)}> Icyiciro cya 7 (0 - 9)</li>
+            <li className='sidelink' onClick={()=> setlesson(1)}> Icyiciro cya 1 (A - D)</li>
+            <li className='sidelink' onClick={()=> setlesson(5)}> Icyiciro cya 2 (E - G)</li>
+            <li className='sidelink' onClick={()=> setlesson(8)}> Icyiciro cya 3 (H - K)</li>
+            <li className='sidelink' onClick={()=> setlesson(12)}> Icyiciro cya 4 (L - O)</li>
+            <li className='sidelink' onClick={()=> setlesson(16)}> Icyiciro cya 5 (P - T)</li>
+            <li className='sidelink' onClick={()=> setlesson(21)}> Icyiciro cya 6 (U - Z)</li>
+            <li className='sidelink' onClick={()=> setlesson(27)}> Icyiciro cya 7 (0 - 9)</li>
           </ul>
 
         </div>
