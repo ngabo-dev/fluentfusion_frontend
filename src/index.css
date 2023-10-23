@@ -22,6 +22,18 @@ body {
   margin-right: 8px;
 }
 .sidelink:hover {
-  background: #3f83f3;
-  color:white;
+  background: #679ff96f;
+  /* color:white; */
+}
+.sidelink-active { text-decoration: none;
+  margin-top: 26px;
+  cursor: pointer;
+  padding: 6px;
+  border-radius: 4px;
+  margin-top: 8px;
+  list-style: none;
+  margin-left: 0px;
+  margin-right: 8px;
+  background-color: #3f84f3;
+  color: white;
 }
