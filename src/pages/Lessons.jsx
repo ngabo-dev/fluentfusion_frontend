@@ -315,7 +315,7 @@ function Lessons() {
 
         </div>
 
-        <button onClick={deincrement} style={{backgroundColor:'#4890fc', color:'white', fontWeight:'bold', height:'38px', padding:'12px', marginTop:'12%', borderRadius:'4px', marginLeft:'12px'}}> Previous  </button>
+        <button onClick={deincrement} style={{backgroundColor:'#4890fc', color:'white', fontWeight:'bold', height:'38px', padding:'12px', marginTop:'30%', borderRadius:'4px', marginLeft:'12px'}}> Previous  </button>
 
         <div style={{ width: '72%', display: 'flex', justifyContent: 'center' }}>
         <span style={{ fontSize: '120px' }}> {key} : </span>
@@ -325,7 +325,7 @@ function Lessons() {
         </div>
       </div>
 
-          <button onClick={increment} style={{backgroundColor:'#4890fc', color:'white', fontWeight:'bold', height:'38px', padding:'12px', marginTop:'12%', borderRadius:'4px'}}> Next  </button>
+          <button onClick={increment} style={{backgroundColor:'#4890fc', color:'white', fontWeight:'bold', height:'38px', padding:'12px', marginTop:'30%', borderRadius:'4px'}}> Next  </button>
       </div>
     </Container>
   )
