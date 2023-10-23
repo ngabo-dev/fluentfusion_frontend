@@ -14,9 +14,14 @@ body {
   text-decoration: none;
   margin-top: 26px;
   cursor: pointer;
-  padding: 4px;
-  border-radius: 1px;
+  padding: 6px;
+  border-radius: 4px;
+  margin-top: 8px;
+  list-style: none;
+  margin-left: 0px;
+  margin-right: 8px;
 }
 .sidelink:hover {
-  background: #b7c4ff;
+  background: #3f83f3;
+  color:white;
 }

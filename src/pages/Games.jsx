@@ -21,7 +21,7 @@ function Games() {
 
     </div>
     <div>
-      akajkja
+      Upcoming
     </div>
     </div>
     </Container>
