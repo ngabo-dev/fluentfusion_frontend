@@ -24,7 +24,7 @@ function Games() {
   const [image3, setImage3] = useState(ask);
   const [image4, setImage4] = useState(ask);
 
-  const [radio, setRadio] = useState(1);
+  const [radio, setRadio] = useState();
 
 
 
@@ -36,7 +36,7 @@ function Games() {
     const randomLetters = [];
 
     const min = 0;
-    const max = 4;
+    const max = 3;
     const randomNum = Math.floor(Math.random() * (max - min + 1)) + min;
     console.log(randomNum)
 
