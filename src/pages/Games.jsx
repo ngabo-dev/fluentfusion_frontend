@@ -24,11 +24,24 @@ function Games() {
   const [image3, setImage3] = useState(ask);
   const [image4, setImage4] = useState(ask);
 
-  const [radio, setRadio] = useState();
+  const [radio, setRadio] = useState(0);
+  const [errortext, setErrortext] = useState("Kanda hasi utangira imyitozo!");
+  const [correctstatus, setCorrectstatus] = useState('not-correct');
+  const [correctPosition, setcorrectPosition] = useState(-1);
 
 
 
   const increment = () => {
+    if ( radio != correctPosition+1){
+      setCorrectstatus('not-correct')
+      setErrortext("Igisubizo mwahisomo ntabwo aricyo, ongera ugerageze!");
+      return 0;
+
+    }else{
+      setErrortext("Igisubizo mwagikoze!");
+      setCorrectstatus('correct')
+
+    }
     newnumber = number + 1;
     setNumber(newnumber);
     updateNavigators(newnumber);
@@ -38,7 +51,8 @@ function Games() {
     const min = 0;
     const max = 3;
     const randomNum = Math.floor(Math.random() * (max - min + 1)) + min;
-    console.log(randomNum)
+    setcorrectPosition(randomNum)
+    // console.log(randomNum)
 
     let i = 0;
     while ( i < 4) {
@@ -71,6 +85,11 @@ function Games() {
     updateNavigators(les);
   };
 
+
+  const handleRadioChange=(num)=> {
+    setRadio(num);
+    console.log(num);
+  }
   const updateNavigators = (newnumber) => {
 
     switch (newnumber) {
@@ -380,6 +399,9 @@ function Games() {
               >
                 {key}
               </span>
+              <div style={{fontStyle:'italic'}}>
+              <span className={correctstatus}><b>NB:</b> {errortext} </span>
+            </div>
             </div>
             {/* end of left side  */}
 
@@ -388,40 +410,40 @@ function Games() {
             <div style={{ marginLeft: "8%", width:'50%' }}>
               <div style={{ display: "flex" }}>
                 <div>
-                  <input type="radio" name="answer"  value={1} />
+                  <input type="radio" name="answer"  value={1}  onClick={() => handleRadioChange(1)} />
                   <img
                     key={number}
                     src={image1}
                     alt="a"
-                    style={{ marginLeft: "8px", height: "120px" }}
+                    style={{ marginLeft: "8px", height: "100px" }}
                   />
                 </div>
                 <div style={{ marginLeft: "42px" }}>
-                  <input type="radio" name="answer" value={2}  />
+                  <input type="radio" name="answer" value={2}  onClick={() => handleRadioChange(2)}  />
                   <img
                     key={number}
                     src={image2}
                     alt="a"
-                    style={{ marginLeft: "8px", height: "120px" }}
+                    style={{ marginLeft: "8px", height: "100px" }}
                   />
                 </div>
               </div>
 
               <div style={{ marginTop: "52px", display: "flex" }}>
                 <div>
-                  <input type="radio" name="answer" value={3} />
+                  <input type="radio" name="answer"  value={3}   onClick={() => handleRadioChange(3)}/>
                   <img
                     src={image3}
                     alt="a"
-                    style={{ marginLeft: "8px", height: "120px" }}
+                    style={{ marginLeft: "8px", height: "100px" }}
                   />
                 </div>
                 <div style={{ marginLeft: "42px" }}>
-                  <input type="radio" name="answer" value={4} />
+                  <input type="radio" name="answer"   value={4}  onClick={() => handleRadioChange(4)} />
                   <img
                     src={image4}
                     alt="a"
-                    style={{ marginLeft: "8px", height: "120px" }}
+                    style={{ marginLeft: "8px", height: "100px" }}
                   />
                 </div>
               </div>
@@ -436,7 +458,7 @@ function Games() {
 
 
           {/* footer for navigation buttons */}
-          <div style={{ width: "100%" }}>
+          <div style={{ marginTop:'12px', display:'flex' }}>
             <button
               onClick={increment}
               style={{
@@ -445,13 +467,15 @@ function Games() {
                 fontWeight: "bold",
                 height: "38px",
                 padding: "12px",
-                marginTop: "0px",
+                marginTop: "12px",
                 borderRadius: "4px",
-                marginLeft:'40%'
+                margin:'auto',
+                float:'right'
+
               }}
             >
               {" "}
-              {number == 0 ? ('Start Exercises'):('Submit') }{" "}
+              {number == 0 ? ('Tangira Imyitozo'):('Subiza') }{" "}
             </button>
           </div>
         </div>

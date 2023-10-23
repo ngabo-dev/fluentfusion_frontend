@@ -37,3 +37,11 @@ body {
   background-color: #3f84f3;
   color: white;
 }
+
+.correct{
+  color: green;
+}
+
+.not-correct{
+  color: red;
+}
