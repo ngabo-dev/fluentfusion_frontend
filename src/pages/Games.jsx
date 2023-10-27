@@ -462,7 +462,6 @@ function Games() {
                 height: "38px",
                 padding: "12px",
                 marginTop: "12px",
-                marginBottom: "56px",
                 borderRadius: "4px",
                 margin:'auto',
                 float:'right'
@@ -475,6 +474,10 @@ function Games() {
           </div>
         </div>
       </div>
+      <br />
+      <br />
+      <br />
+      <br />
 
     </Container>
   );

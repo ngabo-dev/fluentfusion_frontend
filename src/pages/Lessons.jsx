@@ -315,9 +315,9 @@ function Lessons() {
 
         </div>
 
-        <button onClick={deincrement} style={{backgroundColor:'#4890fc', color:'white', fontWeight:'bold', height:'38px', padding:'12px', marginTop:'30%', borderRadius:'4px', marginLeft:'12px'}}> Previous  </button>
+        <button onClick={deincrement} style={{backgroundColor:'#4890fc', color:'white', fontWeight:'bold', height:'38px', padding:'12px', marginTop:'28%', borderRadius:'4px', marginLeft:'12px'}}> Previous  </button>
 
-        <div style={{ width: '72%', justifyContent: 'center' }} className='flex'>
+        <div style={{ width: '72%', justifyContent: 'center' }} className='flex mt-32'>
         <span style={{ fontSize: '120px' }}> {key} : </span>
 
         <div>
@@ -325,8 +325,12 @@ function Lessons() {
         </div>
       </div>
 
-          <button onClick={increment} style={{backgroundColor:'#4890fc', color:'white', fontWeight:'bold', height:'38px', padding:'12px', marginTop:'30%', borderRadius:'4px'}}> Next  </button>
+          <button onClick={increment} style={{backgroundColor:'#4890fc', color:'white', fontWeight:'bold', height:'38px', padding:'12px', marginTop:'28%', borderRadius:'4px'}}> Next  </button>
       </div>
+      <br />
+      <br />
+      <br />
+      <br />
     </Container>
   )
 }
@@ -340,6 +344,9 @@ const Container = styled.div`
       width:20%;
       min-height:420px;
     }
+    .mt-32 {
+      margin-top: 32px;
+    }
 
   @media (max-width: 768px) {
     margin-top: 12vh;
@@ -351,6 +358,9 @@ const Container = styled.div`
       min-height:220px;
       margin-top:120px;
 
+    }
+    .mt-32 {
+      margin-top: 4px;
     }
   }
 `
