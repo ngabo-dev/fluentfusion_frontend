@@ -19,6 +19,11 @@ const Home = () => {
 
 const Container = styled.div`
     margin-top: 20vh;
+
+  @media (max-width: 768px) {
+    margin-top: 12vh;
+
+  }
 `
 
 export default Home

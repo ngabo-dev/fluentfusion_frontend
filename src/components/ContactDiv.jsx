@@ -2,7 +2,7 @@ import React from 'react'
 
 function ContactDiv() {
   return (
-    <div style={{width:'96%',height:'100%', paddingLeft:'18px', paddingRight:'18px', borderLeft:'black 2px solid'}}>
+    <div style={{width:'96%',height:'100%', paddingLeft:'18px', paddingRight:'18px', borderLeft:'black 2px solid', marginBottom:'56px'}}>
     <h3 style={{ textDecoration:'underline'}}>
         TWIGE URURIMI RW'AMARENGA
       </h3>

@@ -340,14 +340,8 @@ function Games() {
 
   return (
     <Container>
-      <div style={{ display: "flex" }}>
-        <div
-          style={{
-            width: "20%",
-            borderRight: "gray 2px solid",
-            minHeight: "420px",
-          }}
-        >
+      <div  className='flex'>
+        <div className="sidebar" >
           <h3 style={{ textAlign: "center" }}> IMYITOZO </h3>
           <ul>
             <li className={lesson1class} onClick={() => setlesson(1)}>
@@ -468,6 +462,7 @@ function Games() {
                 height: "38px",
                 padding: "12px",
                 marginTop: "12px",
+                marginBottom: "56px",
                 borderRadius: "4px",
                 margin:'auto',
                 float:'right'
@@ -485,7 +480,31 @@ function Games() {
   );
 }
 
+
 const Container = styled.div`
-  margin-top: 20vh;
+    margin-top: 20vh;
+    .flex{
+      display:flex;
+    }
+    .sidebar{
+      width:20%;
+      min-height:420px;
+      border-right: gray 2px solid;
+
+    }
+
+  @media (max-width: 768px) {
+    margin-top: 12vh;
+    .flex{
+      display:block;
+    }
+    .sidebar{
+      width:100%;
+      min-height:220px;
+      margin-top:120px;
+      border-right: gray 0px solid;
+
+    }
+  }
 `;
 export default Games;

@@ -299,9 +299,9 @@ function Lessons() {
 
   return (
     <Container>
-      <div style={{display:'flex'}}>
+      <div className='flex'>
 
-        <div style={{width:'20%', borderRight:'gray 2px solid', minHeight:'420px'}} >
+        <div style={{ borderRight:'gray 2px solid'}} className='sidebar'>
           <h3 style={{textAlign:'center', }}> IBYICIRO </h3>
           <ul>
           <li className={lesson1class} onClick={()=> setlesson(1)}> Icyiciro cya 1 (A - D)</li>
@@ -317,7 +317,7 @@ function Lessons() {
 
         <button onClick={deincrement} style={{backgroundColor:'#4890fc', color:'white', fontWeight:'bold', height:'38px', padding:'12px', marginTop:'30%', borderRadius:'4px', marginLeft:'12px'}}> Previous  </button>
 
-        <div style={{ width: '72%', display: 'flex', justifyContent: 'center' }}>
+        <div style={{ width: '72%', justifyContent: 'center' }} className='flex'>
         <span style={{ fontSize: '120px' }}> {key} : </span>
 
         <div>
@@ -333,5 +333,25 @@ function Lessons() {
 
 const Container = styled.div`
     margin-top: 20vh;
+    .flex{
+      display:flex;
+    }
+    .sidebar{
+      width:20%;
+      min-height:420px;
+    }
+
+  @media (max-width: 768px) {
+    margin-top: 12vh;
+    .flex{
+      display:block;
+    }
+    .sidebar{
+      width:100%;
+      min-height:220px;
+      margin-top:120px;
+
+    }
+  }
 `
 export default Lessons
