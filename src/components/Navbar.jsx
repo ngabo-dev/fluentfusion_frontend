@@ -4,14 +4,16 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { Button } from "primereact/button";
 import "primeicons/primeicons.css";
+
 const Navbar = () => {
   const [active, setActive] = useState("home");
+
   return (
     <Nav>
       <div className="brand">
-        <img src={logoBlue} alt="logo" />
+        <img src={logoBlue} alt="logo" style={{maxHeight:'56px'}}/>
       </div>
-      <div className="menus ml-5">
+      <div className="menus">
         <Link
           to="/"
           className="link"
@@ -22,18 +24,6 @@ const Navbar = () => {
         >
           Ahabanza
         </Link>
-        {/* <Link
-          to="/dictionary"
-          className="link"
-          style={
-            active === "dictionary"
-              ? { color: "#4890fc" }
-              : { color: "#212427" }
-          }
-          onClick={() => setActive("dictionary")}
-        >
-          Inkoranya
-        </Link> */}
         <Link
           to="/lessons"
           className="link"
@@ -67,12 +57,9 @@ const Navbar = () => {
           Dusange
         </Link>
       </div>
-      <div
-        id="contact"
-        style={{ width: "30%", display: "flex", justifyContent: "end" }}
-      >
-        <a href="https://wa.me/250788737639" >
-        <Button label="Duhamagare" severity="info" icon="pi pi-phone" />
+      <div id="contact">
+        <a href="https://wa.me/250788737639">
+          <Button label="Duhamagare" severity="info" icon="pi pi-phone" />
         </a>
       </div>
     </Nav>
@@ -102,9 +89,9 @@ const Nav = styled.nav`
   }
 
   .menus {
-    display: flex;
-    justify-content: space-between;
-    width: calc(100vw / 2.5);
+    display: block;
+    justify-content: space between;
+    width: 100%;
 
     .link {
       text-decoration: none;
@@ -117,6 +104,28 @@ const Nav = styled.nav`
       }
     }
   }
-`;
+
+  @media (max-width: 768px) {
+    /* Add responsive styles for smaller screens here */
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem;
+    .brand {
+      width: 100%;
+      text-align: center;
+      img {
+        max-width: 50%;
+      }
+    }
+    .menus {
+      width: 100%;
+      margin-top: 1rem;
+      .link {
+        display: block;
+        margin-bottom: 1rem;
+      }
+    }
+  }
+}`;
 
 export default Navbar;
