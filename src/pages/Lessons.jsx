@@ -315,17 +315,17 @@ function Lessons() {
 
         </div>
 
-        <button onClick={deincrement} className='previous'> Previous  </button>
+        <button onClick={deincrement} className='previous'> Inyuma  </button>
 
         <div style={{ width: '72%', justifyContent: 'center' }} className='flex mt-32'>
-        <span style={{ fontSize: '120px' }}> {key} : </span>
+        <span className='letter'> {key} : </span>
 
         <div>
-          <img key={number} src={image} alt="a" style={{marginLeft:'24px'}}/>
+          <img key={number} src={image} alt="a" className='image' />
         </div>
       </div>
 
-          <button onClick={increment} className='next'> Next  </button>
+          <button onClick={increment} className='next'> Komeza &#8594;  </button>
       </div>
       <br />
       <br />
@@ -366,6 +366,12 @@ const Container = styled.div`
       margin-top: 28%;
       border-radius: 4px;
     }
+    .image{
+      margin-left: 24px;
+    }
+    .letter{
+      font-size: 120px;
+    }
 
   @media (max-width: 768px) {
     margin-top: 12vh;
@@ -387,6 +393,16 @@ const Container = styled.div`
     }
     .next{
       margin-top: 32px;
+      margin-left:12px;
+    }
+    .image{
+      max-height: 220px;
+      margin-left:12px;
+    }
+    .letter{
+      font-size: 80px;
+      margin-bottom:82px;
+      margin-left:12px;
     }
   }
 `

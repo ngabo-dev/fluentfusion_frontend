@@ -401,7 +401,7 @@ function Games() {
 
             {/* right side of the box for images */}
             <div style={{width:'50%'}}>
-            <div style={{ marginLeft: "8%", width:'50%' }}>
+            <div className="semi-main-div">
               <div style={{ display: "flex" }}>
                 <div>
                   <input type="radio" name="answer"  value={1}  onClick={() => handleRadioChange(1)} />
@@ -412,7 +412,7 @@ function Games() {
                     style={{ marginLeft: "8px", height: "100px" }}
                   />
                 </div>
-                <div style={{ marginLeft: "42px" }}>
+                <div className="second-choose">
                   <input type="radio" name="answer" value={2}  onClick={() => handleRadioChange(2)}  />
                   <img
                     key={number}
@@ -432,7 +432,7 @@ function Games() {
                     style={{ marginLeft: "8px", height: "100px" }}
                   />
                 </div>
-                <div style={{ marginLeft: "42px" }}>
+                <div className="second-choose">
                   <input type="radio" name="answer"   value={4}  onClick={() => handleRadioChange(4)} />
                   <img
                     src={image4}
@@ -495,6 +495,13 @@ const Container = styled.div`
       border-right: gray 2px solid;
 
     }
+    .second-choose{
+      margin-left: 42px;
+    }
+    .semi-main-div{
+      margin-left: 8%;
+      width: 50%;
+    }
 
   @media (max-width: 768px) {
     margin-top: 12vh;
@@ -511,6 +518,12 @@ const Container = styled.div`
     }
     .main-div{
       margin-top:120px;
+    }
+    .second-choose{
+      margin-left: 8px;
+    }
+    .semi-main-div{
+      margin-left: 8px;
     }
   }
 `;
