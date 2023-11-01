@@ -376,7 +376,7 @@ function Games() {
         </div>
 
           {/* main div */}
-        <div style={{ width: "72%", paddingLeft:'32px'}} className="main-div">
+        <div style={{ width: "72%"}} className="main-div">
           <div style={{textAlign:'center', textDecoration:'underline', textUnderlineOffset:'6px'}}><h3> HITAMO</h3></div>
 
           <div style={{display:'flex'}}>
@@ -498,10 +498,14 @@ const Container = styled.div`
     .second-choose{
       margin-left: 42px;
     }
+    .main-div{
+      padding-left: 32px;
+    }
     .semi-main-div{
       margin-left: 8%;
       width: 50%;
     }
+
 
   @media (max-width: 768px) {
     margin-top: 12vh;
@@ -518,6 +522,7 @@ const Container = styled.div`
     }
     .main-div{
       margin-top:120px;
+      padding-left: 8px;
     }
     .second-choose{
       margin-left: 8px;
