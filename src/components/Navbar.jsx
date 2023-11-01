@@ -76,7 +76,7 @@ const Navbar = () => {
         </Link>
       </div>
       <div id="contact" className="contact hidden">
-        <a href="https://wa.me/250788737639">
+        <a href="https://wa.me/250788737639"  style={{textDecoration:'none'}}>
           <Button label="Duhamagare" severity="info" icon="pi pi-phone" />
         </a>
       </div>
