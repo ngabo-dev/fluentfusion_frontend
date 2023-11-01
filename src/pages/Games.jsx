@@ -340,7 +340,7 @@ function Games() {
 
   return (
     <Container>
-      <div  className='flex'>
+      <div  className='flex' >
         <div className="sidebar" >
           <h3 style={{ textAlign: "center" }}> IMYITOZO </h3>
           <ul>
@@ -376,7 +376,7 @@ function Games() {
         </div>
 
           {/* main div */}
-        <div style={{ width: "72%", paddingLeft:'32px'}}>
+        <div style={{ width: "72%", paddingLeft:'32px'}} className="main-div">
           <div style={{textAlign:'center', textDecoration:'underline', textUnderlineOffset:'6px'}}><h3> HITAMO</h3></div>
 
           <div style={{display:'flex'}}>
@@ -506,7 +506,11 @@ const Container = styled.div`
       min-height:220px;
       margin-top:120px;
       border-right: gray 0px solid;
+      display: none;
 
+    }
+    .main-div{
+      margin-top:120px;
     }
   }
 `;
