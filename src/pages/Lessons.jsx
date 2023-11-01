@@ -299,7 +299,10 @@ function Lessons() {
 
   return (
     <Container>
+
+      <div className='mobile-title'><h3> AMASOMO</h3></div>
       <div className='flex'>
+
 
         <div style={{ borderRight:'gray 2px solid'}} className='sidebar'>
           <h3 style={{textAlign:'center', }}> IBYICIRO </h3>
@@ -372,6 +375,9 @@ const Container = styled.div`
     .letter{
       font-size: 120px;
     }
+    .mobile-title{
+      display:none;
+    }
 
   @media (max-width: 768px) {
     margin-top: 12vh;
@@ -389,7 +395,7 @@ const Container = styled.div`
       margin-top: 4px;
     }
     .previous{
-      margin-top: 32px;
+      margin-top: 4px;
     }
     .next{
       margin-top: 32px;
@@ -403,6 +409,13 @@ const Container = styled.div`
       font-size: 80px;
       margin-bottom:82px;
       margin-left:12px;
+    }
+    .mobile-title{
+      display:block;
+      margin-top: 112px;
+      text-align: center;
+      text-decoration: underline;
+      text-underline-offset: 6px;
     }
   }
 `
