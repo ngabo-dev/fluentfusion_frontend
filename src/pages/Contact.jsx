@@ -13,8 +13,8 @@ function Contact() {
             <h3 style={{textDecoration:'underline', width:'100%', textAlign:'center'}} > OHEREZA IGITEKEREZO </h3>
             <p style={{fontSize:'18px'}}> Amazina yombi:</p>
             <input type='text' style={{width:'90%', backgroundColor:'#EEEEEE', borderRadius:'4px', height:'32px'}} />
-            <p style={{fontSize:'18px'}}> Email:</p>
-            <input type='email' style={{width:'90%', backgroundColor:'#EEEEEE', borderRadius:'4px', height:'32px'}} />
+            <p style={{fontSize:'18px'}}> Telephone:</p>
+            <input type='phone' style={{width:'90%', backgroundColor:'#EEEEEE', borderRadius:'4px', height:'32px'}} />
             <p style={{fontSize:'18px'}}> Ubutumwa:</p>
             <textarea type='email' style={{width:'90%', backgroundColor:'#EEEEEE', borderRadius:'4px'}} rows={4}></textarea> <br />
 
