@@ -72,7 +72,7 @@ const Navbar = () => {
           }
           onClick={() => setActive("contact")}
         >
-          Dusange
+          Twandikire
         </Link>
       </div>
       <div id="contact" className="contact hidden">
