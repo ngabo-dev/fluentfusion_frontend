@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { one, two, three, four, five, six, seven, eight, nine, zero } from "../constants";
 import { a, b, c, d, e, f, g, h, i as I, j, k, l, m, n, o, p, q, r, s, t, u, v, w, x, y, z } from "../constants/bigletters"
@@ -337,6 +337,10 @@ function Games() {
       setLesson7class("sidelink-active");
     }
   };
+
+  useEffect(() => {
+    increment();
+  }, []);
 
   return (
     <Container>
