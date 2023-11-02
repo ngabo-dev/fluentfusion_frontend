@@ -29,6 +29,7 @@ function Contact() {
       setStatus('sent');
       nameRef.current.value = '';
       phoneRef.current.value ='';
+      emailRef.current.value ='';
       messageRef.current.value ='';
 
     } catch(e){
