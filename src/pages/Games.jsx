@@ -80,10 +80,6 @@ function Games() {
   };
 
 
-  const setlesson = (les) => {
-    setNumber(les);
-    updateNavigators(les);
-  };
 
 
   const handleRadioChange=(num)=> {
@@ -348,31 +344,31 @@ function Games() {
         <div className="sidebar" >
           <h3 style={{ textAlign: "center" }}> IMYITOZO </h3>
           <ul>
-            <li className={lesson1class} onClick={() => setlesson(1)}>
+            <li className={lesson1class}>
               {" "}
               Icyiciro cya 1 (A - D)
             </li>
-            <li className={lesson2class} onClick={() => setlesson(5)}>
+            <li className={lesson2class} >
               {" "}
               Icyiciro cya 2 (E - G)
             </li>
-            <li className={lesson3class} onClick={() => setlesson(8)}>
+            <li className={lesson3class} >
               {" "}
               Icyiciro cya 3 (H - K)
             </li>
-            <li className={lesson4class} onClick={() => setlesson(12)}>
+            <li className={lesson4class} >
               {" "}
               Icyiciro cya 4 (L - O)
             </li>
-            <li className={lesson5class} onClick={() => setlesson(16)}>
+            <li className={lesson5class} >
               {" "}
               Icyiciro cya 5 (P - T)
             </li>
-            <li className={lesson6class} onClick={() => setlesson(21)}>
+            <li className={lesson6class} >
               {" "}
               Icyiciro cya 6 (U - Z)
             </li>
-            <li className={lesson7class} onClick={() => setlesson(27)}>
+            <li className={lesson7class} >
               {" "}
               Icyiciro cya 7 (0 - 9)
             </li>
