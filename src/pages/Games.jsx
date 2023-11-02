@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
-import { one, two, three, four, five, six, seven, eight, nine, zero } from "../constants";
+import { zero, one, two, three, four, five, six, seven, eight, nine } from "../constants";
 import { a, b, c, d, e, f, g, h, i as I, j, k, l, m, n, o, p, q, r, s, t, u, v, w, x, y, z } from "../constants/bigletters"
 import ask from "../assets/logos/ask.png"
 
@@ -25,7 +25,7 @@ function Games() {
   const [image4, setImage4] = useState(ask);
 
   const [radio, setRadio] = useState(0);
-  const [errortext, setErrortext] = useState("Kanda hasi utangira imyitozo!");
+  const [errortext, setErrortext] = useState("Hitamo igisubizo cyukuri!");
   const [correctstatus, setCorrectstatus] = useState('not-correct');
   const [correctPosition, setcorrectPosition] = useState(-1);
 
@@ -37,15 +37,21 @@ function Games() {
       setErrortext("Igisubizo mwahisomo ntabwo aricyo, ongera ugerageze!");
       return 0;
 
-    }else{
-      setErrortext("Igisubizo mwagikoze!");
+    }
+    else if(1 + number > 36){
+      setErrortext("Ibibazo byose wabisubije neza, Conglatulations!");
+      setCorrectstatus('correct')
+      return 0;
+    }
+    else if( number + 1 != 1 ) {
+      setErrortext("Igisubizo wagikoze!");
       setCorrectstatus('correct')
 
     }
     newnumber = number + 1;
     setNumber(newnumber);
     updateNavigators(newnumber);
-    const letters = [ a, b, c, d, e, f, g, h, I, j, k, l, m, n, o, p, q, r, s, t, u, v, w, x, y, z,one, two, three, four, five, six, seven, eight, nine, zero ];
+    const letters = [ a, b, c, d, e, f, g, h, I, j, k, l, m, n, o, p, q, r, s, t, u, v, w, x, y, z, zero, one, two, three, four, five, six, seven, eight, nine ];
     const randomLetters = [];
 
     const min = 0;
