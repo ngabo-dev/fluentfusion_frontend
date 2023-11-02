@@ -44,15 +44,15 @@ function Contact() {
         <div style={{ flex: '1 0 70%' }}>
           <form style={{width:'92%', paddingLeft:'4%'}} onSubmit={hundleSave}>
             <h3 style={{textDecoration:'underline', width:'100%', textAlign:'center'}} > OHEREZA IGITEKEREZO </h3>
-            <p style={{fontSize:'18px'}}> Amazina yombi:</p>
-            <input type='text' style={{width:'90%', backgroundColor:'#EEEEEE', borderRadius:'4px', height:'32px'}} ref={nameRef} />
-            <p style={{fontSize:'18px'}}> Telephone:</p>
-            <input type='phone' style={{width:'90%', backgroundColor:'#EEEEEE', borderRadius:'4px', height:'32px'}} ref={phoneRef}/>
-            <p style={{fontSize:'18px'}}> Email:</p>
-            <input type='email' style={{width:'90%', backgroundColor:'#EEEEEE', borderRadius:'4px', height:'32px'}} ref={emailRef}/>
+            <p style={{fontSize:'18px', marginBottom:'2px'}}> Amazina yombi:</p>
+            <input type='text' style={{width:'90%', backgroundColor:'#EEEEEE', borderRadius:'4px', height:'32px'}} ref={nameRef} required/>
+            <p style={{fontSize:'18px', marginBottom:'2px'}}> Telephone:</p>
+            <input type='phone' style={{width:'90%', backgroundColor:'#EEEEEE', borderRadius:'4px', height:'32px'}} ref={phoneRef} required/>
+            <p style={{fontSize:'18px', marginBottom:'2px'}}> Email:</p>
+            <input type='email' style={{width:'90%', backgroundColor:'#EEEEEE', borderRadius:'4px', height:'32px'}} ref={emailRef} required/>
 
-            <p style={{fontSize:'18px'}}> Ubutumwa:</p>
-            <textarea type='email' style={{width:'90%', backgroundColor:'#EEEEEE', borderRadius:'4px'}} rows={4} ref={messageRef}></textarea> <br />
+            <p style={{fontSize:'18px', marginBottom:'2px'}}> Ubutumwa:</p>
+            <textarea type='email' style={{width:'90%', backgroundColor:'#EEEEEE', borderRadius:'4px'}} rows={4} ref={messageRef} required></textarea> <br />
 
             {status =='sent' ? (
             <div style={{color:'green'}}>{displayMessage}</div>
@@ -80,6 +80,6 @@ function Contact() {
 }
 
 const Container = styled.div`
-    margin-top: 20vh;
+    margin-top: 14vh;
 `
 export default Contact
