@@ -25,7 +25,7 @@ function Games() {
   const [image4, setImage4] = useState(ask);
 
   const [radio, setRadio] = useState(0);
-  const [errortext, setErrortext] = useState("Kanda hasi utangira imyitozo!");
+  const [errortext, setErrortext] = useState("Hitamo igisubizo cyukuri!");
   const [correctstatus, setCorrectstatus] = useState('not-correct');
   const [correctPosition, setcorrectPosition] = useState(-1);
 
@@ -37,8 +37,8 @@ function Games() {
       setErrortext("Igisubizo mwahisomo ntabwo aricyo, ongera ugerageze!");
       return 0;
 
-    }else{
-      setErrortext("Igisubizo mwagikoze!");
+    }else if( number + 1 != 1 ) {
+      setErrortext("Igisubizo wagikoze!");
       setCorrectstatus('correct')
 
     }
