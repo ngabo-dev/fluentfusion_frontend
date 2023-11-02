@@ -11,12 +11,12 @@ function Games() {
   const [key, setKey] = useState("?");
   var newnumber;
   const [lesson1class, setLesson1class] = useState(["sidelink-active"]);
-  const [lesson2class, setLesson2class] = useState("sidelink");
-  const [lesson3class, setLesson3class] = useState("sidelink");
-  const [lesson4class, setLesson4class] = useState("sidelink");
-  const [lesson5class, setLesson5class] = useState("sidelink");
-  const [lesson6class, setLesson6class] = useState("sidelink");
-  const [lesson7class, setLesson7class] = useState("sidelink");
+  const [lesson2class, setLesson2class] = useState("game-sidelink");
+  const [lesson3class, setLesson3class] = useState("game-sidelink");
+  const [lesson4class, setLesson4class] = useState("game-sidelink");
+  const [lesson5class, setLesson5class] = useState("game-sidelink");
+  const [lesson6class, setLesson6class] = useState("game-sidelink");
+  const [lesson7class, setLesson7class] = useState("game-sidelink");
 
 
   const [image1, setImage1] = useState(ask);
@@ -277,59 +277,59 @@ function Games() {
 
     if (newnumber < 5) {
       setLesson1class("sidelink-active");
-      setLesson2class("sidelink");
-      setLesson3class("sidelink");
-      setLesson4class("sidelink");
-      setLesson5class("sidelink");
-      setLesson6class("sidelink");
-      setLesson7class("sidelink");
+      setLesson2class("game-sidelink");
+      setLesson3class("game-sidelink");
+      setLesson4class("game-sidelink");
+      setLesson5class("game-sidelink");
+      setLesson6class("game-sidelink");
+      setLesson7class("game-sidelink");
     } else if (newnumber < 8) {
-      setLesson1class("sidelink");
+      setLesson1class("game-sidelink");
       setLesson2class("sidelink-active");
-      setLesson3class("sidelink");
-      setLesson4class("sidelink");
-      setLesson5class("sidelink");
-      setLesson6class("sidelink");
-      setLesson7class("sidelink");
+      setLesson3class("game-sidelink");
+      setLesson4class("game-sidelink");
+      setLesson5class("game-sidelink");
+      setLesson6class("game-sidelink");
+      setLesson7class("game-sidelink");
     } else if (newnumber < 12) {
-      setLesson1class("sidelink");
-      setLesson2class("sidelink");
+      setLesson1class("game-sidelink");
+      setLesson2class("game-sidelink");
       setLesson3class("sidelink-active");
-      setLesson4class("sidelink");
-      setLesson5class("sidelink");
-      setLesson6class("sidelink");
-      setLesson7class("sidelink");
+      setLesson4class("game-sidelink");
+      setLesson5class("game-sidelink");
+      setLesson6class("game-sidelink");
+      setLesson7class("game-sidelink");
     } else if (newnumber < 16) {
-      setLesson1class("sidelink");
-      setLesson2class("sidelink");
-      setLesson3class("sidelink");
+      setLesson1class("game-sidelink");
+      setLesson2class("game-sidelink");
+      setLesson3class("game-sidelink");
       setLesson4class("sidelink-active");
-      setLesson5class("sidelink");
-      setLesson6class("sidelink");
-      setLesson7class("sidelink");
+      setLesson5class("game-sidelink");
+      setLesson6class("game-sidelink");
+      setLesson7class("game-sidelink");
     } else if (newnumber < 21) {
-      setLesson1class("sidelink");
-      setLesson2class("sidelink");
-      setLesson3class("sidelink");
-      setLesson4class("sidelink");
+      setLesson1class("game-sidelink");
+      setLesson2class("game-sidelink");
+      setLesson3class("game-sidelink");
+      setLesson4class("game-sidelink");
       setLesson5class("sidelink-active");
-      setLesson6class("sidelink");
-      setLesson7class("sidelink");
+      setLesson6class("game-sidelink");
+      setLesson7class("game-sidelink");
     } else if (newnumber < 27) {
-      setLesson1class("sidelink");
-      setLesson2class("sidelink");
-      setLesson3class("sidelink");
-      setLesson4class("sidelink");
-      setLesson5class("sidelink");
+      setLesson1class("game-sidelink");
+      setLesson2class("game-sidelink");
+      setLesson3class("game-sidelink");
+      setLesson4class("game-sidelink");
+      setLesson5class("game-sidelink");
       setLesson6class("sidelink-active");
-      setLesson7class("sidelink");
+      setLesson7class("game-sidelink");
     } else {
-      setLesson1class("sidelink");
-      setLesson2class("sidelink");
-      setLesson3class("sidelink");
-      setLesson4class("sidelink");
-      setLesson5class("sidelink");
-      setLesson6class("sidelink");
+      setLesson1class("game-sidelink");
+      setLesson2class("game-sidelink");
+      setLesson3class("game-sidelink");
+      setLesson4class("game-sidelink");
+      setLesson5class("game-sidelink");
+      setLesson6class("game-sidelink");
       setLesson7class("sidelink-active");
     }
   };

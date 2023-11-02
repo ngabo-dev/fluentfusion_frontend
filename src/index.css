@@ -10,6 +10,22 @@ body {
   object-fit: contain;
 }
 
+.game-sidelink {
+  text-decoration: none;
+  margin-top: 26px;
+  cursor: pointer;
+  padding: 6px;
+  border-radius: 4px;
+  margin-top: 8px;
+  list-style: none;
+  margin-left: 0px;
+  margin-right: 8px;
+}
+
+.game-sidelink:hover{
+  cursor: not-allowed;
+}
+
 .sidelink {
   text-decoration: none;
   margin-top: 26px;
@@ -25,6 +41,8 @@ body {
   background: #679ff96f;
   /* color:white; */
 }
+
+
 .sidelink-active { text-decoration: none;
   margin-top: 26px;
   cursor: pointer;
