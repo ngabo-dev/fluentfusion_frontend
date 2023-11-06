@@ -59,7 +59,7 @@ const Navbar = () => {
         >
           Amasomo
         </Link>
-        <Link
+        {/* <Link
           to="/dictionary"
           className="link"
           style={
@@ -70,7 +70,7 @@ const Navbar = () => {
           onClick={() => changePage("dictionary")}
         >
           Inkoranyamagambo
-        </Link>
+        </Link> */}
 
         <Link
           to="/games"
