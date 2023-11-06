@@ -9,6 +9,11 @@ import { faBars } from "@fortawesome/free-solid-svg-icons";
 
 const Navbar = () => {
   const [active, setActive] = useState("home");
+  const changePage = (nav) =>{
+    setActive(nav);
+    // element.style.display = "block";
+
+  }
 
   const displayNav = () => {
     const elements = document.querySelectorAll(".hidden");
@@ -38,7 +43,7 @@ const Navbar = () => {
           style={
             active === "home" ? { color: "#4890fc" } : { color: "#212427" }
           }
-          onClick={() => setActive("home")}
+          onClick={() => changePage("home")}
         >
           Ahabanza
         </Link>
@@ -50,17 +55,30 @@ const Navbar = () => {
               ? { color: "#4890fc" }
               : { color: "#212427" }
           }
-          onClick={() => setActive("lessons")}
+          onClick={() => changePage("lessons")}
         >
           Amasomo
         </Link>
+        <Link
+          to="/dictionary"
+          className="link"
+          style={
+            active === "dictionary"
+              ? { color: "#4890fc" }
+              : { color: "#212427" }
+          }
+          onClick={() => changePage("dictionary")}
+        >
+          Inkoranyamagambo
+        </Link>
+
         <Link
           to="/games"
           className="link"
           style={
             active === "games" ? { color: "#4890fc" } : { color: "#212427" }
           }
-          onClick={() => setActive("games")}
+          onClick={() => changePage("games")}
         >
           Imyitozo
         </Link>
@@ -70,7 +88,7 @@ const Navbar = () => {
           style={
             active === "contact" ? { color: "#4890fc" } : { color: "#212427" }
           }
-          onClick={() => setActive("contact")}
+          onClick={() => changePage("contact")}
         >
           Twandikire
         </Link>
@@ -117,7 +135,7 @@ const Nav = styled.nav`
       color: #212427;
       font-weight: 600;
       font-size: 1.2rem;
-      margin-left:42px;
+      margin-left:24px;
 
       &:hover {
         color: #4890fc;
