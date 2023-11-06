@@ -24,6 +24,7 @@ import w from "../assets/alphabets/w.png"
 import x from "../assets/alphabets/x.png"
 import y from "../assets/alphabets/y.png"
 import z from "../assets/alphabets/z.png"
+import space from "../assets/alphabets/space.png"
 
 
-export { a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, v, w, x, y, z }
+export { a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, v, w, x, y, z, space }

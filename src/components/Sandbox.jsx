@@ -3,7 +3,7 @@ import { InputTextarea } from "primereact/inputtextarea";
 import styled from "styled-components";
 import { one, two, three, four, five, six, seven, eight, nine, zero } from "../constants";
 
-import { a, b, c, d, e, f, g, h, i as I, j, k, l, m, n, o, p, q, r, s, t, u, v, w, x, y, z } from "../constants/alphabets"
+import { a, b, c, d, e, f, g, h, i as I, j, k, l, m, n, o, p, q, r, s, t, u, v, w, x, y, z, space } from "../constants/alphabets"
 const Sandbox = () => {
   const [value, setValue] = useState('');
 
@@ -147,6 +147,10 @@ const Sandbox = () => {
         case "z":
         case "Z":
           images.push(<img className="sign-img" key={i} src={z} alt="z" />);
+          break;
+
+        case " ":
+          images.push(<img className="sign-img" key={i} src={space} alt=" " />);
           break;
         default:
           // If the character is not a number, skip it or display an error message
