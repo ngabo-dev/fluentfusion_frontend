@@ -23,12 +23,19 @@ function Lessons() {
 
   const increment =() =>{
     newnumber = number+1
+    if (newnumber >= 37) {
+      newnumber = 36
+      return 0
+    }
     setNumber(newnumber);
     updateImage(newnumber)
   }
 
   const deincrement =() =>{
     newnumber = number -1
+    if (newnumber == 0) {
+      return 0
+    }
     setNumber(newnumber);
     updateImage(newnumber)
   }
