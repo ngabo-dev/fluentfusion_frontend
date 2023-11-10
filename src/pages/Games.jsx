@@ -392,13 +392,7 @@ function Games() {
             {/* left side of the box */}
             <div style={{width:'50%'}}>
               <p style={{color:'#444', fontFamily: "'Lato', sans-serif"}}>{number}. Hitamo ikiganza gisobanuye inyuguti ya <b>{key} </b> ?</p>
-              <span
-                style={{
-                  fontSize: "120px",
-                  justifyContent: "center",
-                  padding: "32%",
-                }}
-              >
+              <span className="big-letter">
                 {key}
               </span>
               <div style={{fontStyle:'italic'}}>
@@ -515,6 +509,11 @@ const Container = styled.div`
       margin-left: 8%;
       width: 50%;
     }
+    .big-letter{
+      font-size: 120px;
+      justify-content: center;
+      padding: 32%;
+    }
 
 
   @media (max-width: 768px) {
@@ -539,6 +538,10 @@ const Container = styled.div`
     }
     .semi-main-div{
       margin-left: 8px;
+    }
+    .big-letter{
+      justify-content: left;
+      padding: 0px;
     }
   }
 `;
