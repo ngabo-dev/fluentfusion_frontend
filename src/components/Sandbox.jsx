@@ -170,7 +170,7 @@ const Sandbox = () => {
         value={value}
         onChange={(e) => setValue(e.target.value)}
         rows={3}
-        style={{width:'100%'}}
+        className="input-text"
       />
       <SignsField>
         {renderSignImages()}
@@ -181,6 +181,14 @@ const Sandbox = () => {
 
 const Container = styled.div`
   padding: 1rem 2rem;
+  .input-text{
+    width:92%;
+  }
+  @media (max-width: 768px) {
+    .contact-text{
+      width:100%;
+    }
+  }
 `;
 
 const SignsField = styled.section`
