@@ -62,7 +62,7 @@ function Contact() {
             ) }
 
 
-            <input type='submit' style={{backgroundColor:'#4890fc', height:'36px', color:'white', borderRadius:'4px', fontWeight:'bold', marginTop:'18px'}} value={'Ohereza'} />
+            <input type='submit' style={{backgroundColor:'#4890fc', height:'36px', color:'white', borderRadius:'4px', fontWeight:'bold', border:'1px gray solid', marginTop:'18px'}} value={'Ohereza'} />
             <br />
             <br />
             <br />
