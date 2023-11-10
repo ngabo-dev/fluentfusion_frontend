@@ -46,14 +46,14 @@ function Contact() {
           <form style={{width:'92%', paddingLeft:'4%', color:'#444'}} onSubmit={hundleSave}>
             <h3 style={{textDecoration:'underline', width:'100%', textAlign:'center', color:'#027bce'}} > OHEREZA IGITEKEREZO </h3>
             <p style={{fontSize:'18px', marginBottom:'2px', color:'#295573'}}> Amazina yombi:</p>
-            <input type='text' style={{width:'90%', backgroundColor:'', borderRadius:'4px', height:'32px', border:'1px solid #8d99ae'}} ref={nameRef} required/>
+            <input type='text' className='contact-input' ref={nameRef} required/>
             <p style={{fontSize:'18px', marginBottom:'2px', color:'#295573'}}> Telephone:</p>
-            <input type='phone' style={{width:'90%', backgroundColor:'', borderRadius:'4px', height:'32px', border:'1px solid #8d99ae'}} ref={phoneRef} required/>
+            <input type='phone' className='contact-input' ref={phoneRef} required/>
             <p style={{fontSize:'18px', marginBottom:'2px', color:'#295573'}}> Email:</p>
-            <input type='email' style={{width:'90%', backgroundColor:'', borderRadius:'4px', height:'32px', border:'1px solid #8d99ae'}} ref={emailRef} required/>
+            <input type='email' className='contact-input' ref={emailRef} required/>
 
             <p style={{fontSize:'18px', marginBottom:'2px', color:'#295573'}}> Ubutumwa:</p>
-            <textarea type='email' style={{width:'90%', backgroundColor:'', borderRadius:'4px', border:'1px solid #8d99ae'}} rows={5} ref={messageRef} required></textarea> <br />
+            <textarea type='email'  className='contact-text' rows={5} ref={messageRef} required></textarea> <br />
 
             {status =='sent' ? (
             <div style={{color:'green'}}>{displayMessage}</div>
@@ -82,5 +82,26 @@ function Contact() {
 
 const Container = styled.div`
     margin-top: 14vh;
+    .contact-input{
+      width:90%;
+      border-radius: 4px;
+      height:32px;
+      border:1px solid #8d99ae;
+    }
+    .contact-text{
+      width:90%;
+      border-radius: 4px;
+      border:1px solid #8d99ae;
+    }
+
+  @media (max-width: 768px) {
+    .contact-input{
+      width:100%;
+    }
+    .contact-text{
+      width:100%;
+    }
+  }
+
 `
 export default Contact
