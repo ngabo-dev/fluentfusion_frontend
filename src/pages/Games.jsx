@@ -34,7 +34,7 @@ function Games() {
   const increment = () => {
     if ( radio != correctPosition+1){
       setCorrectstatus('not-correct')
-      setErrortext("Igisubizo mwahisomo ntabwo aricyo, ongera ugerageze!");
+      setErrortext("Ntabwo aribyo, ongera ugerageze!");
       return 0;
 
     }
@@ -511,8 +511,8 @@ const Container = styled.div`
     }
     .big-letter{
       font-size: 120px;
-      justify-content: center;
-      padding: 32%;
+      justify-content: left;
+      padding: 0px;
     }
 
 
@@ -540,8 +540,7 @@ const Container = styled.div`
       margin-left: 8px;
     }
     .big-letter{
-      justify-content: left;
-      padding: 0px;
+      font-size: 72px;
     }
   }
 `;
