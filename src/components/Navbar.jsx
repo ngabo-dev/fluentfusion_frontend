@@ -41,7 +41,7 @@ const Navbar = () => {
           to="/"
           className="link"
           style={
-            active === "home" ? { color: "#4890fc" } : { color: "#212427" }
+            active === "home" ? { color: "#4890fc", textUnderlineOffset: '12px', textDecoration: 'underline' } : { color: "#212427" }
           }
           onClick={() => changePage("home")}
         >
@@ -52,7 +52,7 @@ const Navbar = () => {
           className="link"
           style={
             active === "lessons"
-              ? { color: "#4890fc" }
+              ? { color: "#4890fc", textUnderlineOffset: '12px', textDecoration: 'underline' }
               : { color: "#212427" }
           }
           onClick={() => changePage("lessons")}
@@ -64,7 +64,7 @@ const Navbar = () => {
           className="link"
           style={
             active === "dictionary"
-              ? { color: "#4890fc" }
+              ? { color: "#4890fc", textUnderlineOffset: '12px', textDecoration: 'underline' }
               : { color: "#212427" }
           }
           onClick={() => changePage("dictionary")}
@@ -76,7 +76,7 @@ const Navbar = () => {
           to="/games"
           className="link"
           style={
-            active === "games" ? { color: "#4890fc" } : { color: "#212427" }
+            active === "games" ? { color: "#4890fc", textUnderlineOffset: '12px', textDecoration: 'underline' } : { color: "#212427" }
           }
           onClick={() => changePage("games")}
         >
@@ -86,7 +86,7 @@ const Navbar = () => {
           to="/contact"
           className="link"
           style={
-            active === "contact" ? { color: "#4890fc" } : { color: "#212427" }
+            active === "contact" ? { color: "#4890fc", textUnderlineOffset: '12px', textDecoration: 'underline' } : { color: "#212427" }
           }
           onClick={() => changePage("contact")}
         >
@@ -135,10 +135,12 @@ const Nav = styled.nav`
       color: #212427;
       font-weight: 600;
       font-size: 1.2rem;
-      margin-left:24px;
+      margin-left: 3rem;
 
       &:hover {
         color: #4890fc;
+        text-underline-offset: 12px;
+        text-decoration: underline;
       }
     }
   }

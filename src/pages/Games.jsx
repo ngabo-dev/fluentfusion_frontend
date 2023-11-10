@@ -348,7 +348,8 @@ function Games() {
     <Container>
       <div  className='flex' >
         <div className="sidebar" >
-          <h3 style={{ textAlign: "center" }}> IMYITOZO </h3>
+          <h3 style={{ textAlign: "center", color:'#027bce', textDecoration:'underline',
+          textUnderlineOffset:'8px'  }}> IMYITOZO </h3>
           <ul>
             <li className={lesson1class}>
               {" "}
@@ -383,13 +384,14 @@ function Games() {
 
           {/* main div */}
         <div style={{ width: "72%"}} className="main-div">
-          <div style={{textAlign:'center', textDecoration:'underline', textUnderlineOffset:'6px'}}><h3> HITAMO</h3></div>
+          <div style={{textAlign:'center', color:'#027bce', textDecoration:'underline',
+          textUnderlineOffset:'8px' }}><h3> HITAMO</h3></div>
 
           <div style={{display:'flex'}}>
 
             {/* left side of the box */}
             <div style={{width:'50%'}}>
-              <p>{number}. Hitamo ikiganza gisobanuye inyuguti ya <b>{key} </b> ?</p>
+              <p style={{color:'#444', fontFamily: "'Lato', sans-serif"}}>{number}. Hitamo ikiganza gisobanuye inyuguti ya <b>{key} </b> ?</p>
               <span
                 style={{
                   fontSize: "120px",
@@ -470,7 +472,9 @@ function Games() {
                 marginTop: "12px",
                 borderRadius: "4px",
                 margin:'auto',
-                float:'right'
+                float:'right',
+                border: "1px gray solid",
+                cursor:'pointer'
 
               }}
             >
