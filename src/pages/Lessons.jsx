@@ -305,7 +305,8 @@ function Lessons() {
 
 
         <div style={{ borderRight:'gray 2px solid'}} className='sidebar'>
-          <h3 style={{textAlign:'center', }}> IBYICIRO </h3>
+          <h3 style={{textAlign:'center', color:'#027bce', textDecoration:'underline',
+          textUnderlineOffset:'8px' }}> IBYICIRO </h3>
           <ul>
           <li className={lesson1class} onClick={()=> setlesson(1)}> Icyiciro cya 1 (A - D)</li>
             <li className={lesson2class} onClick={()=> setlesson(5)}> Icyiciro cya 2 (E - G)</li>
@@ -351,29 +352,34 @@ const Container = styled.div`
       margin-top: 32px;
     }
     .previous{
-      background-color: #4890fc;
+      background-color: #5386e4;
+      border: 1px gray;
       color: white;
       font-weight: bold;
       height: 38px;
       padding: 12px;
       margin-top: 28%;
-      border-radius: 4px;
+      border-radius: 3px;
       margin-left:12px;
+      cursor:pointer;
     }
     .next{
-      background-color: #4890fc;
+      background-color: #5386e4;
+      border: 1px gray;
       color:white;
       font-weight: bold;
       height: 38px;
       padding: 12px;
       margin-top: 28%;
       border-radius: 4px;
+      cursor:pointer;
     }
     .image{
       margin-left: 24px;
     }
     .letter{
       font-size: 120px;
+      color: #20323e;
     }
     .mobile-title{
       display:none;

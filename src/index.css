@@ -20,6 +20,8 @@ body {
   list-style: none;
   margin-left: 0px;
   margin-right: 8px;
+  font-weight: 600;
+  color: #295573;
 }
 
 .game-sidelink:hover{
@@ -36,6 +38,8 @@ body {
   list-style: none;
   margin-left: 0px;
   margin-right: 8px;
+  font-weight: 600;
+  color: #295573;
 }
 .sidelink:hover {
   background: #679ff96f;

@@ -135,10 +135,12 @@ const Nav = styled.nav`
       color: #212427;
       font-weight: 600;
       font-size: 1.2rem;
-      margin-left:24px;
+      margin-left: 3rem;
 
       &:hover {
         color: #4890fc;
+        text-underline-offset: 12px;
+        text-decoration: underline;
       }
     }
   }

@@ -163,7 +163,7 @@ const Sandbox = () => {
 
   return (
     <Container>
-      <h1 style={{color: '#4890fc'}}>Menya imyandikire y'ururimi rw'amarenga.</h1>
+      <h1 style={{color: '#4890fc'}}>Menya imyandikire y'inyuguti z'amarenga.</h1>
       <h3 style={{color:'#3e6680'}}>Andika ijambo hano:</h3>
       <InputTextarea
         autoResize
