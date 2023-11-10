@@ -170,7 +170,7 @@ const Sandbox = () => {
         value={value}
         onChange={(e) => setValue(e.target.value)}
         rows={3}
-        style={{width:'96%'}}
+        style={{width:'100%'}}
       />
       <SignsField>
         {renderSignImages()}

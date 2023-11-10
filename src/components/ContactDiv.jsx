@@ -15,15 +15,15 @@ function ContactDiv() {
     </h4>
 
     <b style={{color:'#3e6680'}}> Email:</b> <br/>
-    <a href='mailto:info@iitech.rw' style={{color:'black', textDecoration:'none', fontFamily: "'Lato', sans-serif", color:'#444'}} target='_blank'>
+    <a href='mailto:info@iitech.rw' style={{ textDecoration:'none', fontFamily: "'Lato', sans-serif", color:'#444'}} target='_blank'>
       info@iitech.rw  </a> <br /><br />
 
     <b style={{color:'#3e6680'}}> Telephone:</b> <br/>
-    <a href='https://wa.me/250788737639' style={{color:'black', textDecoration:'none', fontFamily: "'Lato', sans-serif", color:'#444'}} target='_blank'> +(250) 788 737 639 </a> <br /><br />
+    <a href='https://wa.me/250788737639' style={{textDecoration:'none', fontFamily: "'Lato', sans-serif", color:'#444'}} target='_blank'> +(250) 788 737 639 </a> <br /><br />
 
 
     <b style={{color:'#3e6680'}}> Website:</b> <br/>
-    <a href='https://www.iitech.rw/' style={{color:'black', textDecoration:'none', fontFamily: "'Lato', sans-serif", color:'#444'}} target='_blank'>www.iitech.rw </a>
+    <a href='https://www.iitech.rw/' style={{ textDecoration:'none', fontFamily: "'Lato', sans-serif", color:'#444'}} target='_blank'>www.iitech.rw </a>
     </div>
   )
 }
