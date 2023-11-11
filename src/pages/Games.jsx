@@ -3,6 +3,8 @@ import styled from "styled-components";
 import { zero, one, two, three, four, five, six, seven, eight, nine } from "../constants";
 import { a, b, c, d, e, f, g, h, i as I, j, k, l, m, n, o, p, q, r, s, t, u, v, w, x, y, z } from "../constants/bigletters"
 import ask from "../assets/logos/ask.png"
+import Swal from 'sweetalert2';
+
 
 function Games() {
   var i = 1;
@@ -31,6 +33,16 @@ function Games() {
 
 
 
+  const showAlert = () => {
+    Swal.fire({
+      title: 'Conglatulations!',
+      text: 'Igisubizo mwahisemo nicyo!',
+      icon: 'success',
+      confirmButtonText: 'Igikurikiyeho',
+      confirmButtonColor: "#3066be",
+    });
+  };
+
   const increment = () => {
     if ( radio != correctPosition+1){
       setCorrectstatus('not-correct')
@@ -39,6 +51,7 @@ function Games() {
 
     }
     else if(1 + number > 36){
+
       setErrortext("Ibibazo byose wabisubije neza, Conglatulations!");
       setCorrectstatus('correct')
       return 0;
@@ -83,6 +96,7 @@ function Games() {
     setImage3(randomLetters[2]);
     setImage4(randomLetters[3]);
 
+    showAlert();
   };
 
 
