@@ -60,7 +60,7 @@ function Games() {
   const showAlertFinished = () => {
     Swal.fire({
       title: 'Conglatulations!',
-      text: 'Ibisubizo byose mwabikoze neza!',
+      text: 'Ibisubizo byose wabikoze neza!',
       icon: 'info',
       confirmButtonText: 'Ok',
       confirmButtonColor: "info",
