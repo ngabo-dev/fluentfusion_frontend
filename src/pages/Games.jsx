@@ -32,6 +32,19 @@ function Games() {
   const [correctPosition, setcorrectPosition] = useState(-1);
 
 
+  useEffect(() => {
+    let storedTopNumber = localStorage.getItem('topNumber');
+
+    if (!storedTopNumber) {
+      localStorage.setItem('topNumber', 1);
+    }else{
+      console.log("Top scores exists: ", storedTopNumber)
+    }
+    storedTopNumber = storedTopNumber - 1;
+    setNumber(storedTopNumber);
+    updateImages(storedTopNumber);
+  }, []);
+
 
   const showAlert = () => {
     Swal.fire({
@@ -43,11 +56,10 @@ function Games() {
     });
   };
 
-  const updateImages = () =>{
+  const updateImages = (storedTopNumber) =>{
 
     newnumber = number + 1;
     setNumber(newnumber);
-    localStorage.setItem('topNumber', newnumber);
     updateNavigators(newnumber);
     const letters = [ a, b, c, d, e, f, g, h, I, j, k, l, m, n, o, p, q, r, s, t, u, v, w, x, y, z, zero, one, two, three, four, five, six, seven, eight, nine ];
     const randomLetters = [];
@@ -99,6 +111,8 @@ function Games() {
       setErrortext("Hitamo igisubizo cyukuri!");
       setCorrectstatus('correct')
       updateImages();
+      localStorage.setItem('topNumber', number);
+      console.log("Top now is:", localStorage.getItem('topNumber'))
       showAlert();
     }
   };
@@ -358,9 +372,6 @@ function Games() {
     }
   };
 
-  useEffect(() => {
-    updateImages();
-  }, []);
 
   return (
     <Container>
