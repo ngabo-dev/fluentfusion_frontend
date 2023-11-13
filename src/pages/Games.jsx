@@ -28,9 +28,23 @@ function Games() {
 
   const [radio, setRadio] = useState(0);
   const [errortext, setErrortext] = useState("Hitamo igisubizo cyukuri!");
-  const [correctstatus, setCorrectstatus] = useState('not-correct');
+  const [correctstatus, setCorrectstatus] = useState('correct');
   const [correctPosition, setcorrectPosition] = useState(-1);
 
+
+  useEffect(() => {
+    let storedTopNumber = localStorage.getItem('topNumber');
+
+    if (!storedTopNumber) {
+      localStorage.setItem('topNumber', 1);
+    }
+
+    console.log("Top scores is: ", storedTopNumber)
+
+    storedTopNumber = storedTopNumber - 1;
+    setNumber(storedTopNumber);
+    updateImages(storedTopNumber);
+  }, []);
 
 
   const showAlert = () => {
@@ -43,24 +57,8 @@ function Games() {
     });
   };
 
-  const increment = () => {
-    if ( radio != correctPosition+1){
-      setCorrectstatus('not-correct')
-      setErrortext("Ntabwo aribyo, ongera ugerageze!");
-      return 0;
+  const updateImages = (storedTopNumber) =>{
 
-    }
-    else if(1 + number > 36){
-
-      setErrortext("Ibibazo byose wabisubije neza, Conglatulations!");
-      setCorrectstatus('correct')
-      return 0;
-    }
-    else if( number + 1 != 1 ) {
-      setErrortext("Igisubizo wagikoze!");
-      setCorrectstatus('correct')
-
-    }
     newnumber = number + 1;
     setNumber(newnumber);
     updateNavigators(newnumber);
@@ -95,8 +93,29 @@ function Games() {
     setImage2(randomLetters[1]);
     setImage3(randomLetters[2]);
     setImage4(randomLetters[3]);
+  }
 
-    showAlert();
+  const increment = () => {
+    if ( radio != correctPosition+1){
+      setCorrectstatus('not-correct')
+      setErrortext("Ntabwo aribyo, ongera ugerageze!");
+      return 0;
+
+    }
+    else if(1 + number > 36){
+
+      setErrortext("Ibibazo byose wabisubije neza, Conglatulations!");
+      setCorrectstatus('correct')
+      return 0;
+    }
+    else if( number + 1 != 1 ) {
+      setErrortext("Hitamo igisubizo cyukuri!");
+      setCorrectstatus('correct')
+      updateImages();
+      localStorage.setItem('topNumber', number);
+      console.log("Top now is:", localStorage.getItem('topNumber'))
+      showAlert();
+    }
   };
 
 
@@ -354,9 +373,6 @@ function Games() {
     }
   };
 
-  useEffect(() => {
-    increment();
-  }, []);
 
   return (
     <Container>
