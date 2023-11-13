@@ -37,9 +37,10 @@ function Games() {
 
     if (!storedTopNumber) {
       localStorage.setItem('topNumber', 1);
-    }else{
-      console.log("Top scores exists: ", storedTopNumber)
     }
+
+    console.log("Top scores is: ", storedTopNumber)
+
     storedTopNumber = storedTopNumber - 1;
     setNumber(storedTopNumber);
     updateImages(storedTopNumber);
