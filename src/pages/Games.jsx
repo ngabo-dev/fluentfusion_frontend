@@ -39,7 +39,7 @@ function Games() {
       localStorage.setItem('topNumber', 1);
     }
 
-    console.log("Top scores is: ", storedTopNumber)
+    // console.log("Lat time you scored: ", storedTopNumber)
 
     storedTopNumber = storedTopNumber - 1;
     setNumber(storedTopNumber);
@@ -75,7 +75,7 @@ function Games() {
     while ( i < 4) {
       if (randomNum == i){
         randomLetters.push(letters[newnumber-1]);
-        console.log(letters[newnumber-1])
+        // console.log(letters[newnumber-1])
         i++;
 
       }else {
@@ -87,8 +87,7 @@ function Games() {
       }
 
     }
-
-    console.log(randomLetters)
+    // console.log(randomLetters)
     setImage1(randomLetters[0]);
     setImage2(randomLetters[1]);
     setImage3(randomLetters[2]);
@@ -113,7 +112,7 @@ function Games() {
       setCorrectstatus('correct')
       updateImages();
       localStorage.setItem('topNumber', number);
-      console.log("Top now is:", localStorage.getItem('topNumber'))
+      // console.log("Top now is:", localStorage.getItem('topNumber'))
       showAlert();
     }
   };
@@ -123,7 +122,6 @@ function Games() {
 
   const handleRadioChange=(num)=> {
     setRadio(num);
-    console.log(num);
   }
   const updateNavigators = (newnumber) => {
 
