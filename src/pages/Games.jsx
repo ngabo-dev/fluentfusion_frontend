@@ -4,7 +4,7 @@ import { zero, one, two, three, four, five, six, seven, eight, nine } from "../c
 import { a, b, c, d, e, f, g, h, i as I, j, k, l, m, n, o, p, q, r, s, t, u, v, w, x, y, z } from "../constants/bigletters"
 import ask from "../assets/logos/ask.png"
 import Swal from 'sweetalert2';
-
+import Confetti from 'react-confetti'
 
 function Games() {
   var i = 1;
@@ -47,13 +47,23 @@ function Games() {
   }, []);
 
 
-  const showAlert = () => {
+  const showAlertCorrect = () => {
     Swal.fire({
       title: 'Conglatulations!',
       text: 'Igisubizo mwahisemo nicyo!',
       icon: 'success',
       confirmButtonText: 'Igikurikiyeho',
       confirmButtonColor: "#3066be",
+    });
+  };
+
+  const showAlertFinished = () => {
+    Swal.fire({
+      title: 'Conglatulations!',
+      text: 'Ibisubizo byose mwabikoze neza!',
+      icon: 'info',
+      confirmButtonText: 'Ok',
+      confirmButtonColor: "info",
     });
   };
 
@@ -104,7 +114,8 @@ function Games() {
     else if(1 + number > 36){
 
       setErrortext("Ibibazo byose wabisubije neza, Conglatulations!");
-      setCorrectstatus('correct')
+      setCorrectstatus('full-correct')
+      showAlertFinished();
       return 0;
     }
     else if( number + 1 != 1 ) {
@@ -113,7 +124,7 @@ function Games() {
       updateImages();
       localStorage.setItem('topNumber', number);
       // console.log("Top now is:", localStorage.getItem('topNumber'))
-      showAlert();
+      showAlertCorrect();
     }
   };
 
@@ -424,6 +435,9 @@ function Games() {
                 {key}
               </span>
               <div style={{fontStyle:'italic'}}>
+                {correctstatus == 'full-correct' ?
+                (<Confetti />):(<> </>)
+                }
               <span className={correctstatus}><b>NB:</b> {errortext} </span>
             </div>
             </div>
