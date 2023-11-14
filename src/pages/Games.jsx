@@ -9,7 +9,7 @@ import Confetti from 'react-confetti'
 function Games() {
   var i = 1;
   const [image, setImage] = useState(ask);
-  const [number, setNumber] = useState(34);
+  const [number, setNumber] = useState(0);
   const [key, setKey] = useState("?");
   var newnumber;
   const [lesson1class, setLesson1class] = useState(["sidelink-active"]);

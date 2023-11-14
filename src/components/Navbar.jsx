@@ -11,7 +11,7 @@ const Navbar = () => {
   const [active, setActive] = useState("home");
   const changePage = (nav) =>{
     setActive(nav);
-    // element.style.display = "block";
+    displayNav();
 
   }
 
