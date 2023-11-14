@@ -59,9 +59,18 @@ function Games() {
 
   const showAlertFinished = () => {
     Swal.fire({
-      title: 'Conglatulations!',
-      text: 'Ibisubizo byose wabikoze neza!',
-      icon: 'info',
+      title: 'All completed!',
+      html: `
+        <br/>
+        Please follow us on
+        <a href="https://twitter.com/IITECH_RWANDA" target="_blank">X</a> and
+        <a href="https://www.linkedin.com/company/iitechrw/" target="_blank">LinkedIn</a>
+        for updates.
+        <br/>
+        Thank you very much!
+        <br/>
+      `,
+      icon: 'success',
       confirmButtonText: 'Ok',
       confirmButtonColor: "info",
     });
