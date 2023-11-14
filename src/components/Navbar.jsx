@@ -11,9 +11,21 @@ const Navbar = () => {
   const [active, setActive] = useState("home");
   const changePage = (nav) =>{
     setActive(nav);
-    displayNav();
+    hideMobileNav();
 
   }
+
+  const hideMobileNav = () => {
+    if (window.innerWidth < 768) {
+      const elements = document.querySelectorAll(".hidden");
+      elements.forEach(element => {
+        const currentDisplay = getComputedStyle(element).getPropertyValue("display");
+        if (currentDisplay === "block") {
+          element.style.display = "none";
+        }
+      });
+    }
+  };
 
   const displayNav = () => {
     const elements = document.querySelectorAll(".hidden");
