@@ -462,7 +462,7 @@ function Games() {
                     key={number}
                     src={image1}
                     alt="a"
-                    style={{ marginLeft: "8px", height: "100px" }}
+                    className="image"
                   />
                 </div>
                 <div className="second-choose">
@@ -471,7 +471,7 @@ function Games() {
                     key={number}
                     src={image2}
                     alt="a"
-                    style={{ marginLeft: "8px", height: "100px" }}
+                    className="image"
                   />
                 </div>
               </div>
@@ -482,7 +482,7 @@ function Games() {
                   <img
                     src={image3}
                     alt="a"
-                    style={{ marginLeft: "8px", height: "100px" }}
+                    className="image"
                   />
                 </div>
                 <div className="second-choose">
@@ -490,7 +490,7 @@ function Games() {
                   <img
                     src={image4}
                     alt="a"
-                    style={{ marginLeft: "8px", height: "100px" }}
+                    className="image"
                   />
                 </div>
               </div>
@@ -541,6 +541,12 @@ function Games() {
 
 const Container = styled.div`
     margin-top: 20vh;
+
+    .image{
+      margin-left: 8px;
+      max-height: 100px;
+    }
+
     .flex{
       display:flex;
     }
@@ -569,6 +575,10 @@ const Container = styled.div`
 
   @media (max-width: 768px) {
     margin-top: 12vh;
+    .image{
+      margin-left: 4px;
+      max-width: 6rem;
+    }
     .flex{
       display:block;
     }
