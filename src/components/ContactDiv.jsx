@@ -11,15 +11,15 @@ function ContactDiv() {
       </p>
 
     <h4 style={{ textDecoration:'underline', color:'#027bce'}}>
-      DUHAMAGARE
+      CONTACT INFO
     </h4>
 
     <b style={{color:'#3e6680'}}> Email:</b> <br/>
     <a href='mailto:info@iitech.rw' style={{ textDecoration:'none', fontFamily: "'Lato', sans-serif", color:'#444'}} target='_blank'>
       info@iitech.rw  </a> <br /><br />
 
-    <b style={{color:'#3e6680'}}> Telephone:</b> <br/>
-    <a href='https://wa.me/250788737639' style={{textDecoration:'none', fontFamily: "'Lato', sans-serif", color:'#444'}} target='_blank'> +(250) 788 737 639 </a> <br /><br />
+    <b style={{color:'#3e6680'}}> Twitter:</b> <br/>
+    <a href='https://twitter.com/IITECH_RWANDA/' style={{textDecoration:'none', fontFamily: "'Lato', sans-serif", color:'#444'}} target='_blank'> @IITECH_RWANDA </a> <br /><br />
 
 
     <b style={{color:'#3e6680'}}> Website:</b> <br/>

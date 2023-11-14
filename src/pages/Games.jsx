@@ -9,7 +9,7 @@ import Confetti from 'react-confetti'
 function Games() {
   var i = 1;
   const [image, setImage] = useState(ask);
-  const [number, setNumber] = useState(0);
+  const [number, setNumber] = useState(34);
   const [key, setKey] = useState("?");
   var newnumber;
   const [lesson1class, setLesson1class] = useState(["sidelink-active"]);
@@ -60,7 +60,16 @@ function Games() {
   const showAlertFinished = () => {
     Swal.fire({
       title: 'All completed!',
-      text: 'Ibibazo byose wabikoze neza!',
+      html: `
+        <br/>
+        Please follow us on
+        <a href="https://twitter.com/IITECH_RWANDA" target="_blank">X</a> and
+        <a href="https://www.linkedin.com/company/iitechrw/" target="_blank">LinkedIn</a>
+        for updates.
+        <br/>
+        Thank you very much!
+        <br/>
+      `,
       icon: 'success',
       confirmButtonText: 'Ok',
       confirmButtonColor: "info",
