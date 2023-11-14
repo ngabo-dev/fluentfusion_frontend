@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { zero, one, two, three, four, five, six, seven, eight, nine } from "../constants";
-import { a, b, c, d, e, f, g, h, i as I, j, k, l, m, n, o, p, q, r, s, t, u, v, w, x, y, z } from "../constants/bigletters"
+import { a, b, c, d, e, f, g, h, i as I, j, k, l, m, n, o, p, q, r, s, t, u, v, w, x, y, z } from "../constants/pngletters"
 import ask from "../assets/logos/ask.png"
 import Swal from 'sweetalert2';
 import Confetti from 'react-confetti'
