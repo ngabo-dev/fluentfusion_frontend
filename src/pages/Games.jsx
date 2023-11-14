@@ -9,7 +9,7 @@ import Confetti from 'react-confetti'
 function Games() {
   var i = 1;
   const [image, setImage] = useState(ask);
-  const [number, setNumber] = useState(0);
+  const [number, setNumber] = useState(34);
   const [key, setKey] = useState("?");
   var newnumber;
   const [lesson1class, setLesson1class] = useState(["sidelink-active"]);
@@ -59,9 +59,9 @@ function Games() {
 
   const showAlertFinished = () => {
     Swal.fire({
-      title: 'Conglatulations!',
-      text: 'Ibisubizo byose wabikoze neza!',
-      icon: 'info',
+      title: 'All completed!',
+      text: 'Ibibazo byose wabikoze neza!',
+      icon: 'success',
       confirmButtonText: 'Ok',
       confirmButtonColor: "info",
     });
