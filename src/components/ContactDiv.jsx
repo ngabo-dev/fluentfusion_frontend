@@ -6,7 +6,7 @@ function ContactDiv() {
     <h3 style={{ textDecoration:'underline', color:'#027bce'}}>
         MENYA AMARENGA
       </h3>
-      <p style={{textAlign:'justify', fontFamily: "'Lato', sans-serif", color:'#444'}}>
+      <p style={{textAlign:'justify', fontFamily: "'Lato', sans-serif", color:'#555555'}}>
        MENYA AMARENGA n'urubuga rwigisha ururimi rw'amarenga ntakiguzi, mu rwego rwo guteza imbere ababana n'ubumuga bwo kutumva.
       </p>
 
