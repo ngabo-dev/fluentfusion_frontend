@@ -1,258 +1,160 @@
-import React, { useState } from 'react'
-import styled from "styled-components"
-import { one, two, three, four, five, six, seven, eight, nine, zero } from "../constants";
-import { a, b, c, d, e, f, g, h, i as I, j, k, l, m, n, o, p, q, r, s, t, u, v, w, x, y, z } from "../constants/alphabets"
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 
+const Dictionary = () => {
+  const [words, setWords] = useState([]);
+  const [filteredWords, setFilteredWords] = useState([]);
+  const [searchTerm, setSearchTerm] = useState('');
+  const [selectedLetter, setSelectedLetter] = useState('');
+  const [selectedWord, setSelectedWord] = useState(null);
+  const [gifFile, setGifFile] = useState('');
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
+  useEffect(() => {
+    const fetchWords = async () => {
+      try {
+        const response = await axios.get('http://localhost:8000/api/word/');
+        setWords(response.data);
+        setFilteredWords(response.data);
+      } catch (error) {
+        console.error('Failed to fetch words', error);
+      }
+    };
 
-function Dictionary() {
-  var i = 1;
-  const [image, setImage] = useState(a);
-  const [number, setNumber] = useState(1);
-  const [key, setKey] =useState('A');
-  var newnumber;
-  const [lesson1class, setLesson1class ]=  useState(['sidelink-active']);
-  const [lesson2class,setLesson2class ] =  useState('sidelink');
-  const [lesson3class, setLesson3class ] =  useState('sidelink');
-  const [lesson4class, setLesson4class ] =  useState('sidelink');
-  const [lesson5class, setLesson5class ] =  useState('sidelink');
-  const [lesson6class, setLesson6class ] =  useState('sidelink');
-  const [lesson7class, setLesson7class ] =  useState('sidelink');
+    fetchWords();
+  }, []);
 
-
-
-  const increment =() =>{
-    newnumber = number+1
-    setNumber(newnumber);
-    updateImage(newnumber)
-  }
-
-  const deincrement =() =>{
-    newnumber = number -1
-    setNumber(newnumber);
-    updateImage(newnumber)
-  }
-
-  const setlesson =(les) =>{
-    setNumber(les);
-    updateImage(les)
-  }
-
-  const updateImage =(newnumber) => {
-    switch (newnumber) {
-      case 1:
-        setImage(a);
-        setKey('A');
-      break;
-
-      case 2:
-        setImage( b);
-        setKey('B');
-      break;
-
-      case 3:
-        setImage( c);
-        setKey('C');
-      break;
-
-      case 4:
-        setImage( d);
-        setKey('D');
-      break;
-
-      default:
-      // If the character is not a number, skip it or display an error message
-      break;
+  const handleWordClick = async (word) => {
+    setSelectedWord(word);
+    try {
+      const response = await axios.get(`http://localhost:8000/api/word/${word.id}/`);
+      const gifPath = `${response.data.gif_file}`;
+      setGifFile(gifPath);
+      setIsModalOpen(true);
+    } catch (error) {
+      console.error('Failed to fetch gif', error);
     }
-    if (newnumber < 5){
+  };
 
-      setLesson1class('sidelink-active');
-      setLesson2class('sidelink');
-      setLesson3class('sidelink');
-      setLesson4class('sidelink');
-      setLesson5class('sidelink');
-      setLesson6class('sidelink');
-      setLesson7class('sidelink');
+  const handleSearchChange = (event) => {
+    const searchValue = event.target.value;
+    setSearchTerm(searchValue);
+    filterWords(searchValue, selectedLetter);
+  };
 
-    }else if  (newnumber < 8){
+  const handleLetterChange = (event) => {
+    const letter = event.target.value;
+    setSelectedLetter(letter);
+    filterWords(searchTerm, letter);
+  };
 
-      setLesson1class('sidelink');
-      setLesson2class('sidelink-active');
-      setLesson3class('sidelink');
-      setLesson4class('sidelink');
-      setLesson5class('sidelink');
-      setLesson6class('sidelink');
-      setLesson7class('sidelink');
+  const filterWords = (searchValue, letter) => {
+    let filtered = words;
 
-    }else if  (newnumber < 12){
-
-      setLesson1class('sidelink');
-      setLesson2class('sidelink');
-      setLesson3class('sidelink-active');
-      setLesson4class('sidelink');
-      setLesson5class('sidelink');
-      setLesson6class('sidelink');
-      setLesson7class('sidelink');
-
-    }else if  (newnumber < 16){
-
-      setLesson1class('sidelink');
-      setLesson2class('sidelink');
-      setLesson3class('sidelink');
-      setLesson4class('sidelink-active');
-      setLesson5class('sidelink');
-      setLesson6class('sidelink');
-      setLesson7class('sidelink');
-
-    }else if  (newnumber < 21){
-
-      setLesson1class('sidelink');
-      setLesson2class('sidelink');
-      setLesson3class('sidelink');
-      setLesson4class('sidelink');
-      setLesson5class('sidelink-active');
-      setLesson6class('sidelink');
-      setLesson7class('sidelink');
-
-    }else if  (newnumber < 27) {
-
-      setLesson1class('sidelink');
-      setLesson2class('sidelink');
-      setLesson3class('sidelink');
-      setLesson4class('sidelink');
-      setLesson5class('sidelink');
-      setLesson6class('sidelink-active');
-      setLesson7class('sidelink');
-
-    } else {
-
-      setLesson1class('sidelink');
-      setLesson2class('sidelink');
-      setLesson3class('sidelink');
-      setLesson4class('sidelink');
-      setLesson5class('sidelink');
-      setLesson6class('sidelink');
-      setLesson7class('sidelink-active');
+    if (letter) {
+      filtered = filtered.filter((word) => word.word.toLowerCase().startsWith(letter.toLowerCase()));
     }
-  }
+
+    if (searchValue) {
+      filtered = filtered.filter((word) =>
+        word.word.toLowerCase().includes(searchValue.toLowerCase())
+      );
+    }
+
+    setFilteredWords(filtered);
+  };
+
+  const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
 
   return (
-    <Container>
-
-      <div className='mobile-title'><h3> INKORANYAMAGAMBO </h3></div>
-      <div className='flex'>
-
-
-        <div style={{ borderRight:'gray 2px solid'}} className='sidebar'>
-          <h3 style={{textAlign:'center', }}>  AMAGAMBO AKUNDA GUKORESHWA </h3>
-          <ul>
-          <li className={lesson1class} onClick={()=> setlesson(1)}> 1. Mwaramutse </li>
-            <li className={lesson2class} onClick={()=> setlesson(2)}> 2. Murakoze </li>
-            <li className={lesson3class} onClick={()=> setlesson(3)}> 3. Izina </li>
-            <li className={lesson4class} onClick={()=> setlesson(4)}> 4. Amafaranga  </li>
-          </ul>
-
-        </div>
-
-        <button onClick={deincrement} className='previous'> Inyuma  </button>
-
-        <div style={{ width: '72%', justifyContent: 'center' }} className='flex mt-32'>
-        <span className='letter'> {key} : </span>
-
-        <div>
-          <img key={number} src={image} alt="a" className='image' />
-        </div>
+    <div style={{ maxWidth: '1200px', margin: '3rem auto', padding: '0 1rem' }}>
+      <h1 style={{ textAlign: 'center', fontSize: '2rem', fontWeight: 'bold', marginBottom: '2rem' }}>Word List</h1>
+      
+      <div style={{ marginBottom: '1rem', display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
+        <select
+          style={{ padding: '0.5rem', border: '1px solid #D1D5DB', borderRadius: '0.5rem' }}
+          value={selectedLetter}
+          onChange={handleLetterChange}
+        >
+          <option value="">All Letters</option>
+          {alphabet.map((letter) => (
+            <option key={letter} value={letter}>
+              {letter}
+            </option>
+          ))}
+        </select>
+        <input
+          type="text"
+          style={{ padding: '0.5rem', border: '1px solid #D1D5DB',width:'50', borderRadius: '0.5rem', flexGrow: 1 }}
+          placeholder="Search words..."
+          value={searchTerm}
+          onChange={handleSearchChange}
+        />
       </div>
 
-          <button onClick={increment} className='next'> Komeza &#8594;  </button>
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(120px, 1fr))', gap: '1rem' }}>
+        {filteredWords.map((word) => (
+          <div
+            key={word.id}
+            style={{
+              padding: '0.5rem',
+              border: '1px solid #D1D5DB',
+              borderRadius: '0.5rem',
+              textAlign: 'center',
+              cursor: 'pointer',
+              transition: 'background-color 0.2s',
+            }}
+            onClick={() => handleWordClick(word)}
+          >
+            {word.word}
+          </div>
+        ))}
       </div>
-      <br />
-      <br />
-      <br />
-      <br />
-    </Container>
-  )
-}
 
-const Container = styled.div`
-    margin-top: 20vh;
-    .flex{
-      display:flex;
-    }
-    .sidebar{
-      width:20%;
-      min-height:420px;
-    }
-    .mt-32 {
-      margin-top: 32px;
-    }
-    .previous{
-      background-color: #4890fc;
-      color: white;
-      font-weight: bold;
-      height: 38px;
-      padding: 12px;
-      margin-top: 28%;
-      border-radius: 4px;
-      margin-left:12px;
-    }
-    .next{
-      background-color: #4890fc;
-      color:white;
-      font-weight: bold;
-      height: 38px;
-      padding: 12px;
-      margin-top: 28%;
-      border-radius: 4px;
-    }
-    .image{
-      margin-left: 24px;
-    }
-    .letter{
-      font-size: 120px;
-    }
-    .mobile-title{
-      display:none;
-    }
+      {isModalOpen && selectedWord && (
+        <div style={{
+          position: 'fixed',
+          inset: 0,
+          backgroundColor: 'rgba(0, 0, 0, 0.5)',
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+          zIndex: 50,
+        }}>
+          <div style={{
+            backgroundColor: 'white',
+            padding: '1.5rem',
+            borderRadius: '0.5rem',
+            boxShadow: '0 2px 10px rgba(0, 0, 0, 0.1)',
+            maxWidth: '400px',
+            width: '100%',
+          }}>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem' }}>
+              <h2 style={{ fontSize: '1.5rem', fontWeight: '600' }}>{selectedWord.word}</h2>
+              <button
+                onClick={() => setIsModalOpen(false)}
+                style={{ color: '#6B7280', fontSize: '1.5rem', cursor: 'pointer' }}
+              >
+                &times;
+              </button>
+            </div>
+            <p style={{ marginBottom: '1rem' }}>{selectedWord.description}</p>
+            {gifFile ? (
+              <div style={{ display: 'flex', justifyContent: 'center' }}>
+                <img
+                  src={gifFile}
+                  alt={selectedWord.word}
+                  style={{ borderRadius: '0.5rem', boxShadow: '0 2px 10px rgba(0, 0, 0, 0.1)', maxWidth: '100%', height: 'auto' }}
+                />
+              </div>
+            ) : (
+              <p style={{ textAlign: 'center' }}>Loading GIF...</p>
+            )}
+          </div>
+        </div>
+      )}
+    </div>
+  );
+};
 
-  @media (max-width: 768px) {
-    margin-top: 12vh;
-    .flex{
-      display:block;
-    }
-    .sidebar{
-      width:100%;
-      min-height:220px;
-      margin-top:120px;
-      display: none;
-
-    }
-    .mt-32 {
-      margin-top: 4px;
-    }
-    .previous{
-      margin-top: 4px;
-    }
-    .next{
-      margin-top: 32px;
-      margin-left:12px;
-    }
-    .image{
-      max-height: 220px;
-      margin-left:12px;
-    }
-    .letter{
-      font-size: 80px;
-      margin-bottom:82px;
-      margin-left:12px;
-    }
-    .mobile-title{
-      display:block;
-      margin-top: 112px;
-      text-align: center;
-      text-decoration: underline;
-      text-underline-offset: 6px;
-    }
-  }
-`
-export default Dictionary
+export default Dictionary;

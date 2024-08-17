@@ -7,6 +7,7 @@ import "primeicons/primeicons.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 
+
 const Navbar = () => {
   const [active, setActive] = useState("home");
   const changePage = (nav) =>{
@@ -71,18 +72,7 @@ const Navbar = () => {
         >
           Amasomo
         </Link>
-        {/* <Link
-          to="/dictionary"
-          className="link"
-          style={
-            active === "dictionary"
-              ? { color: "#4890fc", textUnderlineOffset: '12px', textDecoration: 'underline' }
-              : { color: "#212427" }
-          }
-          onClick={() => changePage("dictionary")}
-        >
-          Inkoranyamagambo
-        </Link> */}
+
 
         <Link
           to="/games"
@@ -103,6 +93,27 @@ const Navbar = () => {
           onClick={() => changePage("contact")}
         >
           Twandikire
+        </Link>
+        <Link
+          to="/dictionary"
+          className="link"
+          style={
+            active === "dictionary" ? { color: "#4890fc", textUnderlineOffset: '12px', textDecoration: 'underline' } : { color: "#212427" }
+          }
+          onClick={() => changePage("videopage")}
+        >
+          Dictionary
+        </Link>
+      
+        <Link
+          to="/videopage"
+          className="link"
+          style={
+            active === "videopage" ? { color: "#4890fc", textUnderlineOffset: '12px', textDecoration: 'underline' } : { color: "#212427" }
+          }
+          onClick={() => changePage("videopage")}
+        >
+          Videos
         </Link>
       </div>
       <div id="contact" className="contact hidden">

@@ -1,6 +1,6 @@
 import Sandbox from "../components/Sandbox";
 import styled from "styled-components"
-import ContactDiv from "../components/ContactDiv";
+// import ContactDiv from "../components/ContactDiv";
 
 const Home = () => {
   return (
@@ -10,7 +10,7 @@ const Home = () => {
           <Sandbox />
         </div>
         <div style={{ flex: '1 0 26%', marginLeft: '12px' }}>
-          <ContactDiv />
+          {/* <ContactDiv /> */}
         </div>
       </div>
     </Container>
