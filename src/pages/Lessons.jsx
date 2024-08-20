@@ -311,7 +311,7 @@ function Lessons() {
       <div className='flex'>
 
 
-        <div style={{ borderRight:'gray 2px solid'}} className='sidebar'>
+        <div  style={{ borderRight:'gray 2px solid'}} className='sidebar px-8'>
           <h3 style={{textAlign:'center', color:'#027bce', textDecoration:'underline',
           textUnderlineOffset:'8px' }}> IBYICIRO </h3>
           <ul>

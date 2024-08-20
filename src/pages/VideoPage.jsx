@@ -28,7 +28,7 @@ const VideoPage = () => {
   );
 
   return (
-    <div style={{ maxWidth: '1280px', margin: '3rem auto', padding: '0 1rem' }}>
+    <div className='px-8' style={{ maxWidth: '1280px', margin: '3rem auto', padding: '0 1rem' }}>
       <h1 style={{ textAlign: 'center', fontSize: '2rem', fontWeight: 'bold', marginBottom: '2rem' }}>
         Videos
       </h1>
@@ -49,7 +49,7 @@ const VideoPage = () => {
         />
       </div>
 
-      <div style={{ display: 'grid', gap: '1rem', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))' }}>
+      <div className='px-8' style={{ display: 'grid', gap: '1rem', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))' }}>
         {filteredVideos.map(video => (
           <div key={video.id} style={{ padding: '1rem', border: '1px solid #E5E7EB', borderRadius: '0.5rem' }}>
             <h2 style={{ fontSize: '1.25rem', color: '#2563EB', fontWeight: '600', marginBottom: '1rem' }}>

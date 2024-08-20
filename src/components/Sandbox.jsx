@@ -162,7 +162,7 @@ const Sandbox = () => {
   };
 
   return (
-    <Container>
+    <Container className="-translate-y-48">
       <h1 style={{color: '#4890fc'}}>Menya imyandikire y'inyuguti z'amarenga.</h1>
       <h3 style={{color:'#3e6680'}}>Andika ijambo hano:</h3>
       <InputTextarea
@@ -170,7 +170,7 @@ const Sandbox = () => {
         value={value}
         onChange={(e) => setValue(e.target.value)}
         rows={3}
-        className="input-text"
+        className="input-text mt-10"
       />
       <SignsField>
         {renderSignImages()}
@@ -182,7 +182,7 @@ const Sandbox = () => {
 const Container = styled.div`
   padding: 1rem 2rem;
   .input-text{
-    width:92%;
+    width:22%;
   }
   @media (max-width: 768px) {
     .contact-text{

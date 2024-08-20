@@ -70,7 +70,7 @@ const Navbar = () => {
           }
           onClick={() => changePage("lessons")}
         >
-          Amasomo
+          Inyuguti
         </Link>
 
 
@@ -84,16 +84,7 @@ const Navbar = () => {
         >
           Imyitozo
         </Link>
-        <Link
-          to="/contact"
-          className="link"
-          style={
-            active === "contact" ? { color: "#4890fc", textUnderlineOffset: '12px', textDecoration: 'underline' } : { color: "#212427" }
-          }
-          onClick={() => changePage("contact")}
-        >
-          Twandikire
-        </Link>
+
         <Link
           to="/dictionary"
           className="link"
@@ -102,7 +93,7 @@ const Navbar = () => {
           }
           onClick={() => changePage("videopage")}
         >
-          Dictionary
+          Inkoranyamagambo
         </Link>
       
         <Link
@@ -113,7 +104,17 @@ const Navbar = () => {
           }
           onClick={() => changePage("videopage")}
         >
-          Videos
+          Amasomo
+        </Link>
+        <Link
+          to="/contact"
+          className="link"
+          style={
+            active === "contact" ? { color: "#4890fc", textUnderlineOffset: '12px', textDecoration: 'underline' } : { color: "#212427" }
+          }
+          onClick={() => changePage("contact")}
+        >
+          Twandikire
         </Link>
       </div>
       <div id="contact" className="contact hidden">
