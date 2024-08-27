@@ -1,11 +1,52 @@
 import React, { useState } from "react";
 import { InputTextarea } from "primereact/inputtextarea";
 import styled from "styled-components";
-import { one, two, three, four, five, six, seven, eight, nine, zero } from "../constants";
+import {
+  one,
+  two,
+  three,
+  four,
+  five,
+  six,
+  seven,
+  eight,
+  nine,
+  zero,
+} from "../constants";
+import "animate.css";
 
-import { a, b, c, d, e, f, g, h, i as I, j, k, l, m, n, o, p, q, r, s, t, u, v, w, x, y, z, space } from "../constants/alphabets"
+import {
+  a,
+  b,
+  c,
+  d,
+  e,
+  f,
+  g,
+  h,
+  i as I,
+  j,
+  k,
+  l,
+  m,
+  n,
+  o,
+  p,
+  q,
+  r,
+  s,
+  t,
+  u,
+  v,
+  w,
+  x,
+  y,
+  z,
+  space,
+} from "../constants/alphabets";
+
 const Sandbox = () => {
-  const [value, setValue] = useState('');
+  const [value, setValue] = useState("");
 
   const renderSignImages = () => {
     const images = [];
@@ -21,28 +62,42 @@ const Sandbox = () => {
           images.push(<img className="sign-img" key={i} src={two} alt="Two" />);
           break;
         case "3":
-          images.push(<img className="sign-img" key={i} src={three} alt="Three" />);
+          images.push(
+            <img className="sign-img" key={i} src={three} alt="Three" />
+          );
           break;
         case "4":
-          images.push(<img className="sign-img" key={i} src={four} alt="Four" />);
+          images.push(
+            <img className="sign-img" key={i} src={four} alt="Four" />
+          );
           break;
         case "5":
-          images.push(<img className="sign-img" key={i} src={five} alt="Five" />);
+          images.push(
+            <img className="sign-img" key={i} src={five} alt="Five" />
+          );
           break;
         case "6":
           images.push(<img className="sign-img" key={i} src={six} alt="Six" />);
           break;
         case "7":
-          images.push(<img className="sign-img" key={i} src={seven} alt="Seven" />);
+          images.push(
+            <img className="sign-img" key={i} src={seven} alt="Seven" />
+          );
           break;
         case "8":
-          images.push(<img className="sign-img" key={i} src={eight} alt="Eight" />);
+          images.push(
+            <img className="sign-img" key={i} src={eight} alt="Eight" />
+          );
           break;
         case "9":
-          images.push(<img className="sign-img" key={i} src={nine} alt="Nine" />);
+          images.push(
+            <img className="sign-img" key={i} src={nine} alt="Nine" />
+          );
           break;
         case "0":
-          images.push(<img className="sign-img" key={i} src={zero} alt="Zero" />);
+          images.push(
+            <img className="sign-img" key={i} src={zero} alt="Zero" />
+          );
           break;
         case "a":
         case "A":
@@ -162,31 +217,44 @@ const Sandbox = () => {
   };
 
   return (
-    <Container className="-translate-y-48">
-      <h1 style={{color: '#4890fc'}}>Menya imyandikire y'inyuguti z'amarenga.</h1>
-      <h3 style={{color:'#3e6680'}}>Andika ijambo hano:</h3>
-      <InputTextarea
-        autoResize
-        value={value}
-        onChange={(e) => setValue(e.target.value)}
-        rows={3}
-        className="input-text mt-10"
-      />
-      <SignsField>
-        {renderSignImages()}
-      </SignsField>
+    <Container className="">
+      <div className="grid grid-cols-2">
+        <div>
+          <div className="px-14 py-4 text-blue-500 font-bold text-xl">
+            <h1 className="animate__animated animate__slideInLeft">
+              Menya imyandikire y'inyuguti z'amarenga.
+            </h1>
+            <h3 className="animate__animated animate__slideInLeft">
+              Andika ijambo hano:
+            </h3>
+          </div>
+          <div className="mx-14 py-4">
+            <InputTextarea
+              autoResize
+              value={value}
+              onChange={(e) => setValue(e.target.value)}
+              rows={3}
+              
+              className="input-text mt-6 w-96"
+            />
+          </div>
+        </div>
+        <div>
+          <SignsField className="flex flex-wrap">{renderSignImages()}</SignsField>
+        </div>
+      </div>
     </Container>
   );
 };
 
 const Container = styled.div`
   padding: 1rem 2rem;
-  .input-text{
-    width:22%;
+  .input-text {
+    width: 60%;
   }
   @media (max-width: 768px) {
-    .contact-text{
-      width:100%;
+    .contact-text {
+      width: 100%;
     }
   }
 `;
@@ -195,4 +263,4 @@ const SignsField = styled.section`
   padding: 1rem 0;
 `;
 
-export default Sandbox
+export default Sandbox;

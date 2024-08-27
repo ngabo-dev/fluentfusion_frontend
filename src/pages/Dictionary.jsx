@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import VocabularyList from '../components/VocabularyList';
 
 const Dictionary = () => {
   const [words, setWords] = useState([]);
@@ -67,8 +68,10 @@ const Dictionary = () => {
   const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
 
   return (
-    <div style={{ maxWidth: '1200px', margin: '3rem auto', padding: '0 1rem' }}>
-      <h1 style={{ textAlign: 'center', fontSize: '2rem', fontWeight: 'bold', marginBottom: '2rem' }}>Word List</h1>
+<>
+<div className='grid grid-cols-2 mt-32'>
+<div style={{ maxWidth: '1200px', margin: '3rem auto', padding: '0 1rem' }}>
+      <h1 style={{ fontSize: '2rem', fontWeight: 'bold', marginBottom: '2rem' }}>Word List</h1>
       
       <div style={{ marginBottom: '1rem', display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
         <select
@@ -154,6 +157,9 @@ const Dictionary = () => {
         </div>
       )}
     </div>
+    <VocabularyList />
+</div>
+</>
   );
 };
 
