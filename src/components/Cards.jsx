@@ -67,14 +67,14 @@ const Cards = () => {
       </div> */}
 
       <div className=" px-24 py-10 text-center">
-        <span className="text-lg text-blue-500 mb-2">Sign Language Categories</span>
+       
         <h1 className="text-3xl font-bold text-black mb-2">Explore Top Categories</h1>
       </div>
 
       <div className=" px-12 py-24">
         <Slider {...settings}>
           <div className={`w-54 px-4   max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-white dark:border-gray-200 ${animate ? 'animate__animated animate__fadeIn' : ''} hover:animate__pulse`}>
-            <div className="flex flex-col items-center pb-10 px-8">
+            <div className="flex flex-col items-center pb-10 px-8 ">
               <FaUtensils className="w-24 h-24 mb-3 p-3 text-gray-700" />
               <span className="text-lg mb-2 text-black">Cooking</span>
               <button

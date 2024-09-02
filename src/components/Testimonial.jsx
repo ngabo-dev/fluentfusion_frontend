@@ -64,7 +64,7 @@ const Testimonials = () => {
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {testimonials.slice(0, 3).map((testimonial, index) => (
-            <div key={index} className="bg-white p-6 border border-gray-200 rounded-lg shadow-md">
+            <div key={index} className="bg-white p-6 border border-gray-200  hover:bg-blue-500 hover:text-white rounded-lg shadow-md">
               {testimonial.image ? (
                 <img 
                   src={testimonial.image} 
@@ -78,8 +78,8 @@ const Testimonials = () => {
               ) : (
                 <p>No image available</p>
               )}
-              <h4 className="text-lg font-bold">{testimonial.name}</h4>
-              <p className="mt-4 text-gray-600">{testimonial.message}</p>
+              <h4 className="text-lg font-bold hover:text-white">{testimonial.name}</h4>
+              <p className="mt-4 text-gray-600 hover:text-white">{testimonial.message}</p>
             </div>
           ))}
 

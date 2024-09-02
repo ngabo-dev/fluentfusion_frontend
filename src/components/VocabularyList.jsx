@@ -59,7 +59,7 @@ const VocabularyList = () => {
   }
 
   return (
-    <div className="p-6 bg-blue-500">
+    <div className="p-6  bg-gradient-to-r from-indigo-500 from-10% via-sky-500 via-30% to-teal-500 to-90% ...">
       <h2 className="text-3xl mt-10 font-bold mb-6">Vocabulary List</h2>
 
       {/* Search Bar */}

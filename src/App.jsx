@@ -7,6 +7,8 @@ import Games from "./pages/Games"
 import Contact from "./pages/Contact"
 import Footer from "./components/Footer"
 import VideoPage from "./pages/VideoPage"
+import Signup from "./components/Signup"
+import Login from "./components/Login"
 function App() {
 
   return (
@@ -19,6 +21,8 @@ function App() {
         <Route path="/games" element={<Games />} />
         <Route path="/contact" element={< Contact/>} />
         <Route path="/videopage" element={< VideoPage/>} />
+        <Route path="/signup" element={< Signup/>} />
+        <Route path="/login" element={< Login/>} />
         
         <Route path="*" element={'404 - Page not found! 👹'} />
       </Routes>

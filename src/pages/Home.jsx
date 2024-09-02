@@ -3,7 +3,8 @@ import Sandbox from "../components/Sandbox";
 import 'animate.css';
 import Testimonial from "../components/Testimonial";
 import OurMission from "../components/OurMission";
-import VocabularyList from "../components/VocabularyList";
+import Dictionary from "./Dictionary";
+
 
 const Home = () => {
   return (
@@ -17,8 +18,8 @@ const Home = () => {
        
         <div className="translate-y-60">
           {/* <h1 className="text-xl font-bold mb-6 translate-y-10 text-blue-500 px-20 animate__animated animate__slideInLeft">Learn From Today</h1> */}
-          <p className="text-4xl translate-y-8 text-center text-white font-light mb-4 px-20 animate__animated animate__slideInLeft">
-            Empowering Communication<br /> Across All Communities
+          <p className="text-4xl translate-y-8 text-center capitalize text-white font-bold mb-4 px-20 animate__animated animate__slideInLeft">
+            Empowering Communication<br /> Across All Communities with SLTS
           </p>
       
         </div>
@@ -32,9 +33,10 @@ const Home = () => {
       <div>
         <Cards />
       </div>
-      <div>
-        <VocabularyList />
-      </div>
+
+<Dictionary />
+
+
       
 
       <Testimonial />

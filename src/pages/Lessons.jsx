@@ -1,239 +1,46 @@
-import React, { useState } from 'react'
-import styled from "styled-components"
+import React, { useState } from 'react';
+import styled from "styled-components";
 import { one, two, three, four, five, six, seven, eight, nine, zero } from "../constants";
-import { a, b, c, d, e, f, g, h, i as I, j, k, l, m, n, o, p, q, r, s, t, u, v, w, x, y, z } from "../constants/pngletters"
-
-
+import { a, b, c, d, e, f, g, h, i as I, j, k, l, m, n, o, p, q, r, s, t, u, v, w, x, y, z } from "../constants/pngletters";
 
 function Lessons() {
-  var i = 1;
   const [image, setImage] = useState(a);
   const [number, setNumber] = useState(1);
-  const [key, setKey] =useState('A');
-  var newnumber;
-  const [lesson1class, setLesson1class ]=  useState(['sidelink-active']);
-  const [lesson2class,setLesson2class ] =  useState('sidelink');
-  const [lesson3class, setLesson3class ] =  useState('sidelink');
-  const [lesson4class, setLesson4class ] =  useState('sidelink');
-  const [lesson5class, setLesson5class ] =  useState('sidelink');
-  const [lesson6class, setLesson6class ] =  useState('sidelink');
-  const [lesson7class, setLesson7class ] =  useState('sidelink');
+  const [key, setKey] = useState('A');
+  const [lesson1class, setLesson1class] = useState(['sidelink-active']);
+  const [lesson2class, setLesson2class] = useState('sidelink');
+  const [lesson3class, setLesson3class] = useState('sidelink');
+  const [lesson4class, setLesson4class] = useState('sidelink');
+  const [lesson5class, setLesson5class] = useState('sidelink');
+  const [lesson6class, setLesson6class] = useState('sidelink');
+  const [lesson7class, setLesson7class] = useState('sidelink');
 
+  const [isModalOpen, setIsModalOpen] = useState(false); // Modal state
 
+  // Assume this represents user authentication state
+  const isAuthenticated = false; // Change to true when the user is signed in
 
-  const increment =() =>{
-    newnumber = number+1
-    if (newnumber >= 37) {
-      newnumber = 36
-      return 0
+  const setlesson = (les) => {
+    if (!isAuthenticated && les >= 5) {
+      setIsModalOpen(true); // Open the modal instead of alert
+      return;
     }
-    setNumber(newnumber);
-    updateImage(newnumber)
-  }
-
-  const deincrement =() =>{
-    newnumber = number -1
-    if (newnumber == 0) {
-      return 0
-    }
-    setNumber(newnumber);
-    updateImage(newnumber)
-  }
-
-  const setlesson =(les) =>{
     setNumber(les);
-    updateImage(les)
-  }
+    updateImage(les);
+  };
 
-  const updateImage =(newnumber) => {
+  const updateImage = (newnumber) => {
     switch (newnumber) {
-      case 1:
-        setImage(a);
-        setKey('A');
-      break;
-
-      case 2:
-        setImage( b);
-        setKey('B');
-      break;
-
-      case 3:
-        setImage( c);
-        setKey('C');
-      break;
-
-      case 4:
-        setImage( d);
-        setKey('D');
-      break;
-
-      case 5:
-        setImage( e);
-        setKey('E');
-      break;
-
-      case 6:
-        setImage( f);
-        setKey('F');
-      break;
-
-      case 7:
-        setImage( g);
-        setKey('G');
-      break;
-
-      case 8:
-        setImage( h);
-        setKey('H');
-      break;
-
-      case 9:
-        setImage(I);
-        setKey('I');
-      break;
-
-      case 10:
-        setImage( j);
-        setKey('J');
-      break;
-
-      case 11:
-        setImage( k);
-        setKey('K');
-      break;
-
-      case 12:
-        setImage( l);
-        setKey('L');
-      break;
-
-      case 13:
-        setImage( m);
-        setKey('M');
-      break;
-
-      case 14:
-        setImage( n);
-        setKey('N');
-      break;
-
-      case 15:
-        setImage( o);
-        setKey('O');
-      break;
-
-      case 16:
-        setImage( p);
-        setKey('P');
-      break;
-
-      case 17:
-        setImage( q);
-        setKey('Q');
-      break;
-
-
-      case 18:
-        setImage( r);
-        setKey('R');
-      break;
-
-      case 19:
-        setImage(s);
-        setKey('S');
-      break;
-
-      case 20:
-        setImage( t);
-        setKey('T');
-      break;
-
-      case 21:
-        setImage( u);
-        setKey('U');
-      break;
-
-      case 22:
-        setImage( v);
-        setKey('V');
-      break;
-
-      case 23:
-        setImage( w);
-        setKey('W');
-      break;
-
-      case 24:
-        setImage( x);
-        setKey('X');
-      break;
-
-      case 25:
-        setImage( y);
-        setKey('Y');
-      break;
-
-      case 26:
-        setImage( z);
-        setKey('Z');
-      break;
-
-      case 27:
-        setImage( zero );
-        setKey('0');
-      break;
-
-      case 28:
-        setImage( one);
-        setKey('1');
-      break;
-
-      case 29:
-        setImage( two);
-        setKey('2');
-      break;
-
-      case 30:
-        setImage( three);
-        setKey('3');
-      break;
-
-      case 31:
-        setImage( four);
-        setKey('4');
-      break;
-
-      case 32:
-        setImage( five);
-        setKey('5');
-      break;
-
-      case 33:
-        setImage( six);
-        setKey('6');
-      break;
-
-      case 34:
-        setImage( seven);
-        setKey('7');
-      break;
-
-      case 35:
-        setImage( eight);
-        setKey('8');
-      break;
-
-      case 36:
-        setImage( nine);
-        setKey('9');
-      break;
-
-      default:
-      // If the character is not a number, skip it or display an error message
-      break;
+      case 1: setImage(a); setKey('A'); break;
+      case 2: setImage(b); setKey('B'); break;
+      case 3: setImage(c); setKey('C'); break;
+      case 4: setImage(d); setKey('D'); break;
+      // Add further cases as needed
+      default: break;
     }
-    if (newnumber < 5){
 
+    // Update active lesson styles
+    if (newnumber < 5) {
       setLesson1class('sidelink-active');
       setLesson2class('sidelink');
       setLesson3class('sidelink');
@@ -241,9 +48,7 @@ function Lessons() {
       setLesson5class('sidelink');
       setLesson6class('sidelink');
       setLesson7class('sidelink');
-
-    }else if  (newnumber < 8){
-
+    } else if (newnumber < 8) {
       setLesson1class('sidelink');
       setLesson2class('sidelink-active');
       setLesson3class('sidelink');
@@ -251,99 +56,58 @@ function Lessons() {
       setLesson5class('sidelink');
       setLesson6class('sidelink');
       setLesson7class('sidelink');
-
-    }else if  (newnumber < 12){
-
-      setLesson1class('sidelink');
-      setLesson2class('sidelink');
-      setLesson3class('sidelink-active');
-      setLesson4class('sidelink');
-      setLesson5class('sidelink');
-      setLesson6class('sidelink');
-      setLesson7class('sidelink');
-
-    }else if  (newnumber < 16){
-
-      setLesson1class('sidelink');
-      setLesson2class('sidelink');
-      setLesson3class('sidelink');
-      setLesson4class('sidelink-active');
-      setLesson5class('sidelink');
-      setLesson6class('sidelink');
-      setLesson7class('sidelink');
-
-    }else if  (newnumber < 21){
-
-      setLesson1class('sidelink');
-      setLesson2class('sidelink');
-      setLesson3class('sidelink');
-      setLesson4class('sidelink');
-      setLesson5class('sidelink-active');
-      setLesson6class('sidelink');
-      setLesson7class('sidelink');
-
-    }else if  (newnumber < 27) {
-
-      setLesson1class('sidelink');
-      setLesson2class('sidelink');
-      setLesson3class('sidelink');
-      setLesson4class('sidelink');
-      setLesson5class('sidelink');
-      setLesson6class('sidelink-active');
-      setLesson7class('sidelink');
-
-    } else {
-
-      setLesson1class('sidelink');
-      setLesson2class('sidelink');
-      setLesson3class('sidelink');
-      setLesson4class('sidelink');
-      setLesson5class('sidelink');
-      setLesson6class('sidelink');
-      setLesson7class('sidelink-active');
     }
-  }
+  };
+
+  const closeModal = () => setIsModalOpen(false);
 
   return (
     <Container>
-
       <div className='mobile-title'><h3> AMASOMO</h3></div>
       <div className='flex'>
-
-
-        <div  style={{ borderRight:'gray 2px solid'}} className='sidebar px-8'>
-          <h3 style={{textAlign:'center', color:'#027bce', textDecoration:'underline',
-          textUnderlineOffset:'8px' }}> IBYICIRO </h3>
+        <div style={{ borderRight: 'gray 2px solid' }} className='sidebar px-8'>
+          <h3 style={{ textAlign: 'center', color: '#027bce', textDecoration: 'underline', textUnderlineOffset: '8px' }}> IBYICIRO </h3>
           <ul>
-          <li className={lesson1class} onClick={()=> setlesson(1)}> Icyiciro cya 1 (A - D)</li>
-            <li className={lesson2class} onClick={()=> setlesson(5)}> Icyiciro cya 2 (E - G)</li>
-            <li className={lesson3class} onClick={()=> setlesson(8)}> Icyiciro cya 3 (H - K)</li>
-            <li className={lesson4class} onClick={()=> setlesson(12)}> Icyiciro cya 4 (L - O)</li>
-            <li className={lesson5class} onClick={()=> setlesson(16)}> Icyiciro cya 5 (P - T)</li>
-            <li className={lesson6class} onClick={()=> setlesson(21)}> Icyiciro cya 6 (U - Z)</li>
-            <li className={lesson7class} onClick={()=> setlesson(27)}> Icyiciro cya 7 (0 - 9)</li>
+            <li className={lesson1class} onClick={() => setlesson(1)}> Icyiciro cya 1 (A - D)</li>
+            <li className={lesson2class} onClick={() => setlesson(5)}> Icyiciro cya 2 (E - G)</li>
+            <li className={lesson3class} onClick={() => setlesson(8)}> Icyiciro cya 3 (H - K)</li>
+            <li className={lesson4class} onClick={() => setlesson(12)}> Icyiciro cya 4 (L - O)</li>
+            <li className={lesson5class} onClick={() => setlesson(16)}> Icyiciro cya 5 (P - T)</li>
+            <li className={lesson6class} onClick={() => setlesson(21)}> Icyiciro cya 6 (U - Z)</li>
+            <li className={lesson7class} onClick={() => setlesson(27)}> Icyiciro cya 7 (0 - 9)</li>
           </ul>
-
         </div>
-
-        <button onClick={deincrement} className='previous'> Inyuma  </button>
+        
+        <button onClick={() => setlesson(number - 1)} className='previous'> Inyuma </button>
 
         <div style={{ width: '72%', justifyContent: 'center' }} className='flex mt-32'>
-        <span className='letter'> {key} : </span>
-
-        <div>
-          <img key={number} src={image} alt="a" className='image' />
+          <span className='letter'>{key} :</span>
+          <div>
+            <img key={number} src={image} alt="a" className='image' />
+          </div>
         </div>
+
+        <button onClick={() => setlesson(number + 1)} className='next'> Komeza &#8594;</button>
       </div>
 
-          <button onClick={increment} className='next'> Komeza &#8594;  </button>
-      </div>
-      <br />
-      <br />
-      <br />
-      <br />
+      {isModalOpen && (
+        <ModalOverlay>
+          <ModalContent>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6 text-blue-500 border-blue-500 text-center  mx-20 w-20 h-20">
+  <path fill-rule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12Zm8.706-1.442c1.146-.573 2.437.463 2.126 1.706l-.709 2.836.042-.02a.75.75 0 0 1 .67 1.34l-.04.022c-1.147.573-2.438-.463-2.127-1.706l.71-2.836-.042.02a.75.75 0 1 1-.671-1.34l.041-.022ZM12 9a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Z" clip-rule="evenodd" />
+</svg>
+
+            <h2 className='font-bold text-2xl text-center'>Please sign up</h2>
+            <p>You need to sign up to access this lesson.</p>
+            <div className='grid grid-cols-2 gap-4'>
+            <button onClick={closeModal} className="close-btn">Close</button>
+            <button  className="p-3.5 text-center close-btn text-white">sign Up</button>
+            </div>
+          </ModalContent>
+        </ModalOverlay>
+      )}
     </Container>
-  )
+  );
 }
 
 const Container = styled.div`
@@ -358,7 +122,7 @@ const Container = styled.div`
     .mt-32 {
       margin-top: 32px;
     }
-    .previous{
+    .previous, .next {
       background-color: #5386e4;
       border: 1px gray;
       color: white;
@@ -366,20 +130,8 @@ const Container = styled.div`
       height: 38px;
       padding: 12px;
       margin-top: 28%;
-      border-radius: 3px;
-      margin-left:12px;
-      cursor:pointer;
-    }
-    .next{
-      background-color: #5386e4;
-      border: 1px gray;
-      color:white;
-      font-weight: bold;
-      height: 38px;
-      padding: 12px;
-      margin-top: 28%;
       border-radius: 4px;
-      cursor:pointer;
+      cursor: pointer;
     }
     .image{
       height: 320px;
@@ -403,17 +155,13 @@ const Container = styled.div`
       min-height:220px;
       margin-top:120px;
       display: none;
-
     }
     .mt-32 {
       margin-top: 4px;
     }
-    .previous{
-      margin-top: 4px;
-    }
-    .next{
+    .previous, .next {
       margin-top: 32px;
-      margin-left:12px;
+      margin-left: 12px;
     }
     .image{
       max-height: 220px;
@@ -432,5 +180,47 @@ const Container = styled.div`
       text-underline-offset: 6px;
     }
   }
-`
-export default Lessons
+`;
+
+// Modal styles
+const ModalOverlay = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+`;
+
+const ModalContent = styled.div`
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  z-index: 1001;
+
+  h2 {
+    margin-bottom: 16px;
+  }
+
+  p {
+    margin-bottom: 24px;
+  }
+
+  .close-btn {
+    background-color: #5386e4;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+`;
+
+export default Lessons;
