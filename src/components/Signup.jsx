@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { BACKEND_URL } from './Config';
 
 const SignUp = () => {
     const [formData, setFormData] = useState({
@@ -33,10 +34,10 @@ const SignUp = () => {
         }
 
         try {
-            const response = await axios.post('/api/register/', {
-                username,
-                email,
-                password,
+            const response = await axios.post(`${BACKEND_URL}/api/register/`, {
+                'username': username,
+                'email': email,
+                'password': password,
             });
 
             if (response.status === 201) {
@@ -49,6 +50,7 @@ const SignUp = () => {
                 });
             }
         } catch (error) {
+            console.log('Error details:', error); // Log the full error details
             if (error.response && error.response.data) {
                 setErrors(error.response.data);
             } else {
