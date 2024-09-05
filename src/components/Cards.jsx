@@ -18,11 +18,13 @@ const iconMap = {
 
 const Cards = () => {
   const [categories, setCategories] = useState([]);
+  const [words, setWords] = useState([]);
+  const [selectedCategory, setSelectedCategory] = useState(null);
   const [animate, setAnimate] = useState(false);
 
   // Fetch categories from the API
   useEffect(() => {
-    axios.get('http://localhost:8000/api/categories/') // Replace with your backend endpoint
+    axios.get('http://localhost:8000/api/categories/')
       .then(response => {
         setCategories(response.data);
       })
@@ -33,6 +35,17 @@ const Cards = () => {
     const timer = setTimeout(() => setAnimate(true), 5000);
     return () => clearTimeout(timer);
   }, []);
+
+  const handleLearnMore = (categoryId) => {
+    axios.get(`http://localhost:8000/api/words/?category_id=${categoryId}`)
+      .then(response => {
+        setWords(response.data);
+        setSelectedCategory(categoryId);
+      })
+      .catch(error => {
+        console.error("There was an error fetching the words!", error);
+      });
+  };
 
   const settings = {
     dots: false,
@@ -67,6 +80,7 @@ const Cards = () => {
                 <button
                   type="button"
                   className="inline-flex text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mb-2"
+                  onClick={() => handleLearnMore(category.id)}
                 >
                   <p className="px-2">Learn More</p>
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="size-6">
@@ -78,6 +92,21 @@ const Cards = () => {
           ))}
         </Slider>
       </div>
+
+      {selectedCategory && (
+        <div className="px-12 py-24">
+          <h2 className="text-2xl font-bold text-black mb-2">Words in Selected Category</h2>
+          <ul>
+            {words.length === 0 ? (
+              <p>No words available in this category</p>
+            ) : (
+              words.map(word => (
+                <li key={word.id}>{word.word}</li>
+              ))
+            )}
+          </ul>
+        </div>
+      )}
     </>
   );
 };
