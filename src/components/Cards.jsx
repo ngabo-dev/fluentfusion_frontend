@@ -63,16 +63,16 @@ const Cards = () => {
 
   return (
     <>
-      <div className="px-24 py-10 text-center">
-        <h1 className="text-3xl font-bold text-black mb-2">Explore Top Categories</h1>
+      <div className="px-6 md:px-12 lg:px-24 py-10 text-center">
+        <h1 className="text-2xl md:text-3xl font-bold text-black mb-4">Explore Top Categories</h1>
       </div>
 
-      <div className="px-12 py-24">
+      <div className="px-4 md:px-12 lg:px-24 py-12">
         <Slider {...settings}>
           {categories.map((category) => (
             <div
               key={category.id}
-              className={`w-54 px-4 max-w-sm bg-white border border-gray-200 rounded-lg shadow ${animate ? 'animate__animated animate__fadeIn' : ''} hover:animate__pulse`}
+              className={`w-full md:w-54 px-4 max-w-sm bg-white border border-gray-200 rounded-lg shadow ${animate ? 'animate__animated animate__fadeIn' : ''} hover:animate__pulse`}
             >
               <div className="flex flex-col items-center pb-10 px-8">
                 {iconMap[category.category_name] || <img src={category.icon} alt={category.category_name} className="w-24 h-24 mb-3 p-2" />}
@@ -94,8 +94,8 @@ const Cards = () => {
       </div>
 
       {selectedCategory && (
-        <div className="px-12 py-24">
-          <h2 className="text-2xl font-bold text-black mb-2">Words in Selected Category</h2>
+        <div className="px-4 md:px-12 lg:px-24 py-12">
+          <h2 className="text-2xl font-bold text-black mb-4">Words in Selected Category</h2>
           <ul>
             {words.length === 0 ? (
               <p>No words available in this category</p>

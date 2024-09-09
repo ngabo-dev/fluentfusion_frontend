@@ -1,30 +1,32 @@
 import React, { useState } from 'react';
-import styled from "styled-components";
-import { one, two, three, four, five, six, seven, eight, nine, zero } from "../constants";
-import { a, b, c, d, e, f, g, h, i as I, j, k, l, m, n, o, p, q, r, s, t, u, v, w, x, y, z } from "../constants/pngletters";
+import styled from 'styled-components';
+import { a, b, c, d } from '../constants/pngletters'; // Update imports as needed
+import { useNavigate } from 'react-router-dom'; // Import useNavigate for redirection
 
 function Lessons() {
   const [image, setImage] = useState(a);
   const [number, setNumber] = useState(1);
   const [key, setKey] = useState('A');
-  const [lesson1class, setLesson1class] = useState(['sidelink-active']);
+  const [lesson1class, setLesson1class] = useState('sidelink-active');
   const [lesson2class, setLesson2class] = useState('sidelink');
   const [lesson3class, setLesson3class] = useState('sidelink');
   const [lesson4class, setLesson4class] = useState('sidelink');
   const [lesson5class, setLesson5class] = useState('sidelink');
   const [lesson6class, setLesson6class] = useState('sidelink');
   const [lesson7class, setLesson7class] = useState('sidelink');
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const [isModalOpen, setIsModalOpen] = useState(false); // Modal state
+  // Simulate user authentication state
+  const isAuthenticated = false; // Change to true for testing
 
-  // Assume this represents user authentication state
-  const isAuthenticated = false; // Change to true when the user is signed in
+  const navigate = useNavigate(); // Initialize useNavigate
 
   const setlesson = (les) => {
     if (!isAuthenticated && les >= 5) {
-      setIsModalOpen(true); // Open the modal instead of alert
+      setIsModalOpen(true);
       return;
     }
+    console.log("Setting lesson to:", les); // Debugging line
     setNumber(les);
     updateImage(les);
   };
@@ -35,31 +37,24 @@ function Lessons() {
       case 2: setImage(b); setKey('B'); break;
       case 3: setImage(c); setKey('C'); break;
       case 4: setImage(d); setKey('D'); break;
-      // Add further cases as needed
       default: break;
     }
 
     // Update active lesson styles
-    if (newnumber < 5) {
-      setLesson1class('sidelink-active');
-      setLesson2class('sidelink');
-      setLesson3class('sidelink');
-      setLesson4class('sidelink');
-      setLesson5class('sidelink');
-      setLesson6class('sidelink');
-      setLesson7class('sidelink');
-    } else if (newnumber < 8) {
-      setLesson1class('sidelink');
-      setLesson2class('sidelink-active');
-      setLesson3class('sidelink');
-      setLesson4class('sidelink');
-      setLesson5class('sidelink');
-      setLesson6class('sidelink');
-      setLesson7class('sidelink');
-    }
+    setLesson1class(newnumber < 5 ? 'sidelink-active' : 'sidelink');
+    setLesson2class(newnumber >= 5 && newnumber < 8 ? 'sidelink-active' : 'sidelink');
+    setLesson3class(newnumber >= 8 && newnumber < 12 ? 'sidelink-active' : 'sidelink');
+    setLesson4class(newnumber >= 12 && newnumber < 16 ? 'sidelink-active' : 'sidelink');
+    setLesson5class(newnumber >= 16 && newnumber < 21 ? 'sidelink-active' : 'sidelink');
+    setLesson6class(newnumber >= 21 && newnumber < 27 ? 'sidelink-active' : 'sidelink');
+    setLesson7class(newnumber >= 27 ? 'sidelink-active' : 'sidelink');
   };
 
   const closeModal = () => setIsModalOpen(false);
+
+  const handleSignUp = () => {
+    navigate('/signup'); // Redirect to the sign-up page
+  };
 
   return (
     <Container>
@@ -93,15 +88,12 @@ function Lessons() {
       {isModalOpen && (
         <ModalOverlay>
           <ModalContent>
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6 text-blue-500 border-blue-500 text-center  mx-20 w-20 h-20">
-  <path fill-rule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12Zm8.706-1.442c1.146-.573 2.437.463 2.126 1.706l-.709 2.836.042-.02a.75.75 0 0 1 .67 1.34l-.04.022c-1.147.573-2.438-.463-2.127-1.706l.71-2.836-.042.02a.75.75 0 1 1-.671-1.34l.041-.022ZM12 9a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Z" clip-rule="evenodd" />
-</svg>
-
+            <button onClick={closeModal} className="close-icon">X</button>
             <h2 className='font-bold text-2xl text-center'>Please sign up</h2>
             <p>You need to sign up to access this lesson.</p>
-            <div className='grid grid-cols-2 gap-4'>
-            <button onClick={closeModal} className="close-btn">Close</button>
-            <button  className="p-3.5 text-center close-btn text-white">sign Up</button>
+            <div className='button-group'>
+              <button className="login-btn" onClick={() => navigate('/login')}>LOGIN</button>
+              <button className="signup-btn" onClick={handleSignUp}>SIGN UP</button>
             </div>
           </ModalContent>
         </ModalOverlay>
@@ -111,49 +103,49 @@ function Lessons() {
 }
 
 const Container = styled.div`
-    margin-top: 20vh;
-    .flex{
-      display:flex;
-    }
-    .sidebar{
-      width:20%;
-      min-height:420px;
-    }
-    .mt-32 {
-      margin-top: 32px;
-    }
-    .previous, .next {
-      background-color: #5386e4;
-      border: 1px gray;
-      color: white;
-      font-weight: bold;
-      height: 38px;
-      padding: 12px;
-      margin-top: 28%;
-      border-radius: 4px;
-      cursor: pointer;
-    }
-    .image{
-      height: 320px;
-      margin-left: 24px;
-    }
-    .letter{
-      font-size: 120px;
-      color: #20323e;
-    }
-    .mobile-title{
-      display:none;
-    }
+  margin-top: 20vh;
+  .flex {
+    display: flex;
+  }
+  .sidebar {
+    width: 20%;
+    min-height: 420px;
+  }
+  .mt-32 {
+    margin-top: 32px;
+  }
+  .previous, .next {
+    background-color: #5386e4;
+    border: 1px gray;
+    color: white;
+    font-weight: bold;
+    height: 38px;
+    padding: 12px;
+    margin-top: 28%;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  .image {
+    height: 320px;
+    margin-left: 24px;
+  }
+  .letter {
+    font-size: 120px;
+    color: #20323e;
+  }
+  .mobile-title {
+    display: none;
+  }
 
   @media (max-width: 768px) {
     margin-top: 12vh;
-    .flex{
-      display:block;
+    .flex {
+      display: block;
     }
-    .sidebar{
-      width:100%;
-      min-height:220px;
-      margin-top:120px;
+    .sidebar {
+      width: 100%;
+      min-height: 220px;
+      margin-top: 120px;
       display: none;
     }
     .mt-32 {
@@ -163,17 +155,17 @@ const Container = styled.div`
       margin-top: 32px;
       margin-left: 12px;
     }
-    .image{
+    .image {
       max-height: 220px;
-      margin-left:12px;
+      margin-left: 12px;
     }
-    .letter{
+    .letter {
       font-size: 80px;
-      margin-bottom:82px;
-      margin-left:12px;
+      margin-bottom: 82px;
+      margin-left: 12px;
     }
-    .mobile-title{
-      display:block;
+    .mobile-title {
+      display: block;
       margin-top: 112px;
       text-align: center;
       text-decoration: underline;
@@ -203,16 +195,27 @@ const ModalContent = styled.div`
   text-align: center;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
   z-index: 1001;
+  position: relative;
 
-  h2 {
-    margin-bottom: 16px;
+  .close-icon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    color: #5386e4;
+    font-size: 24px;
+    cursor: pointer;
   }
 
-  p {
-    margin-bottom: 24px;
+  .button-group {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
   }
 
-  .close-btn {
+  .login-btn, .signup-btn {
     background-color: #5386e4;
     border: none;
     color: white;
@@ -220,6 +223,10 @@ const ModalContent = styled.div`
     border-radius: 4px;
     cursor: pointer;
     font-size: 16px;
+  }
+
+  .signup-btn {
+    background-color: #027bce; /* Different color for sign-up button */
   }
 `;
 

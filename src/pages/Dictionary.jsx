@@ -14,7 +14,7 @@ const Dictionary = () => {
   useEffect(() => {
     const fetchWords = async () => {
       try {
-        const response = await axios.get('http://localhost:8000/api/word/');
+        const response = await axios.get('http://localhost:8000/api/words/');
         setWords(response.data);
         setFilteredWords(response.data);
       } catch (error) {

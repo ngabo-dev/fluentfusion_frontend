@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { BACKEND_URL } from './Config';
+import { useNavigate } from 'react-router-dom'; // Import useNavigate for redirection
 
 const SignUp = () => {
     const [formData, setFormData] = useState({
@@ -11,8 +12,10 @@ const SignUp = () => {
     });
     const [errors, setErrors] = useState({});
     const [successMessage, setSuccessMessage] = useState('');
+    const [loading, setLoading] = useState(false); // Add loading state
 
     const { username, email, password, confirmPassword } = formData;
+    const navigate = useNavigate(); // Initialize useNavigate
 
     const handleChange = (e) => {
         setFormData({
@@ -23,21 +26,20 @@ const SignUp = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-
-        // Clear previous errors
         setErrors({});
+        setLoading(true); // Set loading to true
 
-        // Check for password match
         if (password !== confirmPassword) {
             setErrors({ confirmPassword: 'Passwords do not match' });
+            setLoading(false); // Set loading to false
             return;
         }
 
         try {
             const response = await axios.post(`${BACKEND_URL}/api/register/`, {
-                'username': username,
-                'email': email,
-                'password': password,
+                username,
+                email,
+                password,
             });
 
             if (response.status === 201) {
@@ -48,14 +50,17 @@ const SignUp = () => {
                     password: '',
                     confirmPassword: '',
                 });
+                setLoading(false); // Set loading to false
+                navigate('/login'); // Redirect to login page
             }
         } catch (error) {
-            console.log('Error details:', error); // Log the full error details
+            console.log('Error details:', error);
             if (error.response && error.response.data) {
                 setErrors(error.response.data);
             } else {
                 setErrors({ general: 'An error occurred. Please try again.' });
             }
+            setLoading(false); // Set loading to false
         }
     };
 
@@ -137,11 +142,12 @@ const SignUp = () => {
                             <button
                                 type="submit"
                                 className="w-full text-black bg-white font-medium rounded-lg text-sm px-5 py-2.5 text-center"
+                                disabled={loading} // Disable button while loading
                             >
-                                Create an Account
+                                {loading ? 'Creating Account...' : 'Create an Account'}
                             </button>
                             <p className="text-sm font-medium text-white dark:text-white">
-                                Already have an account? <a href="#" className="font-medium text-blue-600 hover:underline dark:text-blue-500">Login here</a>
+                                Already have an account? <a href="/login" className="font-medium text-blue-600 hover:underline dark:text-blue-500">Login here</a>
                             </p>
                         </form>
                     </div>

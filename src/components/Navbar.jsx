@@ -7,20 +7,21 @@ import "primeicons/primeicons.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 
-
 const Navbar = () => {
   const [active, setActive] = useState("home");
-  const changePage = (nav) =>{
+
+  const changePage = (nav) => {
     setActive(nav);
     hideMobileNav();
-
-  }
+  };
 
   const hideMobileNav = () => {
     if (window.innerWidth < 768) {
       const elements = document.querySelectorAll(".hidden");
-      elements.forEach(element => {
-        const currentDisplay = getComputedStyle(element).getPropertyValue("display");
+      elements.forEach((element) => {
+        const currentDisplay = getComputedStyle(element).getPropertyValue(
+          "display"
+        );
         if (currentDisplay === "block") {
           element.style.display = "none";
         }
@@ -30,8 +31,10 @@ const Navbar = () => {
 
   const displayNav = () => {
     const elements = document.querySelectorAll(".hidden");
-    elements.forEach(element => {
-      const currentDisplay = getComputedStyle(element).getPropertyValue("display");
+    elements.forEach((element) => {
+      const currentDisplay = getComputedStyle(element).getPropertyValue(
+        "display"
+      );
       if (currentDisplay === "block") {
         element.style.display = "none";
       } else {
@@ -43,10 +46,12 @@ const Navbar = () => {
   return (
     <Nav>
       <div className="brand">
-        <img src={logoBlue} alt="logo" style={{maxHeight:'56px'}}/>
-        < span className="trigger" onClick={displayNav}>
-        <FontAwesomeIcon icon={faBars} style={{height:'28px', marginRight:'24px'}} />
-
+        <img src={logoBlue} alt="logo" style={{ maxHeight: "56px" }} />
+        <span className="trigger" onClick={displayNav}>
+          <FontAwesomeIcon
+            icon={faBars}
+            style={{ height: "28px", marginRight: "24px" }}
+          />
         </span>
       </div>
       <div className="menus hidden">
@@ -54,7 +59,13 @@ const Navbar = () => {
           to="/"
           className="link"
           style={
-            active === "home" ? { color: "#4890fc", textUnderlineOffset: '12px', textDecoration: 'underline' } : { color: "#212427" }
+            active === "home"
+              ? {
+                  color: "#4890fc",
+                  textUnderlineOffset: "12px",
+                  textDecoration: "underline",
+                }
+              : { color: "#212427" }
           }
           onClick={() => changePage("home")}
         >
@@ -65,7 +76,11 @@ const Navbar = () => {
           className="link"
           style={
             active === "lessons"
-              ? { color: "#4890fc", textUnderlineOffset: '12px', textDecoration: 'underline' }
+              ? {
+                  color: "#4890fc",
+                  textUnderlineOffset: "12px",
+                  textDecoration: "underline",
+                }
               : { color: "#212427" }
           }
           onClick={() => changePage("lessons")}
@@ -73,12 +88,17 @@ const Navbar = () => {
           Inyuguti
         </Link>
 
-
         <Link
           to="/games"
           className="link"
           style={
-            active === "games" ? { color: "#4890fc", textUnderlineOffset: '12px', textDecoration: 'underline' } : { color: "#212427" }
+            active === "games"
+              ? {
+                  color: "#4890fc",
+                  textUnderlineOffset: "12px",
+                  textDecoration: "underline",
+                }
+              : { color: "#212427" }
           }
           onClick={() => changePage("games")}
         >
@@ -86,21 +106,16 @@ const Navbar = () => {
         </Link>
 
         <Link
-          to="/dictionary"
-          className="link"
-          style={
-            active === "dictionary" ? { color: "#4890fc", textUnderlineOffset: '12px', textDecoration: 'underline' } : { color: "#212427" }
-          }
-          onClick={() => changePage("videopage")}
-        >
-          Inkoranyamagambo
-        </Link>
-      
-        <Link
           to="/videopage"
           className="link"
           style={
-            active === "videopage" ? { color: "#4890fc", textUnderlineOffset: '12px', textDecoration: 'underline' } : { color: "#212427" }
+            active === "videopage"
+              ? {
+                  color: "#4890fc",
+                  textUnderlineOffset: "12px",
+                  textDecoration: "underline",
+                }
+              : { color: "#212427" }
           }
           onClick={() => changePage("videopage")}
         >
@@ -110,7 +125,13 @@ const Navbar = () => {
           to="/contact"
           className="link"
           style={
-            active === "contact" ? { color: "#4890fc", textUnderlineOffset: '12px', textDecoration: 'underline' } : { color: "#212427" }
+            active === "contact"
+              ? {
+                  color: "#4890fc",
+                  textUnderlineOffset: "12px",
+                  textDecoration: "underline",
+                }
+              : { color: "#212427" }
           }
           onClick={() => changePage("contact")}
         >
@@ -118,11 +139,10 @@ const Navbar = () => {
         </Link>
       </div>
       <div id="contact" className="contact hidden">
-        <a href="https://wa.me/250788737639"  style={{textDecoration:'none'}}>
+        <a href="https://wa.me/250788737639" style={{ textDecoration: "none" }}>
           <Button label="Duhamagare" severity="info" icon="pi pi-phone" />
         </a>
       </div>
-
     </Nav>
   );
 };
@@ -151,7 +171,7 @@ const Nav = styled.nav`
 
   .menus {
     display: block;
-    justify-content: space between;
+    justify-content: space-between;
     width: 100%;
 
     .link {
@@ -168,41 +188,59 @@ const Nav = styled.nav`
       }
     }
   }
-  .trigger{
-    display:none;
+
+  .contact {
+    display: block;
+  }
+
+  .trigger {
+    display: none;
+  }
+
+  @media (max-width: 1024px) {
+    .contact {
+      display: none;
+    }
   }
 
   @media (max-width: 768px) {
-    /* Add responsive styles for smaller screens here */
+    /* Responsive styles for small and medium screens */
     flex-direction: column;
     align-items: flex-start;
     padding: 1rem;
+
     .brand {
       width: 100%;
       img {
         max-width: 50%;
-        align:left;
-
       }
     }
+
     .menus {
       width: 100%;
       margin-top: 1rem;
+
       .link {
         display: block;
         margin-bottom: 1rem;
         margin-left: 12px;
       }
     }
+
     .hidden {
-        display: none;
+      display: none;
     }
-    .trigger{
-      float:right;
-      display:block;
-      margin-top:20px;
+
+    .trigger {
+      float: right;
+      display: block;
+      margin-top: 20px;
+    }
+
+    .contact {
+      display: none; /* Hide button on small and medium screens */
     }
   }
-}`;
+`;
 
 export default Navbar;
