@@ -86,14 +86,14 @@ function Lessons() {
       </div>
 
       {isModalOpen && (
-        <ModalOverlay>
+        <ModalOverlay className='h-96 w-96'>
           <ModalContent>
             <button onClick={closeModal} className="close-icon">X</button>
             <h2 className='font-bold text-2xl text-center'>Please sign up</h2>
             <p>You need to sign up to access this lesson.</p>
             <div className='button-group'>
-              <button className="login-btn" onClick={() => navigate('/login')}>LOGIN</button>
-              <button className="signup-btn" onClick={handleSignUp}>SIGN UP</button>
+              <button className="login-btn justify-center" onClick={() => navigate('/login')}>LOGIN</button>
+              {/* <button className="signup-btn" onClick={handleSignUp}>SIGN UP</button> */}
             </div>
           </ModalContent>
         </ModalOverlay>
@@ -186,6 +186,7 @@ const ModalOverlay = styled.div`
   justify-content: center;
   align-items: center;
   z-index: 1000;
+
 `;
 
 const ModalContent = styled.div`
@@ -196,6 +197,9 @@ const ModalContent = styled.div`
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
   z-index: 1001;
   position: relative;
+  height:350px;
+  width:350px;
+
 
   .close-icon {
     position: absolute;
