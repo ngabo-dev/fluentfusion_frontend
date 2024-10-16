@@ -1,14 +1,15 @@
-import { useState } from "react";
-import logoBlue from "../assets/logos/logo-blue.png";
-import styled from "styled-components";
+import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
-import { Button } from "primereact/button";
-import "primeicons/primeicons.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars } from "@fortawesome/free-solid-svg-icons";
+import { faBars, faTimes, faChevronDown } from "@fortawesome/free-solid-svg-icons";
 
 const Navbar = () => {
   const [active, setActive] = useState("home");
+  const [isNavVisible, setIsNavVisible] = useState(false);
+  const [isDropdownVisible, setIsDropdownVisible] = useState(false);
+  const [isConsultancyDropdownVisible, setIsConsultancyDropdownVisible] = useState(false);
+  const dropdownRef = useRef(null);
+  const consultancyDropdownRef = useRef(null);
 
   const changePage = (nav) => {
     setActive(nav);
@@ -17,230 +18,258 @@ const Navbar = () => {
 
   const hideMobileNav = () => {
     if (window.innerWidth < 768) {
-      const elements = document.querySelectorAll(".hidden");
-      elements.forEach((element) => {
-        const currentDisplay = getComputedStyle(element).getPropertyValue(
-          "display"
-        );
-        if (currentDisplay === "block") {
-          element.style.display = "none";
-        }
-      });
+      setIsNavVisible(false);
     }
   };
 
-  const displayNav = () => {
-    const elements = document.querySelectorAll(".hidden");
-    elements.forEach((element) => {
-      const currentDisplay = getComputedStyle(element).getPropertyValue(
-        "display"
-      );
-      if (currentDisplay === "block") {
-        element.style.display = "none";
-      } else {
-        element.style.display = "block";
-      }
-    });
+  const toggleNav = () => {
+    setIsNavVisible((prev) => !prev);
   };
+
+  // Handle hover for Area of Interest
+  const handleDropdownMouseEnter = () => {
+    setIsDropdownVisible(true);
+  };
+
+  const handleDropdownMouseLeave = () => {
+    setIsDropdownVisible(false);
+  };
+
+  // Handle hover for Consultancy
+  const handleConsultancyDropdownMouseEnter = () => {
+    setIsConsultancyDropdownVisible(true);
+  };
+
+  const handleConsultancyDropdownMouseLeave = () => {
+    setIsConsultancyDropdownVisible(false);
+  };
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth >= 768) {
+        setIsNavVisible(false);
+      }
+    };
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   return (
-    <Nav>
-      <div className="brand">
-        <img src={logoBlue} alt="logo" style={{ maxHeight: "56px" }} />
-        <span className="trigger" onClick={displayNav}>
-          <FontAwesomeIcon
-            icon={faBars}
-            style={{ height: "28px", marginRight: "24px" }}
-          />
-        </span>
+    <nav className="flex items-center justify-between bg-white shadow-md fixed w-full px-4 py-3 md:px-12 z-50">
+      {/* Logo on the left */}
+      <div className="flex items-center">
+        <img
+          src="/logo.webp"
+          alt="logo"
+          className="w-12 rounded-full"
+        />
       </div>
-      <div className="menus hidden">
-        <Link
-          to="/"
-          className="link"
-          style={
-            active === "home"
-              ? {
-                  color: "#4890fc",
-                  textUnderlineOffset: "12px",
-                  textDecoration: "underline",
-                }
-              : { color: "#212427" }
-          }
-          onClick={() => changePage("home")}
-        >
-          Ahabanza
-        </Link>
-        <Link
-          to="/lessons"
-          className="link"
-          style={
-            active === "lessons"
-              ? {
-                  color: "#4890fc",
-                  textUnderlineOffset: "12px",
-                  textDecoration: "underline",
-                }
-              : { color: "#212427" }
-          }
-          onClick={() => changePage("lessons")}
-        >
-          Inyuguti
-        </Link>
 
-        <Link
-          to="/games"
-          className="link"
-          style={
-            active === "games"
-              ? {
-                  color: "#4890fc",
-                  textUnderlineOffset: "12px",
-                  textDecoration: "underline",
-                }
-              : { color: "#212427" }
-          }
-          onClick={() => changePage("games")}
-        >
-          Imyitozo
-        </Link>
+      {/* Navigation links */}
+      <div className={`absolute left-0 top-16 w-full bg-white md:static md:flex md:w-auto ${isNavVisible ? "block" : "hidden"} md:block`}>
+        <div className="flex flex-col md:flex-row md:items-center">
+          <Link
+            to="/"
+            className={`link text-black font-semibold text-lg mx-3 ${
+              active === "home" ? "text-green-600" : ""
+            }`}
+            onClick={() => changePage("home")}
+          >
+            Homepage
+          </Link>
+          <Link
+            to="/aboutme"
+            className={`link text-black font-semibold text-lg mx-3 ${
+              active === "lessons" ? "text-green-600" : ""
+            }`}
+            onClick={() => changePage("lessons")}
+          >
+            About Us
+          </Link>
 
-        <Link
-          to="/videopage"
-          className="link"
-          style={
-            active === "videopage"
-              ? {
-                  color: "#4890fc",
-                  textUnderlineOffset: "12px",
-                  textDecoration: "underline",
-                }
-              : { color: "#212427" }
-          }
-          onClick={() => changePage("videopage")}
-        >
-          Amasomo
-        </Link>
-        <Link
-          to="/contact"
-          className="link"
-          style={
-            active === "contact"
-              ? {
-                  color: "#4890fc",
-                  textUnderlineOffset: "12px",
-                  textDecoration: "underline",
-                }
-              : { color: "#212427" }
-          }
-          onClick={() => changePage("contact")}
-        >
-          Twandikire
-        </Link>
+          {/* Area of Interest dropdown */}
+          <div
+            className="relative"
+            onMouseEnter={handleDropdownMouseEnter}
+            onMouseLeave={handleDropdownMouseLeave}
+            ref={dropdownRef}
+          >
+            <button
+              className={`link text-black font-semibold text-lg mx-3 flex items-center ${
+                active === "games" ? "text-green-600" : ""
+              }`}
+            >
+              Area of Interest
+              <FontAwesomeIcon icon={faChevronDown} className="ml-2" />
+            </button>
+            {isDropdownVisible && (
+              <div className="absolute bg-green-900 w-full md:w-96 shadow-lg mt-10 rounded z-50">
+                <Link
+                  to="#"
+                  className="block text-white py-2 px-4 hover:bg-green-700"
+                  onClick={() => changePage("urbanization")}
+                >
+                  Urbanization
+                </Link>
+                <Link
+                  to="#"
+                  className="block text-white py-2 px-4 hover:bg-green-700"
+                  onClick={() => changePage("environment")}
+                >
+                  Environment
+                </Link>
+                <Link
+                  to="#"
+                  className="block text-white py-2 px-4 hover:bg-green-700"
+                  onClick={() => changePage("sustainability")}
+                >
+                  Sustainability
+                </Link>
+                <Link
+                  to="#"
+                  className="block text-white py-2 px-4 hover:bg-green-700"
+                  onClick={() => changePage("energy")}
+                >
+                  Renewable Energy
+                </Link>
+              </div>
+            )}
+          </div>
+
+          {/* Consultancy dropdown */}
+          <div
+            className="relative"
+            onMouseEnter={handleConsultancyDropdownMouseEnter}
+            onMouseLeave={handleConsultancyDropdownMouseLeave}
+            ref={consultancyDropdownRef}
+          >
+            <button
+              className={`link text-black font-semibold text-lg mx-3 flex items-center ${
+                active === "consultancy" ? "text-green-600" : ""
+              }`}
+            >
+              Consultancy
+              <FontAwesomeIcon icon={faChevronDown} className="ml-2" />
+            </button>
+            {isConsultancyDropdownVisible && (
+              <div className="absolute bg-green-900 text-white w-full md:w-96 shadow-lg mt-8 rounded z-50">
+                <Link
+                  to="#"
+                  className="block py-2 px-4 hover:bg-green-700"
+                  onClick={() => changePage("landuse")}
+                >
+                  Land Use Planning/Zoning Plans
+                </Link>
+                <Link
+                  to="#"
+                  className="block py-2 px-4 hover:bg-green-700"
+                  onClick={() => changePage("physicalplans")}
+                >
+                  Detailed Physical Plans
+                </Link>
+                <Link
+                  to="#"
+                  className="block py-2 px-4 hover:bg-green-700"
+                  onClick={() => changePage("swotvision")}
+                >
+                  Spatial SWOT, Visioning and Goal Settings
+                </Link>
+                <Link
+                  to="#"
+                  className="block py-2 px-4 hover:bg-green-700"
+                  onClick={() => changePage("transportplanning")}
+                >
+                  Transportation Planning
+                </Link>
+                <Link
+                  to="#"
+                  className="block py-2 px-4 hover:bg-green-700"
+                  onClick={() => changePage("environmentalplanning")}
+                >
+                  Environmental Planning and Modeling
+                </Link>
+                <Link
+                  to="#"
+                  className="block py-2 px-4 hover:bg-green-700"
+                  onClick={() => changePage("disasterplanning")}
+                >
+                  Disaster Risk Reduction and Resilience Planning
+                </Link>
+                <Link
+                  to="#"
+                  className="block py-2 px-4 hover:bg-green-700"
+                  onClick={() => changePage("capacitybuilding")}
+                >
+                  Capacity Building and Training
+                </Link>
+                <Link
+                  to="#"
+                  className="block py-2 px-4 hover:bg-green-700"
+                  onClick={() => changePage("smartcity")}
+                >
+                  Green & Smart City Solutions
+                </Link>
+                <Link
+                  to="#"
+                  className="block py-2 px-4 hover:bg-green-700"
+                  onClick={() => changePage("gis")}
+                >
+                  Geo-spatial Technology (GIS) Services
+                </Link>
+                <Link
+                  to="#"
+                  className="block py-2 px-4 hover:bg-green-700"
+                  onClick={() => changePage("events")}
+                >
+                  Organizing and Hosting Urban Planning Events
+                </Link>
+              </div>
+            )}
+          </div>
+
+          <Link
+            to="/blogs"
+            className={`link font-semibold text-lg mx-3 ${
+              active === "contact" ? "text-green-600 underline" : ""
+            }`}
+            onClick={() => changePage("contact")}
+          >
+            Event & News
+          </Link>
+          <Link
+            to="/fellowship"
+            className={`link font-semibold text-lg mx-3 ${
+              active === "fellowship" ? "text-green-600" : ""
+            }`}
+            onClick={() => changePage("fellowship")}
+          >
+            Fellowship
+          </Link>
+        </div>
       </div>
-      <div id="contact" className="contact hidden">
-        <a href="https://wa.me/250788737639" style={{ textDecoration: "none" }}>
-          <Button label="Duhamagare" severity="info" icon="pi pi-phone" />
+
+      {/* Contact Us button on desktop */}
+      <div className="hidden md:block">
+        <a href="/contact">
+          <button className="px-10 py-2 bg-pink-600 text-white rounded hover:bg-pink-600 transition duration-300">
+            Contact us
+          </button>
         </a>
       </div>
-    </Nav>
+
+      {/* Mobile menu toggle */}
+      <button className="md:hidden text-3xl text-pink-600" onClick={toggleNav}>
+        {isNavVisible ? (
+          <FontAwesomeIcon icon={faTimes} />
+        ) : (
+          <FontAwesomeIcon icon={faBars} />
+        )}
+      </button>
+    </nav>
   );
 };
-
-const Nav = styled.nav`
-  display: flex;
-  align-items: center;
-  overflow: hidden;
-  background: white;
-  width: 100%;
-  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
-  padding: 1rem 2rem;
-  position: fixed;
-  top: 0;
-  right: 0;
-  z-index: 100;
-
-  .brand {
-    width: calc(100vw / 4);
-
-    img {
-      max-width: 20%;
-      cursor: pointer;
-    }
-  }
-
-  .menus {
-    display: block;
-    justify-content: space-between;
-    width: 100%;
-
-    .link {
-      text-decoration: none;
-      color: #212427;
-      font-weight: 600;
-      font-size: 1.2rem;
-      margin-left: 3rem;
-
-      &:hover {
-        color: #4890fc;
-        text-underline-offset: 12px;
-        text-decoration: underline;
-      }
-    }
-  }
-
-  .contact {
-    display: block;
-  }
-
-  .trigger {
-    display: none;
-  }
-
-  @media (max-width: 1024px) {
-    .contact {
-      display: none;
-    }
-  }
-
-  @media (max-width: 768px) {
-    /* Responsive styles for small and medium screens */
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 1rem;
-
-    .brand {
-      width: 100%;
-      img {
-        max-width: 50%;
-      }
-    }
-
-    .menus {
-      width: 100%;
-      margin-top: 1rem;
-
-      .link {
-        display: block;
-        margin-bottom: 1rem;
-        margin-left: 12px;
-      }
-    }
-
-    .hidden {
-      display: none;
-    }
-
-    .trigger {
-      float: right;
-      display: block;
-      margin-top: 20px;
-    }
-
-    .contact {
-      display: none; /* Hide button on small and medium screens */
-    }
-  }
-`;
 
 export default Navbar;

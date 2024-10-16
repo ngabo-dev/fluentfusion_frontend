@@ -1,159 +1,178 @@
-import React, { useState } from 'react';
-import { FaLinkedin, FaTwitter, FaInstagram } from 'react-icons/fa';
+import React from 'react'
 
 const Team = () => {
-  const [testimonials, setTestimonials] = useState([
-    {
-      name: 'John Doe',
-      message: 'SLTS has been a great resource in helping me learn sign language!',
-      image: null,
-    },
-    {
-      name: 'Jane Smith',
-      message: 'I was able to complete my sign language course, and the team was supportive throughout.',
-      image: null,
-    },
-  ]);
-
-  const [testimonialInput, setTestimonialInput] = useState({
-    name: '',
-    message: '',
-    email: '',
-    image: null, // Add image field
-  });
-
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setTestimonialInput({ ...testimonialInput, [name]: value });
-  };
-
-  const handleImageChange = (e) => {
-    const file = e.target.files[0];
-    if (file) {
-      // Create an object URL to preview the image
-      const imageUrl = URL.createObjectURL(file);
-      setTestimonialInput({ ...testimonialInput, image: imageUrl });
-    }
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const { name, message, image } = testimonialInput;
-    setTestimonials([...testimonials, { name, message, image }]);
-    setTestimonialInput({ name: '', message: '', email: '', image: null });
-  };
-
   return (
-    <div className='grid grid-cols-2 mt-40'>
-      <div className='grid grid-cols-2 gap-8'>
-        {/* Team Member Cards */}
-        <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow">
-          <a href="#">
-            <img className="rounded-t-lg" src="../src/images/home.jpeg" alt="Pacience" />
-          </a>
-          <div className="p-5 text-center">
-            <h5 className="mb-2 text-lg font-bold text-black">Pacience</h5>
-            <div className="flex justify-center space-x-4 mt-4">
-              <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">
-                <FaLinkedin size={24} className="text-blue-600 hover:text-blue-800" />
-              </a>
-              <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer">
-                <FaTwitter size={24} className="text-blue-400 hover:text-blue-600" />
-              </a>
-              <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
-                <FaInstagram size={24} className="text-pink-500 hover:text-pink-700" />
-              </a>
-            </div>
+    <div>
+    <div class="font-[sans-serif] py-48 bg-white">
+          <div class="lg:max-w-6xl max-w-xl mx-auto p-4">
+              <h2 class="text-5xl font-bold text-center py-10 mb-8 text-pink-600">Meet Our Team</h2>
+
+              <div class="grid lg:grid-cols-2 grid-cols-1 gap-6 max-md:justify-center mt-12">
+
+                  <div class="flex items-center max-sm:flex-col bg-gray-100 gap-4 rounded-lg overflow-hidden hover:scale-[1.02] transition-all">
+                      <img src="https://readymadeui.com/team-1.webp" class="w-full sm:h-60 object-cover" />
+
+                      <div class="p-4">
+                          <h4 class="text-gray-800 text-base font-bold">John Doe</h4>
+                          <p class="text-gray-600 text-xs mt-1">Software Engineer</p>
+
+                          <div class="mt-4">
+                              <p class="text-gray-600 text-sm leading-relaxed">Eiusmod commodo aliquip laboris qui anim non voluptate consectetur.</p>
+                          </div>
+
+                          <div class="space-x-2 mt-4">
+                              <button type="button"
+                                  class="w-6 h-6 inline-flex items-center max-sm:flex-col justify-center rounded-full border-none outline-none bg-pink-600 hover:bg-pink-700 active:bg-pink-600">
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="14px" fill="#fff" viewBox="0 0 155.139 155.139">
+                                      <path
+                                          d="M89.584 155.139V84.378h23.742l3.562-27.585H89.584V39.184c0-7.984 2.208-13.425 13.67-13.425l14.595-.006V1.08C115.325.752 106.661 0 96.577 0 75.52 0 61.104 12.853 61.104 36.452v20.341H37.29v27.585h23.814v70.761h28.48z"
+                                          data-original="#010002" />
+                                  </svg>
+                              </button>
+                              <button type="button"
+                                  class="w-6 h-6 inline-flex items-center max-sm:flex-col justify-center rounded-full border-none outline-none bg-pink-600 hover:bg-pink-600 active:bg-pink-600">
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="14px" fill="#fff" viewBox="0 0 512 512">
+                                      <path
+                                          d="M512 97.248c-19.04 8.352-39.328 13.888-60.48 16.576 21.76-12.992 38.368-33.408 46.176-58.016-20.288 12.096-42.688 20.64-66.56 25.408C411.872 60.704 384.416 48 354.464 48c-58.112 0-104.896 47.168-104.896 104.992 0 8.32.704 16.32 2.432 23.936-87.264-4.256-164.48-46.08-216.352-109.792-9.056 15.712-14.368 33.696-14.368 53.056 0 36.352 18.72 68.576 46.624 87.232-16.864-.32-33.408-5.216-47.424-12.928v1.152c0 51.008 36.384 93.376 84.096 103.136-8.544 2.336-17.856 3.456-27.52 3.456-6.72 0-13.504-.384-19.872-1.792 13.6 41.568 52.192 72.128 98.08 73.12-35.712 27.936-81.056 44.768-130.144 44.768-8.608 0-16.864-.384-25.12-1.44C46.496 446.88 101.6 464 161.024 464c193.152 0 298.752-160 298.752-298.688 0-4.64-.16-9.12-.384-13.568 20.832-14.784 38.336-33.248 52.608-54.496z"
+                                          data-original="#03a9f4" />
+                                  </svg>
+                              </button>
+                              <button type="button"
+                                  class="w-6 h-6 inline-flex items-center max-sm:flex-col justify-center rounded-full border-none outline-none bg-green-900 hover:bg-pink-600 active:bg-green-900">
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="14px" fill="#fff" viewBox="0 0 24 24">
+                                      <path
+                                          d="M23.994 24v-.001H24v-8.802c0-4.306-.927-7.623-5.961-7.623-2.42 0-4.044 1.328-4.707 2.587h-.07V7.976H8.489v16.023h4.97v-7.934c0-2.089.396-4.109 2.983-4.109 2.549 0 2.587 2.384 2.587 4.243V24zM.396 7.977h4.976V24H.396zM2.882 0C1.291 0 0 1.291 0 2.882s1.291 2.909 2.882 2.909 2.882-1.318 2.882-2.909A2.884 2.884 0 0 0 2.882 0z"
+                                          data-original="#0077b5" />
+                                  </svg>
+                              </button>
+                          </div>
+                      </div>
+                  </div>
+
+                  <div class="flex items-center max-sm:flex-col bg-gray-100 gap-4 rounded-lg overflow-hidden hover:scale-[1.02] transition-all">
+                      <img src="https://readymadeui.com/team-3.webp" class="w-full sm:h-60 object-cover" />
+
+                      <div class="p-4">
+                          <h4 class="text-gray-800 text-base font-bold">Simon Konecki</h4>
+                          <p class="text-gray-500 text-xs mt-1">Web Designer</p>
+
+                          <div class="mt-4">
+                              <p class="text-gray-600 text-sm leading-relaxed">Eiusmod commodo aliquip laboris qui anim non voluptate consectetur.</p>
+                          </div>
+
+                          <div class="space-x-2 mt-4">
+                              <button type="button"
+                                  class="w-6 h-6 inline-flex items-center max-sm:flex-col justify-center rounded-full border-none outline-none bg-pink-600 hover:bg-pink-700 active:bg-pink-600">
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="14px" fill="#fff" viewBox="0 0 155.139 155.139">
+                                      <path
+                                          d="M89.584 155.139V84.378h23.742l3.562-27.585H89.584V39.184c0-7.984 2.208-13.425 13.67-13.425l14.595-.006V1.08C115.325.752 106.661 0 96.577 0 75.52 0 61.104 12.853 61.104 36.452v20.341H37.29v27.585h23.814v70.761h28.48z"
+                                          data-original="#010002" />
+                                  </svg>
+                              </button>
+                              <button type="button"
+                                  class="w-6 h-6 inline-flex items-center max-sm:flex-col justify-center rounded-full border-none outline-none bg-pink-600 hover:bg-pink-600 active:bg-pink-600">
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="14px" fill="#fff" viewBox="0 0 512 512">
+                                      <path
+                                          d="M512 97.248c-19.04 8.352-39.328 13.888-60.48 16.576 21.76-12.992 38.368-33.408 46.176-58.016-20.288 12.096-42.688 20.64-66.56 25.408C411.872 60.704 384.416 48 354.464 48c-58.112 0-104.896 47.168-104.896 104.992 0 8.32.704 16.32 2.432 23.936-87.264-4.256-164.48-46.08-216.352-109.792-9.056 15.712-14.368 33.696-14.368 53.056 0 36.352 18.72 68.576 46.624 87.232-16.864-.32-33.408-5.216-47.424-12.928v1.152c0 51.008 36.384 93.376 84.096 103.136-8.544 2.336-17.856 3.456-27.52 3.456-6.72 0-13.504-.384-19.872-1.792 13.6 41.568 52.192 72.128 98.08 73.12-35.712 27.936-81.056 44.768-130.144 44.768-8.608 0-16.864-.384-25.12-1.44C46.496 446.88 101.6 464 161.024 464c193.152 0 298.752-160 298.752-298.688 0-4.64-.16-9.12-.384-13.568 20.832-14.784 38.336-33.248 52.608-54.496z"
+                                          data-original="#03a9f4" />
+                                  </svg>
+                              </button>
+                              <button type="button"
+                                  class="w-6 h-6 inline-flex items-center max-sm:flex-col justify-center rounded-full border-none outline-none bg-green-900 hover:bg-pink-600 active:bg-green-900">
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="14px" fill="#fff" viewBox="0 0 24 24">
+                                      <path
+                                          d="M23.994 24v-.001H24v-8.802c0-4.306-.927-7.623-5.961-7.623-2.42 0-4.044 1.328-4.707 2.587h-.07V7.976H8.489v16.023h4.97v-7.934c0-2.089.396-4.109 2.983-4.109 2.549 0 2.587 2.384 2.587 4.243V24zM.396 7.977h4.976V24H.396zM2.882 0C1.291 0 0 1.291 0 2.882s1.291 2.909 2.882 2.909 2.882-1.318 2.882-2.909A2.884 2.884 0 0 0 2.882 0z"
+                                          data-original="#0077b5" />
+                                  </svg>
+                              </button>
+                          </div>
+                      </div>
+                  </div>
+
+                  <div class="flex items-center max-sm:flex-col bg-gray-100 gap-4 rounded-lg overflow-hidden hover:scale-[1.02] transition-all">
+                      <img src="https://readymadeui.com/team-4.webp" class="w-full sm:h-60 object-cover" />
+
+                      <div class="p-4">
+                          <h4 class="text-gray-800 text-base font-bold">Sophia</h4>
+                          <p class="text-gray-500 text-xs mt-1">Software Developer</p>
+
+                          <div class="mt-4">
+                              <p class="text-gray-600 text-sm leading-relaxed">Eiusmod commodo aliquip laboris qui anim non voluptate consectetur.</p>
+                          </div>
+
+                          <div class="space-x-2 mt-4">
+                              <button type="button"
+                                  class="w-6 h-6 inline-flex items-center max-sm:flex-col justify-center rounded-full border-none outline-none bg-pink-600 hover:bg-pink-700 active:bg-pink-600">
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="14px" fill="#fff" viewBox="0 0 155.139 155.139">
+                                      <path
+                                          d="M89.584 155.139V84.378h23.742l3.562-27.585H89.584V39.184c0-7.984 2.208-13.425 13.67-13.425l14.595-.006V1.08C115.325.752 106.661 0 96.577 0 75.52 0 61.104 12.853 61.104 36.452v20.341H37.29v27.585h23.814v70.761h28.48z"
+                                          data-original="#010002" />
+                                  </svg>
+                              </button>
+                              <button type="button"
+                                  class="w-6 h-6 inline-flex items-center max-sm:flex-col justify-center rounded-full border-none outline-none bg-pink-600 hover:bg-pink-600 active:bg-pink-600">
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="14px" fill="#fff" viewBox="0 0 512 512">
+                                      <path
+                                          d="M512 97.248c-19.04 8.352-39.328 13.888-60.48 16.576 21.76-12.992 38.368-33.408 46.176-58.016-20.288 12.096-42.688 20.64-66.56 25.408C411.872 60.704 384.416 48 354.464 48c-58.112 0-104.896 47.168-104.896 104.992 0 8.32.704 16.32 2.432 23.936-87.264-4.256-164.48-46.08-216.352-109.792-9.056 15.712-14.368 33.696-14.368 53.056 0 36.352 18.72 68.576 46.624 87.232-16.864-.32-33.408-5.216-47.424-12.928v1.152c0 51.008 36.384 93.376 84.096 103.136-8.544 2.336-17.856 3.456-27.52 3.456-6.72 0-13.504-.384-19.872-1.792 13.6 41.568 52.192 72.128 98.08 73.12-35.712 27.936-81.056 44.768-130.144 44.768-8.608 0-16.864-.384-25.12-1.44C46.496 446.88 101.6 464 161.024 464c193.152 0 298.752-160 298.752-298.688 0-4.64-.16-9.12-.384-13.568 20.832-14.784 38.336-33.248 52.608-54.496z"
+                                          data-original="#03a9f4" />
+                                  </svg>
+                              </button>
+                              <button type="button"
+                                  class="w-6 h-6 inline-flex items-center max-sm:flex-col justify-center rounded-full border-none outline-none bg-green-900 hover:bg-pink-600 active:bg-green-900">
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="14px" fill="#fff" viewBox="0 0 24 24">
+                                      <path
+                                          d="M23.994 24v-.001H24v-8.802c0-4.306-.927-7.623-5.961-7.623-2.42 0-4.044 1.328-4.707 2.587h-.07V7.976H8.489v16.023h4.97v-7.934c0-2.089.396-4.109 2.983-4.109 2.549 0 2.587 2.384 2.587 4.243V24zM.396 7.977h4.976V24H.396zM2.882 0C1.291 0 0 1.291 0 2.882s1.291 2.909 2.882 2.909 2.882-1.318 2.882-2.909A2.884 2.884 0 0 0 2.882 0z"
+                                          data-original="#0077b5" />
+                                  </svg>
+                              </button>
+                          </div>
+                      </div>
+                  </div>
+
+                  <div class="flex items-center max-sm:flex-col bg-gray-100 gap-4 rounded-lg overflow-hidden hover:scale-[1.02] transition-all">
+                      <img src="https://readymadeui.com/team-5.webp" class="w-full sm:h-60 object-cover" />
+
+                      <div class="p-4">
+                          <h4 class="text-gray-800 text-base font-bold">Alen</h4>
+                          <p class="text-gray-500 text-xs mt-1">Software Engineer</p>
+
+                          <div class="mt-4">
+                              <p class="text-gray-600 text-sm leading-relaxed">Eiusmod commodo aliquip laboris qui anim non voluptate consectetur.</p>
+                          </div>
+
+                          <div class="space-x-2 mt-4">
+                              <button type="button"
+                                  class="w-6 h-6 inline-flex items-center max-sm:flex-col justify-center rounded-full border-none outline-none bg-pink-600 hover:bg-pink-700 active:bg-pink-600">
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="14px" fill="#fff" viewBox="0 0 155.139 155.139">
+                                      <path
+                                          d="M89.584 155.139V84.378h23.742l3.562-27.585H89.584V39.184c0-7.984 2.208-13.425 13.67-13.425l14.595-.006V1.08C115.325.752 106.661 0 96.577 0 75.52 0 61.104 12.853 61.104 36.452v20.341H37.29v27.585h23.814v70.761h28.48z"
+                                          data-original="#010002" />
+                                  </svg>
+                              </button>
+                              <button type="button"
+                                  class="w-6 h-6 inline-flex items-center max-sm:flex-col justify-center rounded-full border-none outline-none bg-pink-600 hover:bg-pink-600 active:bg-pink-600">
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="14px" fill="#fff" viewBox="0 0 512 512">
+                                      <path
+                                          d="M512 97.248c-19.04 8.352-39.328 13.888-60.48 16.576 21.76-12.992 38.368-33.408 46.176-58.016-20.288 12.096-42.688 20.64-66.56 25.408C411.872 60.704 384.416 48 354.464 48c-58.112 0-104.896 47.168-104.896 104.992 0 8.32.704 16.32 2.432 23.936-87.264-4.256-164.48-46.08-216.352-109.792-9.056 15.712-14.368 33.696-14.368 53.056 0 36.352 18.72 68.576 46.624 87.232-16.864-.32-33.408-5.216-47.424-12.928v1.152c0 51.008 36.384 93.376 84.096 103.136-8.544 2.336-17.856 3.456-27.52 3.456-6.72 0-13.504-.384-19.872-1.792 13.6 41.568 52.192 72.128 98.08 73.12-35.712 27.936-81.056 44.768-130.144 44.768-8.608 0-16.864-.384-25.12-1.44C46.496 446.88 101.6 464 161.024 464c193.152 0 298.752-160 298.752-298.688 0-4.64-.16-9.12-.384-13.568 20.832-14.784 38.336-33.248 52.608-54.496z"
+                                          data-original="#03a9f4" />
+                                  </svg>
+                              </button>
+                              <button type="button"
+                                  class="w-6 h-6 inline-flex items-center max-sm:flex-col justify-center rounded-full border-none outline-none bg-green-900 hover:bg-pink-600 active:bg-green-900">
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="14px" fill="#fff" viewBox="0 0 24 24">
+                                      <path
+                                          d="M23.994 24v-.001H24v-8.802c0-4.306-.927-7.623-5.961-7.623-2.42 0-4.044 1.328-4.707 2.587h-.07V7.976H8.489v16.023h4.97v-7.934c0-2.089.396-4.109 2.983-4.109 2.549 0 2.587 2.384 2.587 4.243V24zM.396 7.977h4.976V24H.396zM2.882 0C1.291 0 0 1.291 0 2.882s1.291 2.909 2.882 2.909 2.882-1.318 2.882-2.909A2.884 2.884 0 0 0 2.882 0z"
+                                          data-original="#0077b5" />
+                                  </svg>
+                              </button>
+                          </div>
+                      </div>
+                  </div>
+              </div>
           </div>
-        </div>
-        {/* Repeat for other team members */}
       </div>
+  </div>
+  )
+}
 
-      {/* Team Information Section */}
-      <div className='py-40'>
-        <span className='px-24 text-lg text-blue-500 mb-8'>Join Us in Making a Difference</span>
-        <h1 className='px-24 mb-2 text-4xl font-bold text-black'>Meet With Our Team</h1>
-        <p className='px-24 mb-2 py-4'>
-          At SLTS, our dedicated team of passionate individuals is driven by a shared vision of making sign
-          language education accessible to everyone.
-        </p>
-        <div className='inline-flex px-24 py-10 gap-5'>
-          <button className="inline-flex w-52 py-4 text-white bg-blue-700 hover:bg-blue-800 rounded-lg">Learn More</button>
-          <button className="inline-flex w-52 py-4 text-white bg-black rounded-lg">Learn More</button>
-        </div>
-      </div>
-
-      {/* Testimonials Section */}
-      <div className="col-span-2 mt-20 px-40">
-        <h2 className="text-3xl font-bold text-center mb-8">What Our Users Are Saying</h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {testimonials.map((testimonial, index) => (
-            <div key={index} className="bg-white p-6 border border-gray-200 rounded-lg shadow-md">
-              {testimonial.image && (
-                <img 
-                  src={testimonial.image} 
-                  alt={`${testimonial.name}'s testimonial`} 
-                  className="w-16 h-16 rounded-full  mb-4"
-                />
-              )}
-              <h4 className="text-lg font-bold">{testimonial.name}</h4>
-              <p className="mt-4 text-gray-600">{testimonial.message}</p>
-            </div>
-          ))}
-        </div>
-
-        {/* Testimonial Form */}
-        <div className="mt-12">
-          <h3 className="text-2xl font-bold mb-4">Share Your Testimonial</h3>
-          <form onSubmit={handleSubmit}>
-            <div className="mb-4">
-              <input
-                type="text"
-                name="name"
-                value={testimonialInput.name}
-                onChange={handleInputChange}
-                placeholder="Your Name"
-                className="w-full p-3 border border-gray-300 rounded-md"
-                required
-              />
-            </div>
-            <div className="mb-4">
-              <textarea
-                name="message"
-                value={testimonialInput.message}
-                onChange={handleInputChange}
-                placeholder="Your Message"
-                className="w-full p-3 border border-gray-300 rounded-md"
-                required
-              />
-            </div>
-            <div className="mb-4">
-              <input
-                type="email"
-                name="email"
-                value={testimonialInput.email}
-                onChange={handleInputChange}
-                placeholder="Your Email (for contact purposes)"
-                className="w-full p-3 border border-gray-300 rounded-md"
-                required
-              />
-            </div>
-            <div className="mb-4">
-              <input
-                type="file"
-                accept="image/*"
-                onChange={handleImageChange}
-                className="w-full p-3 border border-gray-300 rounded-md"
-              />
-            </div>
-            <button type="submit" className="py-3 px-6 text-white bg-blue-600 rounded-lg">
-              Submit Testimonial
-            </button>
-          </form>
-        </div>
-      </div>
-    </div>
-  );
-};
-
-export default Team;
+export default Team

@@ -1,46 +1,89 @@
-import Cards from "../components/Cards";
-import Sandbox from "../components/Sandbox";
+import { useEffect, useState } from 'react';
 import 'animate.css';
-import Testimonial from "../components/Testimonial";
-import OurMission from "../components/OurMission";
-import Dictionary from "./Dictionary";
-
+import Testimonial from '../components/Testimonial';
+import Joinus from '../components/Joinus';
+import Whatwedo from '../components/Whatwedo';
 
 const Home = () => {
+  const [activeVideo, setActiveVideo] = useState(0); // State to track the active video
+  const videos = [
+    { src: '/videos/vid11.mp4' },
+    { src: '/videos/vid6.mp4' },
+    { src: '/videos/vid8.mp4' },
+    { src: 'videos/vid10.mp4' },
+    { src: '/videos/vid3.mp4' }
+  ];
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveVideo((prevVideo) => (prevVideo + 1) % videos.length); // Switch between videos every 6 seconds
+    }, 6000); 
+
+    return () => clearInterval(interval); // Clear the interval when the component unmounts
+  }, [videos.length]);
+
   return (
     <>
-      <div
-        className="h-screen bg-no-repeat bg-cover"
-        style={{
-          backgroundImage: "linear-gradient(180deg, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)), url('../src/images/homeimage.jpg')"
-        }}
-      >
-       
-        <div className="translate-y-60">
-          {/* <h1 className="text-xl font-bold mb-6 translate-y-10 text-blue-500 px-20 animate__animated animate__slideInLeft">Learn From Today</h1> */}
-          <p className="text-4xl translate-y-8 text-center capitalize text-white font-bold mb-4 px-20 animate__animated animate__slideInLeft">
-            Empowering Communication<br /> Across All Communities with SLTS
-          </p>
-      
+      <div className="relative h-screen bg-no-repeat bg-cover">
+        {/* Videos */}
+        {videos.map((video, index) => (
+          <video
+            key={index}
+            src={video.src}
+            type="video/mp4"
+            autoPlay
+            muted
+            loop
+            className={`object-cover w-full h-full absolute inset-0 transition-opacity duration-1000 ${activeVideo === index ? 'opacity-100 animate__slideInLeft' : 'opacity-0'}`}
+          />
+        ))}
+
+        {/* Conditional Transparent Cover - only when video is playing */}
+        {activeVideo !== null && (
+          <>
+            <div className="absolute inset-0 bg-black opacity-70 z-10"></div>
+
+            {/* Linear Gradient Overlay */}
+            <div className="absolute inset-0 bg-gradient-to-b from-black via-transparent to-black opacity-80 z-20"></div>
+          </>
+        )}
+
+        {/* Main Section */}
+        <div className="relative z-30 flex flex-col justify-center h-full">
+          <div className="px-4 sm:px-8 py-24 mt-20 font-[sans-serif]">
+            <div className="max-w-6xl mx-auto grid md:grid-cols-2 justify-center items-center gap-12">
+              
+              {/* Text Section */}
+              <div className="text-center md:text-left">
+                <h2 className="text-2xl sm:text-3xl lg:text-4xl text-pink-600 font-extrabold mb-6 leading-relaxed">
+                  NGU-Link Hub unites global stakeholders to build smarter, sustainable, and inclusive cities
+                </h2>
+
+                {/* Join Us Button */}
+                <a
+                  href="javascript:void(0);"
+                  className="mt-8 sm:mt-12 bg-pink-600 hover:bg-opacity-80 text-white py-3 px-6 rounded-lg text-lg lg:text-xl transition duration-300 ease-in-out transform hover:scale-105 hover:shadow-xl inline-block"
+                >
+                  Join Us
+                </a>
+              </div>
+
+              {/* Video Section */}
+              <div className="text-center">
+                <video autoPlay muted loop className="animate__animated animate__fadeInRight  rounded-full h-full w-full sm:mt-10 max-w-xs sm:max-w-md lg:max-w-lg">
+                  <source src="/videos/vid11.mp4" type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+            </div>
+          </div>
         </div>
-
-
-      </div>
-      <div>
-          <Sandbox />
-        </div>
-
-      <div>
-        <Cards />
       </div>
 
-<Dictionary />
-
-
-      
-
+      {/* Remaining components */}
+      <Whatwedo />
+      <Joinus />
       <Testimonial />
-      <OurMission />
     </>
   );
 };

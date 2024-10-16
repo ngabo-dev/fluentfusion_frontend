@@ -1,171 +1,158 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';  // For making API requests
-import "animate.css";  // For animations
-import md5 from 'md5';  // For hashing email to get Gravatar avatar
+import React from 'react'
 
-const Testimonials = () => {
-  const [testimonials, setTestimonials] = useState([]);
-  const [showMore, setShowMore] = useState(false); // To toggle additional testimonials
-  const [name, setName] = useState(''); // Input state for the testimonial form
-  const [message, setMessage] = useState(''); // Input state for the testimonial form
-  const [email, setEmail] = useState(''); // Input state for the email to fetch Gravatar
-  const [loading, setLoading] = useState(true); // To manage loading state
-
-  // Fetch testimonials from the API
-  useEffect(() => {
-    const fetchTestimonials = async () => {
-      try {
-        const response = await axios.get('http://localhost:8000/api/testimonials/');
-        console.log(response.data);  // Log the response data for debugging
-        setTestimonials(response.data);
-      } catch (error) {
-        console.error('Error fetching testimonials:', error);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchTestimonials();
-  }, []);
-
-  // Function to get Gravatar URL based on email
-  const getGravatarUrl = (email) => {
-    const hash = md5(email.trim().toLowerCase());
-    return `https://www.gravatar.com/avatar/${hash}?d=mp`;  // 'mp' is for a generic avatar with face
-  };
-
-  // Function to add a new testimonial
-  const handleSubmitTestimonial = async (e) => {
-    e.preventDefault();
-    const gravatarUrl = getGravatarUrl(email); // Get the avatar from Gravatar
-    const newTestimonial = { name, message, image: gravatarUrl };
-
-    try {
-      await axios.post('http://localhost:8000/api/testimonials/create/', newTestimonial); // Endpoint for creating a testimonial
-      setTestimonials([...testimonials, newTestimonial]);
-      setName(''); // Clear form fields
-      setMessage('');
-      setEmail('');
-    } catch (error) {
-      console.error('Error submitting testimonial:', error);
-    }
-  };
-
-  const handleShowMore = () => {
-    setShowMore(true); // Show more testimonials when button is clicked
-  };
-
+const Testimonial = () => {
   return (
-    <div className="col-span-2 mt-20 px-12">
-      <h2 className="text-3xl font-bold text-center mb-8">What Our Users Are Saying</h2>
-      
-      {loading ? (
-        <p className="text-center">Loading testimonials...</p>
-      ) : (
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {testimonials.slice(0, 3).map((testimonial, index) => (
-            <div key={index} className="bg-white p-6 border border-gray-200  hover:bg-blue-500 hover:text-white rounded-lg shadow-md">
-              {testimonial.image ? (
-                <img 
-                  src={testimonial.image} 
-                  alt={`${testimonial.name}'s testimonial`} 
-                  className="w-16 h-16 rounded-full mb-4"
-                  onError={(e) => {
-                    e.target.onerror = null; // prevents looping
-                    e.target.src = 'path/to/your/default-image.png'; // Replace with a default image URL
-                  }}
-                />
-              ) : (
-                <p>No image available</p>
-              )}
-              <h4 className="text-lg font-bold hover:text-white">{testimonial.name}</h4>
-              <p className="mt-4 text-gray-600 hover:text-white">{testimonial.message}</p>
+    <div class="pl-10 font-[sans-serif] mt-4 py-20">
+      <div class="max-w-6xl mx-auto">
+        <div class="grid lg:grid-cols-3 gap-6 max-lg:max-w-2xl">
+          <div class="col-span-2">
+            <h2 class="text-pink-600 text-5xl font-bold">Testmonials</h2>
+            
+          </div>
+
+          <div class="flex space-x-4 items-end justify-end">
+            <div class="bg-gray-200 w-10 h-10 grid items-center justify-center rounded-full rotate-90 shrink-0 cursor-pointer">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-3 fill-gray-800 inline" viewBox="0 0 24 24">
+                <path fill-rule="evenodd" d="M11.99997 18.1669a2.38 2.38 0 0 1-1.68266-.69733l-9.52-9.52a2.38 2.38 0 1 1 3.36532-3.36532l7.83734 7.83734 7.83734-7.83734a2.38 2.38 0 1 1 3.36532 3.36532l-9.52 9.52a2.38 2.38 0 0 1-1.68266.69734z" clip-rule="evenodd" data-original="#000000"></path>
+              </svg>
             </div>
-          ))}
-
-          {/* Show the rest of the testimonials with animation */}
-          {showMore && testimonials.slice(3).map((testimonial, index) => (
-            <div key={index} className="bg-white p-6 border border-gray-200 rounded-lg shadow-md animate__animated animate__fadeIn">
-              {testimonial.image ? (
-                <img 
-                  src={testimonial.image} 
-                  alt={`${testimonial.name}'s testimonial`} 
-                  className="w-16 h-16 rounded-full mb-4"
-                  onError={(e) => {
-                    e.target.onerror = null; // prevents looping
-                    e.target.src = 'path/to/your/default-image.png'; // Replace with a default image URL
-                  }}
-                />
-              ) : (
-                <p>No image available</p>
-              )}
-              <h4 className="text-lg font-bold">{testimonial.name}</h4>
-              <p className="mt-4 text-gray-600">{testimonial.message}</p>
+            <div class="bg-green-900 w-10 h-10 grid items-center justify-center rounded-full -rotate-90 shrink-0 cursor-pointer">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-3 fill-[#fff] inline" viewBox="0 0 24 24">
+                <path fill-rule="evenodd" d="M11.99997 18.1669a2.38 2.38 0 0 1-1.68266-.69733l-9.52-9.52a2.38 2.38 0 1 1 3.36532-3.36532l7.83734 7.83734 7.83734-7.83734a2.38 2.38 0 1 1 3.36532 3.36532l-9.52 9.52a2.38 2.38 0 0 1-1.68266.69734z" clip-rule="evenodd" data-original="#000000"></path>
+              </svg>
             </div>
-          ))}
+          </div>
         </div>
-      )}
 
-      {/* Show More Button */}
-      {!showMore && !loading && (
-        <div className="text-center mt-8">
-          <button 
-            onClick={handleShowMore} 
-            className="py-3 px-6 text-white bg-blue-600 rounded-lg"
-          >
-            Show More Testimonials
-          </button>
-        </div>
-      )}
+        <div class="grid lg:grid-cols-3 lg:gap-12 gap-6 mt-16">
+          <div class="max-w-[360px] h-auto py-5 pl-14 pr-4 bg-white border-2 rounded-3xl relative">
+            <img src="https://readymadeui.com/team-2.webp" class="w-20 h-20 rounded-full absolute -left-10 top-0 bottom-0 my-auto border-2 border-gray-300" />
 
-      {/* Share Your Testimonial Section */}
-      <div className="grid py-24 grid-cols-2">
-        <div>
-          <img src='../src/images/share.png' className='mt-12 h-96 w-96 border-8 border-blue-500 rounded-full' />
+            <div>
+              <h4 class="text-gray-800 text-base font-light">John Doe</h4>
+              <p class="mt-1 text-xs text-gray-500">Urban Planner</p>
+            </div>
+
+            <div class="mt-4">
+              <p class="text-gray-800 leading-relaxed font-light text-base">
+              NGU-Link Hub has transformed our city's growth with innovative, sustainable solutions and a global network of urban stakeholders.
+              </p>
+            </div>
+
+            <div class="flex space-x-1 mt-4">
+              <svg class="w-4 fill-pink-600" viewBox="0 0 14 13" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M7 0L9.4687 3.60213L13.6574 4.83688L10.9944 8.29787L11.1145 12.6631L7 11.2L2.8855 12.6631L3.00556 8.29787L0.342604 4.83688L4.5313 3.60213L7 0Z" />
+              </svg>
+              <svg class="w-4 fill-pink-600" viewBox="0 0 14 13" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M7 0L9.4687 3.60213L13.6574 4.83688L10.9944 8.29787L11.1145 12.6631L7 11.2L2.8855 12.6631L3.00556 8.29787L0.342604 4.83688L4.5313 3.60213L7 0Z" />
+              </svg>
+              <svg class="w-4 fill-pink-600" viewBox="0 0 14 13" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M7 0L9.4687 3.60213L13.6574 4.83688L10.9944 8.29787L11.1145 12.6631L7 11.2L2.8855 12.6631L3.00556 8.29787L0.342604 4.83688L4.5313 3.60213L7 0Z" />
+              </svg>
+              <svg class="w-4 fill-[#CED5D8]" viewBox="0 0 14 13" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M7 0L9.4687 3.60213L13.6574 4.83688L10.9944 8.29787L11.1145 12.6631L7 11.2L2.8855 12.6631L3.00556 8.29787L0.342604 4.83688L4.5313 3.60213L7 0Z" />
+              </svg>
+              <svg class="w-4 fill-[#CED5D8]" viewBox="0 0 14 13" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M7 0L9.4687 3.60213L13.6574 4.83688L10.9944 8.29787L11.1145 12.6631L7 11.2L2.8855 12.6631L3.00556 8.29787L0.342604 4.83688L4.5313 3.60213L7 0Z" />
+              </svg>
+            </div>
+          </div>
+
+          <div class="max-w-[360px] h-auto py-5 pl-14 pr-4 bg-white border-2 rounded-3xl relative">
+            <img src="https://readymadeui.com/team-5.webp" class="w-20 h-20 rounded-full absolute -left-10 top-0 bottom-0 my-auto border-2 border-gray-300" />
+
+            <div>
+              <h4 class="text-gray-800 font-light text-base">Mark Adair</h4>
+              <p class="mt-1  text-gray-500 font-light text-base">Government Official</p>
+            </div>
+
+            <div class="mt-4">
+              <p class="text-gray-800  font-light text-base leading-relaxed">NGU-Link Hub gave us insights, resources, and expertise, helping tackle urban challenges and improve citizens' quality of life.</p>
+            </div>
+
+            <div class="flex space-x-1 mt-4">
+              <svg class="w-4 fill-pink-600" viewBox="0 0 14 13" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M7 0L9.4687 3.60213L13.6574 4.83688L10.9944 8.29787L11.1145 12.6631L7 11.2L2.8855 12.6631L3.00556 8.29787L0.342604 4.83688L4.5313 3.60213L7 0Z" />
+              </svg>
+              <svg class="w-4 fill-pink-600" viewBox="0 0 14 13" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M7 0L9.4687 3.60213L13.6574 4.83688L10.9944 8.29787L11.1145 12.6631L7 11.2L2.8855 12.6631L3.00556 8.29787L0.342604 4.83688L4.5313 3.60213L7 0Z" />
+              </svg>
+              <svg class="w-4 fill-pink-600" viewBox="0 0 14 13" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M7 0L9.4687 3.60213L13.6574 4.83688L10.9944 8.29787L11.1145 12.6631L7 11.2L2.8855 12.6631L3.00556 8.29787L0.342604 4.83688L4.5313 3.60213L7 0Z" />
+              </svg>
+              <svg class="w-4 fill-pink-600" viewBox="0 0 14 13" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M7 0L9.4687 3.60213L13.6574 4.83688L10.9944 8.29787L11.1145 12.6631L7 11.2L2.8855 12.6631L3.00556 8.29787L0.342604 4.83688L4.5313 3.60213L7 0Z" />
+              </svg>
+              <svg class="w-4 fill-[#CED5D8]" viewBox="0 0 14 13" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M7 0L9.4687 3.60213L13.6574 4.83688L10.9944 8.29787L11.1145 12.6631L7 11.2L2.8855 12.6631L3.00556 8.29787L0.342604 4.83688L4.5313 3.60213L7 0Z" />
+              </svg>
+            </div>
+          </div>
+
+          <div class="max-w-[360px] h-auto py-5 pl-14 pr-4 bg-white border-2 rounded-3xl relative">
+            <img src="https://readymadeui.com/team-4.webp" class="w-20 h-20 rounded-full absolute -left-10 top-0 bottom-0 my-auto border-2 border-gray-300" />
+
+            <div>
+              <h4 class="text-gray-800 text-base font-light">Simon Konecki</h4>
+              <p class="mt-1  text-gray-500 font-light text-base">Technology Provider</p>
+            </div>
+
+            <div class="mt-4">
+              <p class="text-gray-800 font-light text-base leading-relaxed">NGU-Link Hub connected us with global city leaders, fostering collaboration, innovation, and showcasing our solutions worldwide.</p>
+            </div>
+
+            <div class="flex space-x-1 mt-4">
+              <svg class="w-4 fill-pink-600" viewBox="0 0 14 13" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M7 0L9.4687 3.60213L13.6574 4.83688L10.9944 8.29787L11.1145 12.6631L7 11.2L2.8855 12.6631L3.00556 8.29787L0.342604 4.83688L4.5313 3.60213L7 0Z" />
+              </svg>
+              <svg class="w-4 fill-pink-600" viewBox="0 0 14 13" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M7 0L9.4687 3.60213L13.6574 4.83688L10.9944 8.29787L11.1145 12.6631L7 11.2L2.8855 12.6631L3.00556 8.29787L0.342604 4.83688L4.5313 3.60213L7 0Z" />
+              </svg>
+              <svg class="w-4 fill-pink-600" viewBox="0 0 14 13" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M7 0L9.4687 3.60213L13.6574 4.83688L10.9944 8.29787L11.1145 12.6631L7 11.2L2.8855 12.6631L3.00556 8.29787L0.342604 4.83688L4.5313 3.60213L7 0Z" />
+              </svg>
+              <svg class="w-4 fill-pink-600" viewBox="0 0 14 13" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M7 0L9.4687 3.60213L13.6574 4.83688L10.9944 8.29787L11.1145 12.6631L7 11.2L2.8855 12.6631L3.00556 8.29787L0.342604 4.83688L4.5313 3.60213L7 0Z" />
+              </svg>
+              <svg class="w-4 fill-pink-600" viewBox="0 0 14 13" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M7 0L9.4687 3.60213L13.6574 4.83688L10.9944 8.29787L11.1145 12.6631L7 11.2L2.8855 12.6631L3.00556 8.29787L0.342604 4.83688L4.5313 3.60213L7 0Z" />
+              </svg>
+            </div>
+          </div>
         </div>
-        <form onSubmit={handleSubmitTestimonial} className="max-w-lg ml-16 mt-12">
-          <h3 className="text-3xl font-semibold mb-6 text-center">Share Your Testimonial</h3>
-          <div className="mb-4">
-            <label className="block text-sm font-medium text-gray-700">Name</label>
-            <input
-              type="text"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-              required
-              className="mt-1 p-2 block w-full border border-gray-300 rounded-md shadow-sm"
-            />
-          </div>
-          <div className="mb-4">
-            <label className="block text-sm font-medium text-gray-700">Email</label>
-            <input
-              type="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              required
-              className="mt-1 p-2 block w-full border border-gray-300 rounded-md shadow-sm"
-            />
-          </div>
-          <div className="mb-4">
-            <label className="block text-sm font-medium text-gray-700">Message</label>
-            <textarea
-              value={message}
-              onChange={(e) => setMessage(e.target.value)}
-              required
-              className="mt-1 p-2 block w-full border border-gray-300 rounded-md shadow-sm"
-            />
-          </div>
-          <div>
-            <button
-              type="submit"
-              className="py-3 px-6 bg-blue-600 text-white w-full rounded-lg"
-            >
-              Submit Testimonial
-            </button>
-          </div>
-        </form>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Testimonials;
+export default Testimonial

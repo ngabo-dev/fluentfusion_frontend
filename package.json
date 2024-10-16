@@ -1,5 +1,5 @@
 {
-  "name": "signs-app",
+  "name": "ngu_link_hub",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -17,6 +17,8 @@
     "animate.css": "^4.1.1",
     "axios": "^1.7.3",
     "firebase": "^10.5.2",
+    "flowbite": "^2.5.2",
+    "flowbite-react": "^0.10.2",
     "md5": "^2.3.0",
     "primeicons": "^6.0.1",
     "primereact": "^9.6.0",
