@@ -1,8 +1,9 @@
 # Node modules
 node_modules/
 
-# Ignore all MP4 files in the videos directory
+# Ignore all video files
 public/videos/*.mp4
+
 
 dist/
 build/
