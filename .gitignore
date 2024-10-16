@@ -1,6 +1,8 @@
 # Node modules
 node_modules/
 
+
+public/videos/*.mp4
 # Build output
 dist/
 build/
