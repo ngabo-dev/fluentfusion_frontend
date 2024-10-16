@@ -2,7 +2,10 @@
 node_modules/
 
 # Ignore all video files
-public/videos/*.mp4
+public/videos/vid9.mp4
+public/videos/vid4.mp4
+public/videos/vid8.mp4
+
 
 
 dist/
