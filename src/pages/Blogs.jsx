@@ -1,8 +1,10 @@
 import React from 'react'
+import EventShowcase from '../components/EventShowcase'
 
 const Blogs = () => {
   return (
     <>
+    <EventShowcase/>
       <div className="md:px-10 px-4 font-[sans-serif] py-48">
         <div className="max-w-5xl max-lg:max-w-3xl max-sm:max-w-sm mx-auto">
           {/* Events Section */}

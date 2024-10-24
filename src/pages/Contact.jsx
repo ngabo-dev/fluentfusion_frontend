@@ -39,7 +39,7 @@ const Contact = () => {
                   </div>
                   <a href="mailto:info@example.com" className="text-black text-sm ml-4">
                     <small className="block">Mail</small>
-                    <strong>info@example.com</strong>
+                    <strong>nextgenurbanlinkhub@gmail.com</strong>
                   </a>
                 </li>
               </ul>
@@ -49,7 +49,7 @@ const Contact = () => {
               <ul className="flex mt-4 space-x-4">
                 {/* Social Icons */}
                 <li className="bg-pink-600 h-10 w-10 rounded-full flex items-center justify-center shrink-0">
-                  <a href="javascript:void(0)">
+                  <a href="https://www.facebook.com/profile.php?id=100064515589711">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="20px"
@@ -62,7 +62,7 @@ const Contact = () => {
                   </a>
                 </li>
                 <li className="bg-pink-600 h-10 w-10 rounded-full flex items-center justify-center shrink-0">
-                  <a href="javascript:void(0)">
+                  <a href="https://www.linkedin.com/in/nextgen-urban-link-hub-380a87333/">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="20px"
@@ -74,19 +74,7 @@ const Contact = () => {
                     </svg>
                   </a>
                 </li>
-                <li className="bg-pink-600 h-10 w-10 rounded-full flex items-center justify-center shrink-0">
-                  <a href="javascript:void(0)">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="20px"
-                      height="20px"
-                      fill="#ffffff"
-                      viewBox="0 0 500 500"
-                    >
-                      <path d="M250 0c-138.497 0-250 111.503-250 250s111.503 250 250 250 250-111.503 250-250S388.497 0 250 0zm0 472c-122.262 0-222-99.738-222-222S127.738 28 250 28 472 127.738 472 250 372.262 472 250 472zm105.057-230.856c-12.953 18.673-30.932 29.308-52.057 29.308-37.758 0-63.813-28.837-63.813-68.444 0-39.831 26.002-67.716 63.064-67.716 16.886 0 31.895 5.959 43.84 17.178l-14.014 19.443c-6.811-8.622-17.891-13.736-29.84-13.736-19.211 0-31.829 15.245-31.829 35.982 0 20.553 12.462 35.125 31.059 35.125 18.537 0 29.404-12.661 32.163-19.658l-29.66-12.378c.946 17.642 12.135 29.918 29.068 29.918 9.898 0 16.76-4.153 21.928-10.82l-30.245-11.956c3.73 14.908 15.85 23.691 31.127 23.691 16.078 0 26.479-9.925 33.007-18.703l-.001-.002zm-127.731-41.455c-16.893 0-28.553-13.183-28.553-30.248 0-16.925 11.516-30.168 28.354-30.168 16.836 0 27.838 13.182 27.838 30.248 0 17.098-11.063 30.12-27.57 30.12z" />
-                    </svg>
-                  </a>
-                </li>
+
               </ul>
             </div>
           </div>

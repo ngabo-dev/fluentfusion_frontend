@@ -4,7 +4,7 @@ import "slick-carousel/slick/slick.css";
 
 const OurMission = () => {
   return (
-    <section className="px-24 py-24">
+    <section className=" py-24 px-2 md:px-12">
       <div className="container mx-auto px-4">
         <h2 className="text-5xl font-bold text-center py-10 mb-8 text-pink-600">Goals And Values</h2>
 

@@ -31,10 +31,10 @@ const Whatwedo = () => {
   }, []);
 
   return (
-    <div className="bg-white font-[sans-serif] py-12 px-4 md:px-12 overflow-x-hidden"> {/* Overflow-x hidden to prevent scroll */}
+    <div className="bg-white font-[sans-serif] py-12 px-4 md:px-12 overflow-x-hidden mt-[250px] sm:mt-[100px]"> {/* Adjust margin for small screens */}
       <div
         ref={sectionRef}
-        className="max-w-6xl mx-auto grid md:grid-cols-2 justify-center items-center gap-8 overflow-hidden" // Add overflow-hidden
+        className="max-w-6xl mx-auto grid md:grid-cols-2 justify-center items-center gap-8 overflow-hidden"
       >
         <div
           className={`p-4 ${
@@ -57,8 +57,8 @@ const Whatwedo = () => {
           }`}
         >
           <img
-            src="https://readymadeui.com/team-image.webp"
-            alt="Premium Benefits"
+            src="/smart City2.jpeg"
+            alt="what we do image"
             className="h-full w-full rounded-2xl object-cover"
           />
         </div>
