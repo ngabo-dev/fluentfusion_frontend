@@ -45,10 +45,7 @@ const Whatwedo = () => {
             What we do
           </h2>
           <p className="text-black text-base font-light leading-relaxed">
-            At our hub, we bring together urban planners, technology providers,
-            governments, Communities, and other stakeholders to share knowledge,
-            resources, and strategies for addressing next-generation urban
-            challenges.
+          NGU-Link Hub stands for Next Generation Urban Hub. It is an international hub based in Rwanda that brings together Urban planners, technology providers, governments, Communities and other stakeholders to share knowledge, resources, and strategies to address next-generation urban challenges. 
           </p>
         </div>
         <div

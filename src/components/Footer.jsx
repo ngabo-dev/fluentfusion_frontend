@@ -9,7 +9,7 @@ const Footer = () => {
           <div class="lg:col-span-2">
             <a href='javascript:void(0)'><img src="/logo.webp" alt="logo"
               class='w-20 rounded-full mb-8 ' /></a>
-            <p class="text-white text-sm">It is an international hub that brings together urban planners, technology providers, governments, communities, and other stakeholders to share knowledge, resources, and strategies to address next-generation urban challenges.</p>
+            <p class="text-white text-sm">NGU-Link Hub stands for <span className='text-pink-600 font-bold text-2xl'>N</span>ext <span className='text-pink-600 font-bold text-2xl'>G</span>eneration <span className='text-pink-600 font-bold text-2xl'>U</span>rban <span className='text-pink-600 font-bold text-2xl'>H</span>ub. It is an international hub based in Rwanda that brings together Urban planners, technology providers, governments, Communities and other stakeholders to share knowledge, resources, and strategies to address next-generation urban challenges. </p>
           </div>
 
           <div>
@@ -59,9 +59,9 @@ const Footer = () => {
           <div>
             <h4 class="text-lg font-semibold mb-8 text-white">Contact Us</h4>
             <div class="space-y-4">
-              <p class="text-white text-sm">123 Street, City Name</p>
-              <p class="text-white text-sm">contact@example.com</p>
-              <p class="text-white text-sm">+1 234 567 890</p>
+              <p class="text-white text-sm">Street: KK 700 st 19</p>
+              <p class="text-white text-sm">nextgenurbanlinkhub@gmail.com </p>
+              <p class="text-white text-sm">+250786169592 </p>
             </div>
           </div>
 

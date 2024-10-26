@@ -41,6 +41,7 @@ const Fellowships = () => {
                 type="text"
                 placeholder="Enter your full name"
                 className="w-full rounded-md py-2.5 px-4 border border-gray-300 text-sm outline-pink-600"
+                required
               />
             </div>
             <div>
@@ -49,6 +50,7 @@ const Fellowships = () => {
                 type="email"
                 placeholder="Enter your email"
                 className="w-full rounded-md py-2.5 px-4 border border-gray-300 text-sm outline-pink-600"
+                required
               />
             </div>
             <div>
@@ -58,6 +60,7 @@ const Fellowships = () => {
                 value={phone}
                 onChange={handlePhoneChange}
                 inputClass="!w-full !rounded-md !py-2.5 !px-4 !border !border-gray-300 !text-sm !outline-pink-600"
+                required
               />
             </div>
             <div>
@@ -66,6 +69,7 @@ const Fellowships = () => {
                 value={country}
                 onChange={handleCountryChange}
                 className="w-full rounded-md py-2.5 px-4 border border-gray-300 text-sm outline-pink-600"
+                required
               >
                 <option value="">Select your country</option>
                 {countries.map((country) => (
@@ -81,6 +85,7 @@ const Fellowships = () => {
                 type="text"
                 placeholder="Enter your level of education"
                 className="w-full rounded-md py-2.5 px-4 border border-gray-300 text-sm outline-pink-600"
+                required
               />
             </div>
             <div>
@@ -89,6 +94,7 @@ const Fellowships = () => {
                 type="text"
                 placeholder="Enter your field of education"
                 className="w-full rounded-md py-2.5 px-4 border border-gray-300 text-sm outline-pink-600"
+                required
               />
             </div>
             <div>
@@ -97,6 +103,7 @@ const Fellowships = () => {
                 type="text"
                 placeholder="Enter your work organisation or university"
                 className="w-full rounded-md py-2.5 px-4 border border-gray-300 text-sm outline-pink-600"
+                required
               />
             </div>
             <div>
@@ -120,6 +127,7 @@ const Fellowships = () => {
               <input
                 type="file"
                 className="w-full rounded-md py-2.5 px-4 border border-gray-300 text-sm outline-pink-600"
+                required
               />
             </div>
             <div>
@@ -127,11 +135,12 @@ const Fellowships = () => {
               <input
                 type="file"
                 className="w-full rounded-md py-2.5 px-4 border border-gray-300 text-sm outline-pink-600"
+                required
               />
             </div>
 
             <button
-              type="button"
+              type="submit"
               className="text-white w-max bg-pink-600 hover:bg-pink-600 tracking-wide rounded-md text-sm px-6 py-3 mt-4"
             >
               <svg

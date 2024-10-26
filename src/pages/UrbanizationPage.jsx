@@ -24,8 +24,8 @@ const UrbanizationPage = () => {
           <div className="mt-4 md:ml-8 md:mt-0">
             <h2 className="text-3xl font-bold text-green-600">Green Urbanization</h2>
             <p className="text-lg text-black mt-4">
-              Green urbanization focuses on integrating nature into urban environments through sustainable practices such as
-              green buildings, parks, and eco-friendly urban design.
+            Integration of ecological considerations into urban planning, construction, and management, aiming to the carbon footprint of cities, improving environmental health, and making urban areas more resilient to the impacts of climate change while improving the quality of life for residents. Green urbanization is more about: 
+            <span className="font-bold">Sustainable Building Practices,Green spaces,sustainable transportation,energy  efficiency,Water and Waste Management,Resilience to Climate Change and Urban Farming and Local Food Systems</span>
             </p>
           </div>
         </div>
@@ -38,8 +38,8 @@ const UrbanizationPage = () => {
           <div className="mt-4 md:ml-8 md:mt-0">
             <h2 className="text-3xl font-bold text-pink-600">Smart City Technologies</h2>
             <p className="text-lg text-black mt-4">
-              Smart cities use technology to enhance urban services and improve quality of life for residents through innovations
-              in infrastructure, energy efficiency, and connectivity.
+            A range of advanced tools, systems, and innovations that enhance the efficiency, sustainability, and livability of urban areas by integrating digital technology into infrastructure, services, and management. Most technology are:
+            <span className="font-bold">IoT Sensors,smart street lighting,digital payment systems,smart homes,home automation systems,city-wide Wi-Fi,5G Networks,Urban Dashboards,Predictive Analytics,surviellance systems,smart bins,smart water management,E-Government platforms,smart grids,smart meters,Traffic management systems,Autonomous Vehicles and Ride-Sharing and Mobility</span>
             </p>
           </div>
           <img src='/smart City.jpeg' alt="Smart City Technologies" className="w-96 h-96 md:w-1/2 rounded-lg shadow-lg" />
@@ -48,12 +48,12 @@ const UrbanizationPage = () => {
 
       <section className="p-8 " id="urban-resilient">
         <div className="flex flex-col md:flex-row items-center">
-          <img src='env.jpg' alt="Urban Resilient" className="w-full h-96 md:w-1/2 rounded-lg shadow-lg" />
+          <img src='resi.jpg' alt="Urban Resilient" className="w-full h-96 md:w-full rounded-lg shadow-lg" />
           <div className="mt-4 md:ml-8 md:mt-0">
             <h2 className="text-3xl font-bold text-green-600">Urban Resilient</h2>
             <p className="text-lg text-black mt-4">
-              Urban resilience involves designing cities to withstand and recover from challenges such as climate change, natural
-              disasters, and social inequities.
+            A city which is able to absorb, recover from, and adapt to various shocks and stresses whether environmental, social, or economic while maintaining its essential functions and ensuring the well-being of its inhabitants. Through effective:
+            <span className="font-bold">Disaster Preparedness and Recovery,Climate Change Adaptation,Economic Resilience,Social Resilience,Infrastructure Resilience and Community Engagement</span>
             </p>
           </div>
         </div>
@@ -65,8 +65,8 @@ const UrbanizationPage = () => {
           <div className="mt-4 md:ml-8 md:mt-0">
             <h2 className="text-3xl font-bold text-pink-600">Urban Agriculture</h2>
             <p className="text-lg text-black mt-4">
-              Urban agriculture refers to growing and producing food in urban areas, helping cities become more self-sufficient and
-              reducing their carbon footprint.
+            The practice of growing, processing, and distributing food within urban areas or cities through a wide variety of food production activities, such as growing fruits, vegetables, and herbs; raising livestock like chickens and fish; and producing non-food items like flowers and ornamental plants. Urban agriculture can take place in various forms including:
+            <spn className='font-bold'>Community Gardens,Rooftop Farming,Vertical Farming,Backyard Gardens,Hydroponics and Aquaponics and Livestock and Poultry Farming</spn>
             </p>
           </div>
           <img src='/Urban agriculture1.jpeg' alt="Urban Agriculture" className="w-full h-96 md:w-1/2 rounded-lg shadow-lg" />
@@ -79,8 +79,7 @@ const UrbanizationPage = () => {
           <div className="mt-4 md:ml-8 md:mt-0">
             <h2 className="text-3xl font-bold text-green-600">Urban Heritage</h2>
             <p className="text-lg text-black mt-4">
-              Urban heritage preserves the cultural, historical, and architectural legacy of cities while promoting sustainable
-              development that respects the past.
+            The cultural, architectural, historical, and social assets within urban environments that hold significance for a city's identity and legacy. These assets include structures that reflect significant historical periods, architectural styles, or cultural movements, such as ancient temples, colonial buildings, industrial-era factories, statues, memorials, and landmarks that commemorate historical events or figures and contribute to the city's cultural narrative. It is also including the events that reflect the city’s history, diversity, and community spirit, such as annual parades, religious festivals, or national holidays.  Urban heritage plays a crucial role in shaping the character of cities and maintaining their historical continuity while promoting cultural diversity.
             </p>
           </div>
         </div>
@@ -92,11 +91,16 @@ const UrbanizationPage = () => {
           <div className="mt-4 md:ml-8 md:mt-0">
             <h2 className="text-3xl font-bold text-pink-600">Transportation</h2>
             <p className="text-lg text-black mt-4">
-              Transportation planning focuses on sustainable mobility solutions to reduce congestion, lower emissions, and create
-              efficient urban transit systems.
+            The systems and infrastructure that facilitate the movement of people,<br></br>
+            goods, and services within urban areas, such as cities and towns. It <br></br>
+            includes a range of modes and networks designed to meet the transportation<br></br>
+            needs of urban populations efficiently, safely, and sustainably such as public <br></br>
+            transit (Buses, Trams & light rail, subways/metros, feries, etc), Private Vehicles<br></br>
+            (Cars, motorcycles and scooters), Non-Motorized Transport (bicycles and walking), <br></br>
+            Ride-Sharing and On-Demand Services (Taxis, Ride-Hailing 
             </p>
           </div>
-          <img src='/Transportation 1.jpeg' alt="Transportation" className="w-full h-96 md:w-1/2 rounded-lg shadow-lg" />
+          <img src='/train.jpg' alt="Transportation" className="w-full h-96 md:w-1/2 rounded-lg shadow-lg" />
         </div>
       </section>
     </div>
