@@ -1,27 +1,29 @@
-import React from 'react';
+import React from "react";
 
 const Contact = () => {
   return (
     <div className="py-12 md:py-48 px-4 md:px-8 flex flex-col md:flex-row justify-between items-start">
       {/* Map */}
       <iframe
-        src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d15949.878263588562!2d30.146559999999994!3d-1.9660799999999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2srw!4v1729935903676!5m2!1sen!2srw"
-        width="600"
-        height="450"
+        src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d15950.022021294664!2d30.14444191429443!3d-1.950978579612319!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2srw!4v1682023997371!5m2!1sen!2srw"
         style={{ border: 0 }}
-        allowFullScreen=""
+        title="map"
+        allowfullscreen=""
         loading="lazy"
-        referrerPolicy="no-referrer-when-downgrade"
-        title="Google Map"
+        referrerpolicy="no-referrer-when-downgrade"
+        className="h-full w-full"
       ></iframe>
 
       {/* Contact Information */}
       <div className="mt-6 md:mt-0 bg-white p-6 md:p-8 shadow-md rounded-lg border max-w-md mx-auto">
         <div className="grid gap-8">
           <div>
-            <h1 className="text-gray-800 text-3xl font-extrabold">Let's Talk</h1>
+            <h1 className="text-gray-800 text-3xl font-extrabold">
+              Let's Talk
+            </h1>
             <p className="text-sm text-gray-500 mt-4">
-              Have some big idea or brand to develop and need help? Then reach out—we'd love to hear about your project and provide help.
+              Have some big idea or brand to develop and need help? Then reach
+              out—we'd love to hear about your project and provide help.
             </p>
             <div className="mt-12">
               <h2 className="text-gray-800 text-base font-bold">Email</h2>
@@ -39,7 +41,10 @@ const Contact = () => {
                       <path d="M434.146 59.882H44.912C20.146 59.882 0 80.028 0 104.794v269.47c0 24.766 20.146 44.912 44.912 44.912h389.234c24.766 0 44.912-20.146 44.912-44.912v-269.47c0-24.766-20.146-44.912-44.912-44.912zm0 29.941c2.034 0 3.969.422 5.738 1.159L239.529 264.631 39.173 90.982a14.902 14.902 0 0 1 5.738-1.159zm0 299.411H44.912c-8.26 0-14.971-6.71-14.971-14.971V122.615l199.778 173.141c2.822 2.441 6.316 3.655 9.81 3.655s6.988-1.213 9.81-3.655l199.778-173.141v251.649c-.001 8.26-6.711 14.97-14.971 14.97z" />
                     </svg>
                   </div>
-                  <a href="mailto:nextgenurbanlinkhub@gmail.com" className="text-black text-sm ml-4">
+                  <a
+                    href="mailto:nextgenurbanlinkhub@gmail.com"
+                    className="text-black text-sm ml-4"
+                  >
                     <small className="block">Mail</small>
                     <strong>nextgenurbanlinkhub@gmail.com</strong>
                   </a>
@@ -87,7 +92,7 @@ const Contact = () => {
                       fill="#ffffff"
                       viewBox="0 0 24 24"
                     >
-                      <path d="M24 4.556a9.998 9.998 0 0 1-2.857.781 4.94 4.94 0 0 0 2.165-2.724 10.001 10.001 0 0 1-3.127 1.195 4.934 4.934 0 0 0-8.394 4.498 13.99 13.99 0 0 1-10.164-5.165 4.935 4.935 0 0 0 1.53 6.572A4.909 4.909 0 0 1 .96 8.785v.061a4.934 4.934 0 0 0 3.95 4.828 4.923 4.923 0 0 1-2.225.084 4.935 4.935 0 0 0 4.604 3.419 9.89 9.89 0 0 1-6.13 2.107c-.399 0-.79-.023-1.174-.067A13.973 13.973 0 0 0 7.548 21c9.057 0 14.012-7.502 14.012-14.006 0-.213-.005-.426-.014-.637a10.024 10.024 0 0 0 2.464-2.56z"/>
+                      <path d="M24 4.556a9.998 9.998 0 0 1-2.857.781 4.94 4.94 0 0 0 2.165-2.724 10.001 10.001 0 0 1-3.127 1.195 4.934 4.934 0 0 0-8.394 4.498 13.99 13.99 0 0 1-10.164-5.165 4.935 4.935 0 0 0 1.53 6.572A4.909 4.909 0 0 1 .96 8.785v.061a4.934 4.934 0 0 0 3.95 4.828 4.923 4.923 0 0 1-2.225.084 4.935 4.935 0 0 0 4.604 3.419 9.89 9.89 0 0 1-6.13 2.107c-.399 0-.79-.023-1.174-.067A13.973 13.973 0 0 0 7.548 21c9.057 0 14.012-7.502 14.012-14.006 0-.213-.005-.426-.014-.637a10.024 10.024 0 0 0 2.464-2.56z" />
                     </svg>
                   </a>
                 </li>
