@@ -48,13 +48,13 @@ const Navbar = () => {
           <Link to="/" className={`link text-black font-semibold text-lg mx-3 ${active === "home" ? "text-green-600" : ""}`} onClick={() => changePage("home")}>
             Homepage
           </Link>
-          <Link to="/aboutme" className={`link text-black font-semibold text-lg mx-3 ${active === "lessons" ? "text-green-600" : ""}`} onClick={() => changePage("lessons")}>
+          <Link to="/aboutme" className={`link text-black font-semibold text-lg mx-3 ${active === "aboutme" ? "text-green-600" : ""}`} onClick={() => changePage("aboutme")}>
             About Us
           </Link>
 
           {/* Area of Interest dropdown */}
           <div className="relative" onMouseEnter={() => setIsDropdownVisible(true)} onMouseLeave={() => setIsDropdownVisible(false)}>
-            <button className={`link text-black font-semibold text-lg mx-3 flex items-center ${active === "games" ? "text-green-600" : ""}`}>
+            <button className={`link text-black font-semibold text-lg mx-3 flex items-center ${active === "areaofinterest" ? "text-green-600" : ""}`}>
               Area of Interest
               <FontAwesomeIcon icon={faChevronDown} className="ml-2" />
             </button>
@@ -68,6 +68,9 @@ const Navbar = () => {
                 </Link>
                 <Link to="/urbanization" className="block text-white py-2 px-4 hover:bg-green-700" onClick={() => changePage("urbanization")}>
                   Urbanization
+                </Link>
+                <Link to="/education" className="block text-white py-2 px-4 hover:bg-green-700" onClick={() => changePage("education")}>
+                  Education & Research
                 </Link>
               </div>
             )}
@@ -115,7 +118,7 @@ const Navbar = () => {
             )}
           </div>
 
-          <Link to="/blogs" className={`link font-semibold text-lg mx-3 ${active === "contact" ? "text-green-600 underline" : ""}`} onClick={() => changePage("contact")}>
+          <Link to="/blogs" className={`link font-semibold text-lg mx-3 ${active === "event" ? "text-green-600 underline" : ""}`} onClick={() => changePage("event")}>
             Event & News
           </Link>
           <Link to="/fellowship" className={`link font-semibold text-lg mx-3 ${active === "fellowship" ? "text-green-600" : ""}`} onClick={() => changePage("fellowship")}>
@@ -125,7 +128,7 @@ const Navbar = () => {
       </div>
 
       <div className="hidden md:block">
-        <a href="/contact">
+        <a href="/contact" className={`link font-semibold text-lg mx-3 ${active === "contact" ? "text-green-600" : ""}`} onClick={() => changePage("contact")}>
           <button className="px-10 py-2 bg-pink-600 text-white rounded hover:bg-pink-700 transition duration-300">
             Contact us
           </button>

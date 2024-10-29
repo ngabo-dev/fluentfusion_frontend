@@ -25,6 +25,7 @@ import Gis from './pages/Gis';
 import EventPlanning from './pages/Eventplanning';
 import Partners from './components/Partners';
 import EventShowcase from './components/EventShowcase';
+import EducationResearch from './pages/EducationResearch';
 
 
 function App() {
@@ -53,6 +54,7 @@ function App() {
           <Route path="/partners" element={<Partners/>} />
           <Route path="/eventPlanning" element={<EventPlanning/>} />
           <Route path="/eventshowcase" element={<EventShowcase/>} />
+          <Route path="/education" element={<EducationResearch/>} />
 
           <Route path="*" element={'404 - Page not found! 👹'} />
         </Routes>
