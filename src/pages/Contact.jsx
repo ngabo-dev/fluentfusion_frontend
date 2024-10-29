@@ -4,7 +4,7 @@ const Contact = () => {
   return (
     <div className="py-12 md:py-48 px-4 md:px-8 flex flex-col md:flex-row justify-between items-start">
       {/* Map */}
-      {/* <iframe
+      <iframe
         src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d15949.878263588562!2d30.146559999999994!3d-1.9660799999999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2srw!4v1729935903676!5m2!1sen!2srw"
         width="600"
         height="450"
@@ -13,7 +13,7 @@ const Contact = () => {
         loading="lazy"
         referrerPolicy="no-referrer-when-downgrade"
         title="Google Map"
-      ></iframe> */}
+      ></iframe>
 
       {/* Contact Information */}
       <div className="mt-6 md:mt-0 bg-white p-6 md:p-8 shadow-md rounded-lg border max-w-md mx-auto">
