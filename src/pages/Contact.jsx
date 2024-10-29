@@ -79,7 +79,7 @@ const Contact = () => {
                 </li>
                 {/* Twitter Icon */}
                 <li className="bg-pink-600 h-10 w-10 rounded-full flex items-center justify-center shrink-0">
-                  <a href="https://twitter.com/yourprofile">
+                  <a href="https://x.com/NGULinkHub?t=g_2HGF66R3lTPSxzPQn5xQ&s=09">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="20px"
@@ -93,7 +93,7 @@ const Contact = () => {
                 </li>
                 {/* Instagram Icon */}
                 <li className="bg-pink-600 h-10 w-10 rounded-full flex items-center justify-center shrink-0">
-                  <a href="https://instagram.com/yourprofile">
+                  <a href="https://www.linkedin.com/in/nextgen-urban-link-hub-516358227/">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="20px"
