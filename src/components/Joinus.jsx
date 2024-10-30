@@ -28,7 +28,7 @@ const Joinus = () => {
   return (
     <div
       ref={sectionRef}
-      className="bg-green-900 font-[sans-serif] mx-4 sm:mx-20 px-6"
+      className="bg-emerald-800 font-[sans-serif] mx-4 sm:mx-20 px-6"
     >
       <div className="grid md:grid-cols-2 items-center gap-10 max-w-5xl max-md:max-w-md mx-auto">
         {/* Image section */}

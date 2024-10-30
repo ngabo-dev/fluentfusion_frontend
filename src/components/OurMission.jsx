@@ -10,7 +10,7 @@ const OurMission = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
 
-          <div className="bg-green-900 p-6 border border-gray-200 rounded-lg shadow-md animate__animated animate__fadeInUp">
+          <div className="bg-emerald-800 p-6 border border-gray-200 rounded-lg shadow-md animate__animated animate__fadeInUp">
             <div className='border-4 border-white rounded-full w-20 text-center h-20'>
               <span className='text-5xl font-bold text-white p-3.5'>1</span>
             </div>
@@ -20,7 +20,7 @@ const OurMission = () => {
             </p>
           </div>
 
-          <div className="bg-green-900 p-6 border border-gray-200 rounded-lg shadow-md animate__animated animate__fadeInUp">
+          <div className="bg-emerald-800 p-6 border border-gray-200 rounded-lg shadow-md animate__animated animate__fadeInUp">
             <div className='border-4 border-white rounded-full w-20 text-center h-20'>
               <span className='text-5xl font-bold text-white p-3.5'>2</span>
             </div>
@@ -54,7 +54,7 @@ const OurMission = () => {
 
           </div>
 
-          <div className="bg-green-900 p-6 border border-gray-200 rounded-lg shadow-md animate__animated animate__fadeInUp">
+          <div className="bg-emerald-800 p-6 border border-gray-200 rounded-lg shadow-md animate__animated animate__fadeInUp">
             <div className='border-4 border-white rounded-full w-20 text-center h-20'>
               <span className='text-5xl font-bold text-white py-12'>3</span>
             </div>
@@ -88,7 +88,7 @@ const OurMission = () => {
 
           </div>
 
-          <div className="bg-green-900 p-6 border border-gray-200 rounded-lg shadow-md animate__animated animate__fadeInUp">
+          <div className="bg-emerald-800 p-6 border border-gray-200 rounded-lg shadow-md animate__animated animate__fadeInUp">
             <div className='border-4 border-white rounded-full w-20 text-center h-20'>
               <span className='text-5xl font-bold text-white py-12'>4</span>
             </div>
