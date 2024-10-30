@@ -126,19 +126,13 @@ const Navbar = () => {
           </Link>
 
           {/* Add Contact Link Here for Mobile */}
-          <Link to="/contact" className={`link font-semibold text-lg mx-3 ${active === "contact" ? "text-green-600" : ""}`} onClick={() => changePage("contact")}>
+          <Link to="/contact" className={`link font-semibold text-lg  px-4 py-2 bg-pink-600 text-white rounded hover:bg-pink-700 transition ${active === "contact" ? "text-green-600" : ""}`} onClick={() => changePage("contact")}>
             Contact Us
           </Link>
         </div>
       </div>
 
-      <div className="hidden md:block">
-        <Link to="/contact" className={`link font-semibold text-lg mx-3 ${active === "contact" ? "text-green-600" : ""}`} onClick={() => changePage("contact")}>
-          <span className="px-10 py-2 bg-pink-600 text-white rounded hover:bg-pink-700 transition duration-300">
-            Contact us
-          </span>
-        </Link>
-      </div>
+
 
       <button className="md:hidden text-3xl text-pink-600" onClick={toggleNav}>
         {isNavVisible ? <FontAwesomeIcon icon={faTimes} /> : <FontAwesomeIcon icon={faBars} />}
