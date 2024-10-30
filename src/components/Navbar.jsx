@@ -129,9 +129,9 @@ const Navbar = () => {
 
       <div className="hidden md:block">
         <a href="/contact" className={`link font-semibold text-lg mx-3 ${active === "contact" ? "text-green-600" : ""}`} onClick={() => changePage("contact")}>
-          <button className="px-10 py-2 bg-pink-600 text-white rounded hover:bg-pink-700 transition duration-300">
+          <span className="px-10 py-2 bg-pink-600 text-white rounded hover:bg-pink-700 transition duration-300">
             Contact us
-          </button>
+          </span>
         </a>
       </div>
 
