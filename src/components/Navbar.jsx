@@ -1,18 +1,13 @@
 import { useState, useEffect, useCallback } from "react";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faBars,
-  faTimes,
-  faChevronDown,
-} from "@fortawesome/free-solid-svg-icons";
+import { faBars, faTimes, faChevronDown } from "@fortawesome/free-solid-svg-icons";
 
 const Navbar = () => {
   const [active, setActive] = useState("home");
   const [isNavVisible, setIsNavVisible] = useState(false);
   const [isDropdownVisible, setIsDropdownVisible] = useState(false);
-  const [isConsultancyDropdownVisible, setIsConsultancyDropdownVisible] =
-    useState(false);
+  const [isConsultancyDropdownVisible, setIsConsultancyDropdownVisible] = useState(false);
 
   const changePage = useCallback((nav) => {
     setActive(nav);
@@ -48,73 +43,33 @@ const Navbar = () => {
         <img src="/logo.webp" alt="logo" className="w-12 rounded-full" />
       </div>
 
-      <div
-        className={`absolute left-0 top-16 w-full bg-white md:static md:flex md:w-auto ${
-          isNavVisible ? "block" : "hidden"
-        } md:block`}
-      >
+      <div className={`absolute left-0 top-16 w-full bg-white md:static md:flex md:w-auto ${isNavVisible ? "block" : "hidden"} md:block`}>
         <div className="flex flex-col md:flex-row md:items-center">
-          <Link
-            to="/"
-            className={`link text-black font-semibold text-lg mx-3 ${
-              active === "home" ? "text-green-600" : ""
-            }`}
-            onClick={() => changePage("home")}
-          >
+          <Link to="/" className={`link text-black font-semibold text-lg mx-3 ${active === "home" ? "text-green-600" : ""}`} onClick={() => changePage("home")}>
             Homepage
           </Link>
-          <Link
-            to="/aboutme"
-            className={`link text-black font-semibold text-lg mx-3 ${
-              active === "aboutme" ? "text-green-600" : ""
-            }`}
-            onClick={() => changePage("aboutme")}
-          >
+          <Link to="/aboutme" className={`link text-black font-semibold text-lg mx-3 ${active === "aboutme" ? "text-green-600" : ""}`} onClick={() => changePage("aboutme")}>
             About Us
           </Link>
 
           {/* Area of Interest dropdown */}
-          <div
-            className="relative"
-            onMouseEnter={() => setIsDropdownVisible(true)}
-            onMouseLeave={() => setIsDropdownVisible(false)}
-          >
-            <button
-              className={`link text-black font-semibold text-lg mx-3 flex items-center ${
-                active === "areaofinterest" ? "text-green-600" : ""
-              }`}
-            >
+          <div className="relative" onMouseEnter={() => setIsDropdownVisible(true)} onMouseLeave={() => setIsDropdownVisible(false)}>
+            <button className={`link text-black font-semibold text-lg mx-3 flex items-center ${active === "areaofinterest" ? "text-green-600" : ""}`}>
               Area of Interest
               <FontAwesomeIcon icon={faChevronDown} className="ml-2" />
             </button>
             {isDropdownVisible && (
               <div className="absolute bg-green-900 w-full md:w-96 shadow-lg mt-1 rounded z-50">
-                <Link
-                  to="/environment"
-                  className="block text-white py-2 px-4 hover:bg-green-700"
-                  onClick={() => changePage("environment")}
-                >
+                <Link to="/environment" className="block text-white py-2 px-4 hover:bg-green-700" onClick={() => changePage("environment")}>
                   Environment
                 </Link>
-                <Link
-                  to="/communities"
-                  className="block text-white py-2 px-4 hover:bg-green-700"
-                  onClick={() => changePage("sustainability")}
-                >
+                <Link to="/communities" className="block text-white py-2 px-4 hover:bg-green-700" onClick={() => changePage("sustainability")}>
                   Communities
                 </Link>
-                <Link
-                  to="/urbanization"
-                  className="block text-white py-2 px-4 hover:bg-green-700"
-                  onClick={() => changePage("urbanization")}
-                >
+                <Link to="/urbanization" className="block text-white py-2 px-4 hover:bg-green-700" onClick={() => changePage("urbanization")}>
                   Urbanization
                 </Link>
-                <Link
-                  to="/education"
-                  className="block text-white py-2 px-4 hover:bg-green-700"
-                  onClick={() => changePage("education")}
-                >
+                <Link to="/education" className="block text-white py-2 px-4 hover:bg-green-700" onClick={() => changePage("education")}>
                   Education & Research
                 </Link>
               </div>
@@ -122,139 +77,63 @@ const Navbar = () => {
           </div>
 
           {/* Consultancy dropdown */}
-          <div
-            className="relative"
-            onMouseEnter={() => setIsConsultancyDropdownVisible(true)}
-            onMouseLeave={() => setIsConsultancyDropdownVisible(false)}
-          >
-            <button
-              className={`link text-black font-semibold text-lg mx-3 flex items-center ${
-                active === "consultancy" ? "text-green-600" : ""
-              }`}
-            >
+          <div className="relative" onMouseEnter={() => setIsConsultancyDropdownVisible(true)} onMouseLeave={() => setIsConsultancyDropdownVisible(false)}>
+            <button className={`link text-black font-semibold text-lg mx-3 flex items-center ${active === "consultancy" ? "text-green-600" : ""}`}>
               Consultancy
               <FontAwesomeIcon icon={faChevronDown} className="ml-2" />
             </button>
             {isConsultancyDropdownVisible && (
               <div className="absolute bg-green-900 text-white w-full md:w-96 shadow-lg mt-1 rounded z-50">
-                <Link
-                  to="/landuse"
-                  className="block py-2 px-4 hover:bg-green-700"
-                  onClick={() => changePage("landuse")}
-                >
+                <Link to="/landuse" className="block py-2 px-4 hover:bg-green-700" onClick={() => changePage("landuse")}>
                   Land Use Planning/Zoning Plans
                 </Link>
-                <Link
-                  to="/detailed"
-                  className="block py-2 px-4 hover:bg-green-700"
-                  onClick={() => changePage("physicalplans")}
-                >
+                <Link to="/detailed" className="block py-2 px-4 hover:bg-green-700" onClick={() => changePage("physicalplans")}>
                   Detailed Physical Plans
                 </Link>
-                <Link
-                  to="/swot"
-                  className="block py-2 px-4 hover:bg-green-700"
-                  onClick={() => changePage("swotvision")}
-                >
+                <Link to="/swot" className="block py-2 px-4 hover:bg-green-700" onClick={() => changePage("swotvision")}>
                   Spatial SWOT, Visioning and Goal Settings
                 </Link>
-                <Link
-                  to="/transportation"
-                  className="block py-2 px-4 hover:bg-green-700"
-                  onClick={() => changePage("transportplanning")}
-                >
+                <Link to="/transportation" className="block py-2 px-4 hover:bg-green-700" onClick={() => changePage("transportplanning")}>
                   Transportation Planning
                 </Link>
-                <Link
-                  to="/environmentalPlanning"
-                  className="block py-2 px-4 hover:bg-green-700"
-                  onClick={() => changePage("environmentalplanning")}
-                >
+                <Link to="/environmentalPlanning" className="block py-2 px-4 hover:bg-green-700" onClick={() => changePage("environmentalplanning")}>
                   Environmental Planning and Modeling
                 </Link>
-                <Link
-                  to="/disasters"
-                  className="block py-2 px-4 hover:bg-green-700"
-                  onClick={() => changePage("disasterplanning")}
-                >
+                <Link to="/disasters" className="block py-2 px-4 hover:bg-green-700" onClick={() => changePage("disasterplanning")}>
                   Disaster Risk Reduction and Resilience Planning
                 </Link>
-                <Link
-                  to="/capacitybuilding"
-                  className="block py-2 px-4 hover:bg-green-700"
-                  onClick={() => changePage("capacitybuilding")}
-                >
+                <Link to="/capacitybuilding" className="block py-2 px-4 hover:bg-green-700" onClick={() => changePage("capacitybuilding")}>
                   Capacity Building and Training
                 </Link>
-                <Link
-                  to="/smartcity"
-                  className="block py-2 px-4 hover:bg-green-700"
-                  onClick={() => changePage("smartcity")}
-                >
+                <Link to="/smartcity" className="block py-2 px-4 hover:bg-green-700" onClick={() => changePage("smartcity")}>
                   Green & Smart City Solutions
                 </Link>
-                <Link
-                  to="/gis"
-                  className="block py-2 px-4 hover:bg-green-700"
-                  onClick={() => changePage("gis")}
-                >
+                <Link to="/gis" className="block py-2 px-4 hover:bg-green-700" onClick={() => changePage("gis")}>
                   Geo-spatial Technology (GIS) Services
                 </Link>
-                <Link
-                  to="/eventPlanning"
-                  className="block py-2 px-4 hover:bg-green-700"
-                  onClick={() => changePage("events")}
-                >
+                <Link to="/eventPlanning" className="block py-2 px-4 hover:bg-green-700" onClick={() => changePage("events")}>
                   Organizing and Hosting Urban Planning Events
                 </Link>
               </div>
             )}
           </div>
 
-          <Link
-            to="/blogs"
-            className={`link font-semibold text-lg mx-3 ${
-              active === "event" ? "text-green-600 underline" : ""
-            }`}
-            onClick={() => changePage("event")}
-          >
+          <Link to="/blogs" className={`link font-semibold text-lg mx-3 ${active === "event" ? "text-green-600 underline" : ""}`} onClick={() => changePage("event")}>
             Event & News
           </Link>
-          <Link
-            to="/fellowship"
-            className={`link font-semibold text-lg mx-3 ${
-              active === "fellowship" ? "text-green-600" : ""
-            }`}
-            onClick={() => changePage("fellowship")}
-          >
+          <Link to="/fellowship" className={`link font-semibold text-lg mx-3 ${active === "fellowship" ? "text-green-600" : ""}`} onClick={() => changePage("fellowship")}>
             Fellowship
           </Link>
 
           {/* Add Contact Link Here for Mobile */}
-          <div className="mt-4">
-            <Link
-              to="/contact"
-              className={`link font-semibold text-lg mx-3 ${
-                active === "contact" ? "text-green-600" : ""
-              }`}
-              onClick={() => changePage("contact")}
-            >
-              <span className="px-10 py-2 bg-pink-600 text-white rounded hover:bg-pink-700 transition duration-300">
-                Contact us
-              </span>
-            </Link>
-          </div>
+          <Link to="/contact" className={`link font-semibold text-lg mx-3 ${active === "contact" ? "text-green-600" : ""}`} onClick={() => changePage("contact")}>
+            Contact Us
+          </Link>
         </div>
       </div>
 
       <div className="hidden md:block">
-        <Link
-          to="/contact"
-          className={`link font-semibold text-lg mx-3 ${
-            active === "contact" ? "text-green-600" : ""
-          }`}
-          onClick={() => changePage("contact")}
-        >
+        <Link to="/contact" className={`link font-semibold text-lg mx-3 ${active === "contact" ? "text-green-600" : ""}`} onClick={() => changePage("contact")}>
           <span className="px-10 py-2 bg-pink-600 text-white rounded hover:bg-pink-700 transition duration-300">
             Contact us
           </span>
@@ -262,11 +141,7 @@ const Navbar = () => {
       </div>
 
       <button className="md:hidden text-3xl text-pink-600" onClick={toggleNav}>
-        {isNavVisible ? (
-          <FontAwesomeIcon icon={faTimes} />
-        ) : (
-          <FontAwesomeIcon icon={faBars} />
-        )}
+        {isNavVisible ? <FontAwesomeIcon icon={faTimes} /> : <FontAwesomeIcon icon={faBars} />}
       </button>
     </nav>
   );
