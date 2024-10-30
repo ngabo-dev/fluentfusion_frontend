@@ -63,14 +63,7 @@ const Landuse = () => {
             Land Use Planning/Zoning Plans
           </h2>
           <p className="text-black text-base font-light leading-relaxed">
-            Our approach to Land Use Planning includes:
-            <ul className="list-disc pl-5 mt-2">
-              <li>Assessment of Land Resources</li>
-              <li>Zoning Regulations</li>
-              <li>Community Input</li>
-              <li>Land Use Mapping</li>
-              <li>Inclusion of Green Spaces</li>
-            </ul>
+          NGU Link Hub composed of sharp young planners with innovative urban technologies and urban experts across the world specializing in land use planning and zoning offers a comprehensive range of services including assessments of land use patterns and environmental impacts, developing long-term master plans that align with community goals and sustainability principles, and assisting in the creation and revision of zoning codes to define permissible land uses. A hub helps clients navigate regulatory compliance and develop implementation strategies that prioritize land use initiatives, ensuring that developments adhere to zoning laws and contribute positively to the community.
           </p>
         </div>
         <div
@@ -79,7 +72,7 @@ const Landuse = () => {
           }`}
         >
           <img
-            src="/Nature based solution.jpeg"
+            src="/landuse4.jpg"
             alt="Land Use Planning"
             className="h-full w-full rounded-2xl object-cover"
           />

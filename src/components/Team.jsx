@@ -64,7 +64,7 @@ const Team = () => {
                       </svg>
                     </a>
                     <a
-                      href="https://www.linkedin.com/in/nextgen-urban-link-hub-380a87333/"
+                      href="https://www.linkedin.com/in/nextgen-urban-link-hub-516358227/"
                       class="w-6 h-6 inline-flex items-center max-sm:flex-col justify-center rounded-full border-none outline-none bg-green-900 hover:bg-pink-600 active:bg-green-900"
                     >
                       <svg
@@ -138,7 +138,7 @@ const Team = () => {
                       </svg>
                     </a>
                     <a
-                      href="https://www.linkedin.com/in/nextgen-urban-link-hub-380a87333/"
+                      href="https://www.linkedin.com/in/nextgen-urban-link-hub-516358227/"
                       class="w-6 h-6 inline-flex items-center max-sm:flex-col justify-center rounded-full border-none outline-none bg-green-900 hover:bg-pink-600 active:bg-green-900"
                     >
                       <svg
@@ -209,7 +209,7 @@ const Team = () => {
                       </svg>
                     </a>
                     <a
-                      href="https://www.linkedin.com/in/nextgen-urban-link-hub-380a87333/"
+                      href="https://www.linkedin.com/in/nextgen-urban-link-hub-516358227/"
                       class="w-6 h-6 inline-flex items-center max-sm:flex-col justify-center rounded-full border-none outline-none bg-green-900 hover:bg-pink-600 active:bg-green-900"
                     >
                       <svg
@@ -282,7 +282,7 @@ const Team = () => {
                       </svg>
                     </a>
                     <a
-                      href="https://www.linkedin.com/in/nextgen-urban-link-hub-380a87333/"
+                      href="https://www.linkedin.com/in/nextgen-urban-link-hub-516358227/"
                       class="w-6 h-6 inline-flex items-center max-sm:flex-col justify-center rounded-full border-none outline-none bg-green-900 hover:bg-pink-600 active:bg-green-900"
                     >
                       <svg
@@ -353,7 +353,7 @@ const Team = () => {
                       </svg>
                     </a>
                     <a
-                      href="https://www.linkedin.com/in/nextgen-urban-link-hub-380a87333/"
+                      href="https://www.linkedin.com/in/nextgen-urban-link-hub-516358227/"
                       class="w-6 h-6 inline-flex items-center max-sm:flex-col justify-center rounded-full border-none outline-none bg-green-900 hover:bg-pink-600 active:bg-green-900"
                     >
                       <svg
@@ -425,7 +425,7 @@ const Team = () => {
                       </svg>
                     </a>
                     <a
-                      href="https://www.linkedin.com/in/nextgen-urban-link-hub-380a87333/"
+                      href="https://www.linkedin.com/in/nextgen-urban-link-hub-516358227/"
                       class="w-6 h-6 inline-flex items-center max-sm:flex-col justify-center rounded-full border-none outline-none bg-green-900 hover:bg-pink-600 active:bg-green-900"
                     >
                       <svg
@@ -506,7 +506,7 @@ const Team = () => {
                       </svg>
                     </a>
                     <a
-                      href="https://www.linkedin.com/in/nextgen-urban-link-hub-380a87333/"
+                      href="https://www.linkedin.com/in/nextgen-urban-link-hub-516358227/"
                       class="w-6 h-6 inline-flex items-center max-sm:flex-col justify-center rounded-full border-none outline-none bg-green-900 hover:bg-pink-600 active:bg-green-900"
                     >
                       <svg
@@ -575,7 +575,7 @@ const Team = () => {
                       </svg>
                     </a>
                     <a
-                      href="https://www.linkedin.com/in/nextgen-urban-link-hub-380a87333/"
+                      href="https://www.linkedin.com/in/nextgen-urban-link-hub-516358227/"
                       class="w-6 h-6 inline-flex items-center max-sm:flex-col justify-center rounded-full border-none outline-none bg-green-900 hover:bg-pink-600 active:bg-green-900"
                     >
                       <svg
@@ -655,7 +655,7 @@ const Team = () => {
                       </svg>
                     </a>
                     <a
-                      href="https://www.linkedin.com/in/nextgen-urban-link-hub-380a87333/"
+                      href="https://www.linkedin.com/in/nextgen-urban-link-hub-516358227/"
                       class="w-6 h-6 inline-flex items-center max-sm:flex-col justify-center rounded-full border-none outline-none bg-green-900 hover:bg-pink-600 active:bg-green-900"
                     >
                       <svg
@@ -724,7 +724,7 @@ const Team = () => {
                       </svg>
                     </a>
                     <a
-                      href="https://www.linkedin.com/in/nextgen-urban-link-hub-380a87333/"
+                      href="https://www.linkedin.com/in/nextgen-urban-link-hub-516358227/"
                       class="w-6 h-6 inline-flex items-center max-sm:flex-col justify-center rounded-full border-none outline-none bg-green-900 hover:bg-pink-600 active:bg-green-900"
                     >
                       <svg
@@ -796,7 +796,7 @@ const Team = () => {
                       </svg>
                     </a>
                     <a
-                      href="https://www.linkedin.com/in/nextgen-urban-link-hub-380a87333/"
+                      href="https://www.linkedin.com/in/nextgen-urban-link-hub-516358227/"
                       class="w-6 h-6 inline-flex items-center max-sm:flex-col justify-center rounded-full border-none outline-none bg-green-900 hover:bg-pink-600 active:bg-green-900"
                     >
                       <svg
@@ -867,7 +867,7 @@ const Team = () => {
                       </svg>
                     </a>
                     <a
-                      href="https://www.linkedin.com/in/nextgen-urban-link-hub-380a87333/"
+                      href="https://www.linkedin.com/in/nextgen-urban-link-hub-516358227/"
                       class="w-6 h-6 inline-flex items-center max-sm:flex-col justify-center rounded-full border-none outline-none bg-green-900 hover:bg-pink-600 active:bg-green-900"
                     >
                       <svg
@@ -936,7 +936,7 @@ const Team = () => {
                       </svg>
                     </a>
                     <a
-                      href="https://www.linkedin.com/in/nextgen-urban-link-hub-380a87333/"
+                      href="https://www.linkedin.com/in/nextgen-urban-link-hub-516358227/"
                       class="w-6 h-6 inline-flex items-center max-sm:flex-col justify-center rounded-full border-none outline-none bg-green-900 hover:bg-pink-600 active:bg-green-900"
                     >
                       <svg
@@ -1008,7 +1008,7 @@ const Team = () => {
                       </svg>
                     </a>
                     <a
-                      href="https://www.linkedin.com/in/nextgen-urban-link-hub-380a87333/"
+                      href="https://www.linkedin.com/in/nextgen-urban-link-hub-516358227/"
                       class="w-6 h-6 inline-flex items-center max-sm:flex-col justify-center rounded-full border-none outline-none bg-green-900 hover:bg-pink-600 active:bg-green-900"
                     >
                       <svg
