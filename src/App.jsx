@@ -26,6 +26,7 @@ import EventPlanning from './pages/Eventplanning';
 import Partners from './components/Partners';
 import EventShowcase from './components/EventShowcase';
 import EducationResearch from './pages/EducationResearch';
+import Donate from './pages/Donate';
 
 
 function App() {
@@ -55,6 +56,7 @@ function App() {
           <Route path="/eventPlanning" element={<EventPlanning/>} />
           <Route path="/eventshowcase" element={<EventShowcase/>} />
           <Route path="/education" element={<EducationResearch/>} />
+          <Route path="/donate" element={<Donate/>} />
 
           <Route path="*" element={'404 - Page not found! 👹'} />
         </Routes>

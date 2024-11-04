@@ -84,6 +84,14 @@ const OurMission = () => {
     </span>
     <span><span className='font-bold'>Sustainability:</span> Committing to sustainable practices that ensure the well-being of communities and the environment in urban planning.</span> 
   </p>
+  <p className="font-light text-base p-3.5 flex items-start">
+    <span className="icon mr-2">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="size-6">
+        <path fillRule="evenodd" d="M16.28 11.47a.75.75 0 0 1 0 1.06l-7.5 7.5a.75.75 0 0 1-1.06-1.06L14.69 12 7.72 5.03a.75.75 0 0 1 1.06-1.06l7.5 7.5Z" clipRule="evenodd" />
+      </svg>
+    </span>
+    <span><span className='font-bold'>Excellent:</span>We strive to exceed expectations by consistently pursuing superior performance, continuous improvement, and impactful urban solutions that shape the future.</span> 
+  </p>
 </div>
 
           </div>

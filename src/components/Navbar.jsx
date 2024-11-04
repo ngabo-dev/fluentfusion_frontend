@@ -124,6 +124,9 @@ const Navbar = () => {
           <Link to="/fellowship" className={`link font-semibold text-lg mx-3 ${active === "fellowship" ? "text-green-600" : ""}`} onClick={() => changePage("fellowship")}>
             Fellowship
           </Link>
+          <Link to="/donate" className={`link font-semibold text-lg mx-3 ${active === "fellowship" ? "text-green-600" : ""}`} onClick={() => changePage("donate")}>
+            Donate
+          </Link>
 
           {/* Add Contact Link Here for Mobile */}
           <Link to="/contact" className={`link font-semibold text-lg  px-4 py-2 bg-pink-600 text-white rounded hover:bg-pink-700 transition ${active === "contact" ? "text-green-600" : ""}`} onClick={() => changePage("contact")}>
