@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom';
 
 const donationCards = [
   { id: 1, title: "Transportation planning", amount: "$10", description: "Support Transportation planning for Comprehensive Solutions", image: "/Transportation 2.jpg" },
-  { id: 2, title: "Disaster risks", amount: "$50", description: "Disaster Preparedness needs your support", image: "/disasita1.jpg" },
-  { id: 3, title: "Trainings", amount: "$100", description: "Contribute towards Empowering Urban Development", image: "/research.jpg" },
+  { id: 2, title: "Disaster risks", amount: "$50", description: "Disaster Preparedness need your support", image: "/disasita1.jpg" },
+  { id: 3, title: "Traings", amount: "$100", description: "Contribute towards Empowering Urban Development", image: "/research.jpg" },
 ];
 
 const Donate = () => {
@@ -44,6 +44,7 @@ const Donate = () => {
 
   const handleDonateSubmit = (e) => {
     e.preventDefault();
+    // Handle donation logic here (e.g., API call)
     console.log(`Donating ${amount} ${currency} via ${paymentMethod}`);
     handleModalClose();
   };
@@ -53,32 +54,33 @@ const Donate = () => {
       {/* Main Donation Section */}
       <div className="min-h-screen flex items-center justify-center p-6">
         <div className="w-full max-w-6xl grid grid-cols-1 md:grid-cols-2 gap-8 bg-white rounded-lg shadow-lg overflow-hidden">
-          <div className="flex flex-col items-center justify-center p-12 bg-gray-50 h-96">
-            <h1 className="text-3xl md:text-5xl font-serif mb-8 text-center">
+          <div className="flex flex-col items-center h-96 justify-center p-12 bg-gray-50">
+            <h1 className="text-4xl md:text-5xl font-serif mb-8 text-center">
               Donate Now
             </h1>
             <button 
               onClick={handleDonateClick}
-              className="bg-emerald-800 hover:bg-emerald-700 text-white px-8 py-3 rounded-full font-medium transition-colors duration-200"
+              className=" bg-emerald-800 hover:bg-emerald-700 text-white px-8 py-3 rounded-full font-medium transition-colors duration-200"
             >
               Donate
             </button>
           </div>
-          <div className="flex items-center p-12">
-            <p className="text-base md:text-lg leading-relaxed text-center md:text-left">
-              Our mission is to serve as an international hub that connects young city planners, technology providers, governments, communities, and other key stakeholders to collaboratively share knowledge, resources, and strategies in order to build resilient, inclusive, and smart cities for future generations.
+          <div className="flex items-center h-96 p-12">
+            <p className="text-lg leading-relaxed text-center md:text-left">
+            Our mission is to serve as an international hub that connects young city planners, technology providers, governments, communities, and other key stakeholders to collaboratively share knowledge, resources, and strategies in order to build resilient, inclusive, and smart cities for future generations.
             </p>
           </div>
         </div>
       </div>
 
       {/* Donation Cards */}
-      <p className='text-center font-bold text-3xl md:text-4xl leading-12'>Make an impact by donating</p>
+      <p className=' text-center font-bold text-4xl leading-12'>Make an impact by donating</p>
       <div className="flex flex-wrap justify-center gap-8 p-6">
+    
         {donationCards.map((card) => (
-          <div key={card.id} className="border rounded-lg shadow-lg p-4 bg-white max-w-xs w-full sm:w-64">
+          <div key={card.id} className="border rounded-lg shadow-lg p-4 bg-white max-w-xs">
             <img src={card.image} alt={card.title} className="w-full h-32 object-cover rounded-t-lg" />
-            <h2 className="text-lg md:text-xl font-semibold">{card.title}</h2>
+            <h2 className="text-xl font-semibold">{card.title}</h2>
             <p className="text-lg">{card.amount}</p>
             <p className="text-gray-700">{card.description}</p>
             <button 
@@ -200,12 +202,13 @@ const Donate = () => {
                       value={cvv}
                       onChange={(e) => setCvv(e.target.value)}
                       className="border rounded p-2 w-full"
-                      placeholder="Enter CVV"
+                      placeholder="CVV"
                       required
                     />
                   </div>
                 </>
               )}
+
               {paymentMethod === 'PayPal' && (
                 <div className="mb-4">
                   <label className="block text-sm font-medium mb-1" htmlFor="paypalEmail">
@@ -217,16 +220,17 @@ const Donate = () => {
                     value={paypalEmail}
                     onChange={(e) => setPaypalEmail(e.target.value)}
                     className="border rounded p-2 w-full"
-                    placeholder="Enter PayPal email"
+                    placeholder="Enter your PayPal email"
                     required
                   />
                 </div>
               )}
+
               {paymentMethod === 'Bank Transfer' && (
                 <>
                   <div className="mb-4">
                     <label className="block text-sm font-medium mb-1" htmlFor="bankAccountName">
-                      Bank Account Name
+                      Account Name
                     </label>
                     <input
                       type="text"
@@ -234,13 +238,13 @@ const Donate = () => {
                       value={bankAccountName}
                       onChange={(e) => setBankAccountName(e.target.value)}
                       className="border rounded p-2 w-full"
-                      placeholder="Enter bank account name"
+                      placeholder="Enter account name"
                       required
                     />
                   </div>
                   <div className="mb-4">
                     <label className="block text-sm font-medium mb-1" htmlFor="bankAccountNumber">
-                      Bank Account Number
+                      Account Number
                     </label>
                     <input
                       type="text"
@@ -248,7 +252,7 @@ const Donate = () => {
                       value={bankAccountNumber}
                       onChange={(e) => setBankAccountNumber(e.target.value)}
                       className="border rounded p-2 w-full"
-                      placeholder="Enter bank account number"
+                      placeholder="Enter account number"
                       required
                     />
                   </div>
@@ -268,35 +272,39 @@ const Donate = () => {
                   </div>
                 </>
               )}
+
               {paymentMethod === 'Momo Pay' && (
                 <div className="mb-4">
                   <label className="block text-sm font-medium mb-1" htmlFor="momoPhoneNumber">
                     Momo Phone Number
                   </label>
                   <input
-                    type="tel"
+                    type="text"
                     id="momoPhoneNumber"
                     value={momoPhoneNumber}
                     onChange={(e) => setMomoPhoneNumber(e.target.value)}
                     className="border rounded p-2 w-full"
-                    placeholder="Enter phone number"
+                    placeholder="Enter your Momo phone number"
                     required
                   />
                 </div>
               )}
-              <button
-                type="submit"
-                className="bg-emerald-800 hover:bg-emerald-700 text-white px-4 py-2 rounded w-full mt-4"
-              >
-                Submit Donation
-              </button>
-              <button
-                type="button"
-                onClick={handleModalClose}
-                className="text-red-500 mt-2 w-full text-center"
-              >
-                Cancel
-              </button>
+
+              <div className="flex justify-end mt-6">
+                <button
+                  type="button"
+                  onClick={handleModalClose}
+                  className="mr-4 bg-pink-600 hover:bg-pink-500 text-white font-bold px-4 py-2 rounded"
+                >
+                  Cancel
+                </button>
+                <button 
+                  type="submit"
+                  className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded"
+                >
+                  Submit Donation
+                </button>
+              </div>
             </form>
           </div>
         </div>
