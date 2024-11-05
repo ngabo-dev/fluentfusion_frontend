@@ -51,6 +51,16 @@ const Donate = () => {
 
   return (
     <>
+            <div class="relative font-sans before:absolute before:w-full before:h-full before:inset-0 before:bg-black before:opacity-50 before:z-10">
+    <img src="/donate.jpg" alt="Banner Image" class="absolute inset-0 w-full h-full object-cover" />
+
+    <div class="min-h-[630px] relative  h-full max-w-6xl mx-auto flex flex-col justify-center items-center text-center text-white p-6">
+      
+      <p class="text-2xl sm:text-3xl lg:text-4xl text-pink-600 font-extrabold mb-6 leading-relaxed">Do something incredible today</p>
+
+
+    </div>
+  </div>
       {/* Main Donation Section */}
       <div className="min-h-screen flex items-center justify-center p-6">
         <div className="w-full max-w-6xl grid grid-cols-1 md:grid-cols-2 gap-8 bg-white rounded-lg shadow-lg overflow-hidden">
@@ -75,7 +85,7 @@ const Donate = () => {
 
       {/* Donation Cards */}
       <p className=' text-center font-bold text-4xl leading-12'>Make an impact by donating</p>
-      <div className="flex flex-wrap justify-center gap-8 p-6">
+      <div className="flex flex-wrap justify-center gap-8 px-6 py-10">
     
         {donationCards.map((card) => (
           <div key={card.id} className="border rounded-lg shadow-lg p-4 bg-white max-w-xs">
@@ -300,7 +310,7 @@ const Donate = () => {
                 </button>
                 <button 
                   type="submit"
-                  className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded"
+                  className="bg-emerald-800 hover:bg-emerald-700 text-white px-4 py-2 rounded"
                 >
                   Submit Donation
                 </button>

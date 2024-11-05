@@ -27,6 +27,9 @@ import Partners from './components/Partners';
 import EventShowcase from './components/EventShowcase';
 import EducationResearch from './pages/EducationResearch';
 import Donate from './pages/Donate';
+import Advisory from './pages/Advisory';
+import Informalsettlement from './pages/Informalsettlement';
+import Feasibilystudy from './pages/Feasibilystudy';
 
 
 function App() {
@@ -57,6 +60,9 @@ function App() {
           <Route path="/eventshowcase" element={<EventShowcase/>} />
           <Route path="/education" element={<EducationResearch/>} />
           <Route path="/donate" element={<Donate/>} />
+          <Route path="/advisory" element={<Advisory/>} />
+          <Route path="/informalsettlement" element={<Informalsettlement/>} />
+          <Route path="/feasibilystudy" element={<Feasibilystudy/>} />
 
           <Route path="*" element={'404 - Page not found! 👹'} />
         </Routes>
