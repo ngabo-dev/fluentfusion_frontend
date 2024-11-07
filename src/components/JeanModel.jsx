@@ -55,7 +55,7 @@ const JeanModel = () => {
 
             <div className="p-4 md:p-5 space-y-4 text-sm sm:text-base leading-relaxed text-gray-700">
               <p>
-              Nshimiyimana Jean D'Amour he is A certified Urban Planner in Rwanda, with Bsc in Urban and Regional Planning, Managing Director of UDC ltd. Experienced in consultancy in following detailed physical plan: Nyagasambu, Akinyambo, Gatare, Munini all located Rwamagana district. 
+              Plan. Jean D’Amour NSHIMIYIMANA, he is A certified Urban Planner in Rwanda, with Bsc in Urban and Regional Planning, Managing Director of UDC ltd. Experienced in consultancy in following detailed physical plan: Nyagasambu, Akinyambo, Gatare, Munini all located Rwamagana district. 
               </p>
             </div>
           </div>

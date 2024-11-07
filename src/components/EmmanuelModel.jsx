@@ -55,7 +55,7 @@ const EmmanuelModel = () => {
 
             <div className="p-4 md:p-5 space-y-4 text-sm sm:text-base leading-relaxed text-gray-700">
               <p>
-              Emmanuel UWIZEYIMANA is certified urban planner in Rwanda, holding a Master’s in Geo-Information for Environment Sustainable Development, BSc in Urban Planning from University of Rwanda. Currently, He is working as a Building Construction Pre-Assessment Engineer in the City of Kigali with working expertise in sustainable urban planning, climate resilience, and sustainable land management, with hands-on experience in green building assessment and smart City Innovation technology. He also dedicated in promoting inclusive cities, and climate-resilient urban development, leveraging GIS and earth observation data to inform sustainable urban growth strategies across Rwanda and the entire world as a whole.
+              Plan. Emmanuel UWIZEYIMANA is certified urban planner in Rwanda, holding a Master’s in Geo-Information for Environment Sustainable Development, BSc in Urban Planning from University of Rwanda. Currently, He is working as a Building Construction Pre-Assessment Engineer in the City of Kigali with working expertise in sustainable urban planning, climate resilience, and sustainable land management, with hands-on experience in green building assessment and smart City Innovation technology. He also dedicated in promoting inclusive cities, and climate-resilient urban development, leveraging GIS and earth observation data to inform sustainable urban growth strategies across Rwanda and the entire world as a whole.
               </p>
             </div>
           </div>

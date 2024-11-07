@@ -55,7 +55,7 @@ const AimeeModel = () => {
 
             <div className="p-4 md:p-5 space-y-4 text-sm sm:text-base leading-relaxed text-gray-700">
               <p>
-              Aimee Pacis IRAKOZE is a certified Urban Planner in Rwanda. She has substantial experience in urban planning practices, having contributed to various district land use plans in collaboration with the National Land Authority. Aimee Pacis is proficient in essential urban planning software, including GIS and remote sensing, enabling her to analyze spatial data effectively and enhance urban development projects. She has Bachelor Degree in Geography Urban Planning and Masters Student in in Biodiversity, Conservation and Natural Resources Management in University Rwanda.
+              Plan. Aimee Pacis IRAKOZE is a certified Urban Planner in Rwanda. She has substantial experience in urban planning practices, having contributed to various district land use plans in collaboration with the National Land Authority. Aimee Pacis is proficient in essential urban planning software, including GIS and remote sensing, enabling her to analyze spatial data effectively and enhance urban development projects. She has Bachelor Degree in Geography Urban Planning and Masters Student in in Biodiversity, Conservation and Natural Resources Management in University Rwanda.
               </p>
             </div>
           </div>

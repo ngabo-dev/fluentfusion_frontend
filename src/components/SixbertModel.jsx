@@ -55,7 +55,7 @@ const SixbertModel = () => {
 
             <div className="p-4 md:p-5 space-y-4 text-sm sm:text-base leading-relaxed text-gray-700">
               <p>
-              Sixbert MUGIRABANGA, is a certified urban planner in Rwanda with BSC degree in Urban planning. Specifically, he is familiar with Geospatial technologies, including GIS, Remote sensing and LAIS with conflict solving skills. He is also professionally experienced in Land, Infrastructure and Settlement management and currently government employed.
+              Plan. Sixbert MUGIRABANGA, is a certified urban planner in Rwanda with BSC degree in Urban planning. Specifically, he is familiar with Geospatial technologies, including GIS, Remote sensing and LAIS with conflict solving skills. He is also professionally experienced in Land, Infrastructure and Settlement management and currently government employed.
               </p>
             </div>
           </div>

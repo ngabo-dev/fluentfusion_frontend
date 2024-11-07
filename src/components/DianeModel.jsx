@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const Richard = () => {
+const DianeModel = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const openModal = () => {
@@ -55,11 +55,11 @@ const Richard = () => {
 
             <div className="p-4 md:p-5 space-y-4 text-sm sm:text-base leading-relaxed text-gray-700">
               <p>
-              Plan. Richard NDICUNGUYE is an Urban Development Professional specialized in Strategic Planning, Green and Climate-Resilience Urbanization. Holder of a Master's in Urban Management and Development, with certifications as a Senior Urban and Regional Planner (Rwanda Urban Planning Institute) and Development Project Manager (PM4DEV).
-With over a decade working as a Consultant and a Senior Technical Advisor with the Global Green Growth Institute (GGGI), He spearheaded green urbanization initiatives across Rwanda's Secondary Cities, delivering measurable outcomes in Climate-Resilient Urban Development, Sustainable Transport and Mobility Solutions, Green Infrastructure and Building Design, Clean Energy Implementation, Water and Sanitation Systems, Circular Economy and Waste Management, Gender Equity and Social Inclusion, Climate Finance and Green Investment Mobilization. 
-His portfolio includes leading multi-stakeholder projects in Urban and Regional Planning, Land Use and Housing Development, Geo-information Technology, Green Growth Strategy, Eco-Tourism Development, Climate Change Adaptation, and Sustainable Landscape Design. 
-He has also contributed to academic excellence as a Visiting Lecturer at the University of Rwanda's College of Science and Technology, School of Architecture and Built Environment, teaching Spatial Planning and Land & Housing courses.
-Driven by a vision of smart, inclusive, and sustainable urban and regional development that safeguards future generations' needs, He specialized in creating innovative, contextually appropriate solutions that best serve both present and future communities. With a strong belief in the power of collective action to achieve this, I am committed to mentoring and inspiring the next generation of urban practitioners to shape resilient communities and cities of tomorrow. </p>
+              Diane UWINGABIRE is an impact based environmental enthusiast with a bachelor’s degree in Geography, with Environmental Planning. She is committed to contribute to participatory environmental wellness and sustainability, hence prioritizes continuous learning to deepen her expertise in environmentally sound planning.
+During her year and half fellowship with GanzAfrica, Diane was deployed at the National Land Authority where she gained hands on experience on land use planning, this experience deepened her passion for participatory planning hence motivating her to further contribute to inclusive environmental practices.
+Currently, Diane is working as a data analyst, where she applies her experience from the National Land Authority to support a data-driven spatial monitoring and measurement of the effectiveness of Nature-Based Solutions for climate-resilient, flood-prone urban areas.
+              </p>
+              
             </div>
           </div>
         </div>
@@ -68,4 +68,4 @@ Driven by a vision of smart, inclusive, and sustainable urban and regional devel
   );
 };
 
-export default Richard;
+export default DianeModel;

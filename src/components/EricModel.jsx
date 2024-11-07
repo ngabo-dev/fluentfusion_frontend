@@ -55,7 +55,7 @@ const EricModel = () => {
 
             <div className="p-4 md:p-5 space-y-4 text-sm sm:text-base leading-relaxed text-gray-700">
               <p>
-              Eric Habineza is a certified Urban Planner in Rwanda, energetic, and self-motivated individual dedicated to applying theoretical skills in practical real-world scenarios within the field of geospatial analysis. He utilizes spatial technology, including Geographic Information Systems (GIS) and Remote Sensing (RS).
+              Plan. Eric HABINEZA is a certified Urban Planner in Rwanda, energetic, and self-motivated individual dedicated to applying theoretical skills in practical real-world scenarios within the field of geospatial analysis. He utilizes spatial technology, including Geographic Information Systems (GIS) and Remote Sensing (RS).
 
 Eric is proficient in platforms such as Digital Earth Africa, Google Earth Engine, and GitHub and passionate about research. He has four years of experience in urban economic development project initiatives within a satellite city. Additionally, he has worked with an international NGO as a District Technical Advisor in urban planning, serving as the focal person for Rwamagana satellite city in Enabel, Rwanda.
               </p>

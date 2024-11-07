@@ -55,7 +55,7 @@ const InnocentModel = () => {
 
             <div className="p-4 md:p-5 space-y-4 text-sm sm:text-base leading-relaxed text-gray-700">
               <p>
-              Innocent NSHIMIYIMANA, a certified Urban Planner who is an enthusiastic and curious urban planner keen on relations between Built Environment, urban Planning and Society. The empathic engagement with communities, through participatory processes, makes his particularly passionate about quality of life in urban areas.
+              Plan. Innocent NSHIMIYIMANA, a certified Urban Planner who is an enthusiastic and curious urban planner keen on relations between Built Environment, urban Planning and Society. The empathic engagement with communities, through participatory processes, makes his particularly passionate about quality of life in urban areas.
 He participated in different Master Plans revisions like Kigali city master plan and Huye Master plan 2050 mastering the providing his expertise in those projects. 
 He is a Master Student in Geo-Information Science for Environment and Sustainable at the University of Rwanda. He holds a Bachelor’s Degree in Urban and Regional Planning got from the University of Rwanda in 201. He is currently serving as Land Infrastructure, Habitat and Community Settlement Officer at Bugesera District.
               </p>

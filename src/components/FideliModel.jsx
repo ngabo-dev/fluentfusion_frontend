@@ -55,7 +55,7 @@ const FideliModel = () => {
 
             <div className="p-4 md:p-5 space-y-4 text-sm sm:text-base leading-relaxed text-gray-700">
               <p>
-                MWIZERWA is a lecturer at University of Rwanda, College of
+              Plan. Fideli MWIZERWA is a lecturer at University of Rwanda, College of
                 Science and Technology, School of Architecture and Built
                 Environment, Spatial Planning Department. He is an individual
                 Consultant, Lead Founder of Ganza Green Solutions. He is Expert

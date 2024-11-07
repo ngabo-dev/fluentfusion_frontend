@@ -55,7 +55,7 @@ const MutoniModel = () => {
 
             <div className="p-4 md:p-5 space-y-4 text-sm sm:text-base leading-relaxed text-gray-700">
               <p>
-              Grace MUTONI is a Certified urban planner in Rwanda with expertise in sustainable urban development, GIS-based spatial analysis, settlements planning, and project coordination. She holds a Master’s Degree in Geoinformation science and earth observation-urban planning and management from Faculty of Geo-Information Science and Earth Observation (ITC) of the University of Twente. She also holds a bachelor degree in Geography Urban Planning from University of Rwanda. She worked as Urban Planner in different government institutions including National Land Authority (NLA).
+              Plan. Grace MUTONI is a Certified urban planner in Rwanda with expertise in sustainable urban development, GIS-based spatial analysis, settlements planning, and project coordination. She holds a Master’s Degree in Geoinformation science and earth observation-urban planning and management from Faculty of Geo-Information Science and Earth Observation (ITC) of the University of Twente. She also holds a bachelor degree in Geography Urban Planning from University of Rwanda. She worked as Urban Planner in different government institutions including National Land Authority (NLA).
               </p>
             </div>
           </div>

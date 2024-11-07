@@ -55,7 +55,7 @@ const MujyambereModel = () => {
 
             <div className="p-4 md:p-5 space-y-4 text-sm sm:text-base leading-relaxed text-gray-700">
               <p>
-              Emmanuel MUJYAMBERE is a certified Urban Planner in Rwanda, with Bsc in Urban and Regional Planning, Managing Director of URBAN CAD ltd. Experienced in physical planning Such as Ruhimbi and Bwinsanga, Ntebe in Rwamagana district
+              Plan. Emmanuel MUJYAMBEREis a certified Urban Planner in Rwanda, with Bsc in Urban and Regional Planning, Managing Director of URBAN CAD ltd. Experienced in physical planning Such as Ruhimbi and Bwinsanga, Ntebe in Rwamagana district
               </p>
             </div>
           </div>
