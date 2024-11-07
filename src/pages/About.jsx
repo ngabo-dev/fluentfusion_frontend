@@ -8,7 +8,7 @@ const About = () => {
   return (
     <>
       {/* Welcome Text Overlay */}
-      <div className="relative w-full h-screen">
+      <div className=" w-full h-screen">
         {/* Welcome Text Positioned Absolutely */}
         <div className="absolute inset-0 flex flex-col items-center justify-center  text-white z-20">
           <h1 className="text-5xl font-bold mb-4"><span className='text-pink-600 leading-relaxed'>About Us</span> <br></br>Welcome to Our Sustainable Future!</h1>

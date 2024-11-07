@@ -30,6 +30,10 @@ import Donate from './pages/Donate';
 import Advisory from './pages/Advisory';
 import Informalsettlement from './pages/Informalsettlement';
 import Feasibilystudy from './pages/Feasibilystudy';
+import Juliemodel from './components/Juliemodel';
+import HyacintheModel from './components/HyacintheModel';
+import FideliModel from './components/FideliModel';
+import InnocentModel from './components/InnocentModel';
 
 
 function App() {
@@ -63,6 +67,21 @@ function App() {
           <Route path="/advisory" element={<Advisory/>} />
           <Route path="/informalsettlement" element={<Informalsettlement/>} />
           <Route path="/feasibilystudy" element={<Feasibilystudy/>} />
+          <Route path="/juliemodel" element={<Juliemodel/>} />
+          <Route path="/hyacinthemodel" element={<HyacintheModel/>} />
+          <Route path="/fidelimodel" element={<FideliModel/>} />
+
+
+          <Route path="/innocentmodel" element={<InnocentModel/>} />
+          <Route path="/eventshowcase" element={<EventShowcase/>} />
+          <Route path="/education" element={<EducationResearch/>} />
+          <Route path="/donate" element={<Donate/>} />
+          <Route path="/advisory" element={<Advisory/>} />
+          <Route path="/informalsettlement" element={<Informalsettlement/>} />
+          <Route path="/feasibilystudy" element={<Feasibilystudy/>} />
+          <Route path="/juliemodel" element={<Juliemodel/>} />
+          <Route path="/hyacinthemodel" element={<HyacintheModel/>} />
+          <Route path="/fidelimodel" element={<FideliModel/>} />
 
           <Route path="*" element={'404 - Page not found! 👹'} />
         </Routes>

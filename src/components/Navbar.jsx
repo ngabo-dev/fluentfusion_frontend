@@ -61,16 +61,16 @@ const Navbar = () => {
             {isDropdownVisible && (
               <div className="absolute bg-emerald-800 w-full md:w-96 shadow-lg mt-1 rounded z-50">
                 <Link to="/environment" className="block text-white py-2 px-4 hover:bg-emerald-700" onClick={() => changePage("environment")}>
-                  Environment
+                  Environmental & Climate change
                 </Link>
-                <Link to="/communities" className="block text-white py-2 px-4 hover:bg-emerald-700" onClick={() => changePage("sustainability")}>
-                  Communities
+                <Link to="/communities" className="block text-white py-2 px-4 hover:bg-emerald-700" onClick={() => changePage("communities")}>
+                  Urban Communities
                 </Link>
                 <Link to="/urbanization" className="block text-white py-2 px-4 hover:bg-emerald-700" onClick={() => changePage("urbanization")}>
                   Urbanization
                 </Link>
                 <Link to="/education" className="block text-white py-2 px-4 hover:bg-emerald-700" onClick={() => changePage("education")}>
-                  Education & Research
+                  Education Research & Development
                 </Link>
               </div>
             )}
@@ -114,11 +114,20 @@ const Navbar = () => {
                 <Link to="/eventPlanning" className="block py-2 px-4 hover:bg-emerald-700" onClick={() => changePage("events")}>
                   Organizing and Hosting Urban Planning Events
                 </Link>
+                <Link to="/advisory" className="block py-2 px-4 hover:bg-emerald-700" onClick={() => changePage("advisory")}>
+                Advisory and technical support to local government
+                </Link>
+                <Link to="/informalsettlement" className="block py-2 px-4 hover:bg-emerald-700" onClick={() => changePage("informalsettlement")}>
+                Informal settlement Upgrading
+                </Link>
+                <Link to="/feasibilystudy" className="block py-2 px-4 hover:bg-emerald-700" onClick={() => changePage("feasibilystudy")}>
+                Feasibility Studies
+                </Link>
               </div>
             )}
           </div>
 
-          <Link to="/blogs" className={`link font-semibold text-lg mx-3 ${active === "event" ? "text-green-600 underline" : ""}`} onClick={() => changePage("event")}>
+          <Link to="/blogs" className={`link font-semibold text-lg mx-3 ${active === "event" ? "text-green-600 underline" : ""}`} onClick={() => changePage("eveblogsnt")}>
             Event & News
           </Link>
           <Link to="/fellowship" className={`link font-semibold text-lg mx-3 ${active === "fellowship" ? "text-green-600" : ""}`} onClick={() => changePage("fellowship")}>
