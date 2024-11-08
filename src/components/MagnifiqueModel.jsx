@@ -55,7 +55,8 @@ const MagnifiqueModel = () => {
 
             <div className="p-4 md:p-5 space-y-4 text-sm sm:text-base leading-relaxed text-gray-700">
               <p>
-              Plan. Magnifique Thierry IGIRIMPUHE is a seasoned environmental scientist and researcher with a focus on biodiversity conservation and ecosystem management. With a Master’s degree in Environmental Science and years of hands-on experience in field research, Magnifique has contributed to several projects aimed at preserving natural habitats and promoting sustainable resource management. His work includes leading studies on endangered species, analyzing ecosystem health, and advocating for policies that balance development with environmental preservation. Magnifique is recognized for his methodical approach to environmental challenges, strong analytical skills, and commitment to fostering ecological resilience in vulnerable areas.
+              Plan. Magnifique Thierry IGIRIMPUHWE is certified Urban Planner in Rwanda, a skilled young private consultant and the Managing Director of T&J Design Consultant Ltd. He utilizes a distinctive combination of communication and leadership abilities to engage various stakeholders in urban planning.
+              He is committed to promoting collaboration among emerging city planners, technology innovators, and government officials through actively linking key players and encouraging the exchange of knowledge and resources.
               </p>
             </div>
           </div>

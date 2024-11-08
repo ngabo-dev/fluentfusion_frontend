@@ -55,7 +55,7 @@ const DynaModel = () => {
 
             <div className="p-4 md:p-5 space-y-4 text-sm sm:text-base leading-relaxed text-gray-700">
               <p>
-              Dyna is Climate Resilient Activist. the founder and Chief Executive Officer of the climate advocate group. I am currently a student at the University of Rwanda, pursuing a Bachelor of Science with Honors in Geography, specializing in Environmental Planning. I have specialized skills in climate action, environmental impact assessment, and geospatial software, and I am also experienced in project management. Additionally, I am a researcher in the field of environment.
+              Dyna is Climate Resilient Activist. the founder and Chief Executive Officer of the climate advocate group. She currently a student at the University of Rwanda, pursuing a Bachelor of Science with Honors in Geography, specializing in Environmental Planning. I have specialized skills in climate action, environmental impact assessment, and geospatial software, and She is also experienced in project management. Additionally, she is a researcher in the field of environment.
 
 She presented at the 24th WATERNET/WARFSA/GWPSA Symposium in Zanzibar, Tanzania, on the topic "Small-scale irrigation technologies in Rwanda: affordable technologies to cope with climate change, reduce poverty, and hunger."  Awarded as Best Fellow in Cohort 1 of Eco_Ed Connect's Climate Leadership Program. Additionally, she is Dedicated to environmental solutions through geospatial software and climate advocacy, advancing sustainable development goals for a resilient future."
               </p>

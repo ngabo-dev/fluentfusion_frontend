@@ -331,8 +331,7 @@ const Team = () => {
 
                   <div class="mt-4">
                     <p class="text-gray-600 text-sm leading-relaxed">
-                      Engages communities in urban planning processes, ensuring
-                      their voices shape inclusive and effective solutions.
+                    Plan. Onesphore BYIRINGIRO is a dedicated expert in renewable energy and sustainable infrastructure, with a solid background in engineering and a deep commitment to environmental stewardship.
                     </p>
                   </div>
                   <OnesphoreModel />
@@ -396,16 +395,14 @@ const Team = () => {
                 />
 
                 <div class="p-4">
-                  <h4 class="text-gray-800 text-base font-bold">Plan Magnifique Thierry IGIRIMPUHE</h4>
+                  <h4 class="text-gray-800 text-base font-bold">Plan Magnifique Thierry IGIRIMPUHWE</h4>
                   <p class="text-gray-500 text-xs mt-1">
                     Consultancy Coordinator
                   </p>
 
                   <div class="mt-4">
                     <p class="text-gray-600 text-sm leading-relaxed">
-                      Manages consultancy projects, connecting stakeholders and
-                      providing expertise to address urban challenges
-                      collaboratively.
+                    Plan. Magnifique Thierry Igirimpuhe is certified Urban Planner in Rwanda, a skilled young private consultant and the Managing Director of T&J Design Consultant Ltd.
                     </p>
                   </div>
                   <MagnifiqueModel />

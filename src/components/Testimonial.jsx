@@ -3,48 +3,36 @@ import 'animate.css'; // Import Animate.css
 
 const testimonialsData = [
   {
-    name: "John Doe",
-    role: "Urban Planner",
+    name: "Dyna",
+    role: "Software Engineer",
     message: "NGU-Link Hub has transformed our city's growth with innovative, sustainable solutions and a global network of urban stakeholders.",
-    image: "https://www.gravatar.com/avatar/00000000000000000000000000000000?d=mp&f=y",
+    image: "/dyna.jpg",
   },
   {
-    name: "Mark Adair",
+    name: "Jean",
     role: "Government Official",
     message: "NGU-Link Hub gave us insights, resources, and expertise, helping tackle urban challenges and improve citizens' quality of life.",
-    image: "https://www.gravatar.com/avatar/00000000000000000000000000000000?d=mp&f=y",
+    image: "/jean.jpg",
   },
   {
-    name: "Simon Konecki",
+    name: "Djamilla",
     role: "Technology Provider",
     message: "NGU-Link Hub connected us with global city leaders, fostering collaboration, innovation, and showcasing our solutions.",
-    image: "https://www.gravatar.com/avatar/00000000000000000000000000000000?d=mp&f=y",
+    image: "/djamilla.jpg",
   },
   {
-    name: "Alice Smith",
+    name: "Joel",
     role: "Community Leader",
     message: "The innovative approaches from NGU-Link Hub have greatly improved our community's infrastructure.",
-    image: "https://www.gravatar.com/avatar/00000000000000000000000000000000?d=mp&f=y",
-  },
-  {
-    name: "Bob Johnson",
-    role: "Urban Developer",
-    message: "Thanks to NGU-Link Hub, our urban projects are more efficient and environmentally friendly.",
-    image: "https://www.gravatar.com/avatar/00000000000000000000000000000000?d=mp&f=y",
-  },
-  {
-    name: "Belyse Niyonsenga",
-    role: "Urban Developer",
-    message: "Thanks to NGU-Link Hub, our urban projects are more efficient and environmentally friendly.",
-    image: "https://www.gravatar.com/avatar/00000000000000000000000000000000?d=mp&f=y",
+    image: "/joel.jpg",
   },
 ];
 
 const Testimonial = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const testimonialsToShow = testimonialsData.slice(currentIndex, currentIndex + 3);
-  const refs = useRef([]); // Create a refs array for each testimonial
-  const [isVisible, setIsVisible] = useState(Array(testimonialsToShow.length).fill(false)); // Initialize visibility state
+  const refs = useRef([]);
+  const [isVisible, setIsVisible] = useState(Array(testimonialsToShow.length).fill(false));
 
   const handleNext = () => {
     if (currentIndex < testimonialsData.length - 3) {
@@ -61,27 +49,17 @@ const Testimonial = () => {
   useEffect(() => {
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const index = Number(entry.target.dataset.index);
-          setIsVisible(prev => {
-            const newVisibility = [...prev];
-            newVisibility[index] = true; // Set to true when in view
-            return newVisibility;
-          });
-        } else {
-          const index = Number(entry.target.dataset.index);
-          setIsVisible(prev => {
-            const newVisibility = [...prev];
-            newVisibility[index] = false; // Reset to false when out of view
-            return newVisibility;
-          });
-        }
+        const index = Number(entry.target.dataset.index);
+        setIsVisible(prev => {
+          const newVisibility = [...prev];
+          newVisibility[index] = entry.isIntersecting;
+          return newVisibility;
+        });
       });
     }, {
-      threshold: 0.1 // Trigger when 10% of the element is visible
+      threshold: 0.1
     });
 
-    // Observe each testimonial
     refs.current.forEach(ref => {
       if (ref) {
         observer.observe(ref);
@@ -89,7 +67,6 @@ const Testimonial = () => {
     });
 
     return () => {
-      // Cleanup the observer on component unmount
       refs.current.forEach(ref => {
         if (ref) {
           observer.unobserve(ref);
@@ -132,12 +109,12 @@ const Testimonial = () => {
           {testimonialsToShow.map((testimonial, index) => (
             <div
               key={index}
-              data-index={index} // Assign index to data attribute
-              ref={el => (refs.current[index] = el)} // Assign ref
+              data-index={index}
+              ref={el => (refs.current[index] = el)}
               className={`max-w-[360px] h-auto py-5 pl-14 pr-4 bg-white border-2 rounded-3xl relative 
                 ${isVisible[index] ? 'animate__animated animate__fadeInUp' : 'animate__animated animate__fadeOutDown'}`}
             >
-              <img src="/profileimage.jpeg" className="w-20 h-20 rounded-full absolute -left-10 top-0 bottom-0 my-auto border-2 border-gray-300 object-cover" alt={testimonial.name} />
+              <img src={testimonial.image} className="w-20 h-20 rounded-full absolute -left-10 top-0 bottom-0 my-auto border-2 border-gray-300 object-cover" alt={testimonial.name} />
               <div>
                 <h4 className="text-gray-800 text-base font-light">{testimonial.name}</h4>
                 <p className="mt-1 text-xs text-gray-500">{testimonial.role}</p>
@@ -146,7 +123,6 @@ const Testimonial = () => {
                 <p className="text-gray-800 leading-relaxed font-light text-base">{testimonial.message}</p>
               </div>
               <div className="flex space-x-1 mt-4">
-                {/* Star rating SVGs */}
                 {[...Array(5)].map((_, i) => (
                   <svg key={i} className="w-4 fill-pink-600" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M7 0L9.4687 3.60213L13.1439 4.25161L10.4315 7.56387L11.1563 11.2975L7 9.06312L2.84375 11.2975L3.56851 7.56387L0.856077 4.25161L4.53125 3.60213L7 0Z" />

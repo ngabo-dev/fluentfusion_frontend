@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const donationCards = [
   { id: 1, title: "Transportation planning", amount: "$10", description: "Support Transportation planning for Comprehensive Solutions", image: "/Transportation 2.jpg" },
   { id: 2, title: "Disaster risks", amount: "$50", description: "Disaster Preparedness need your support", image: "/disasita1.jpg" },
-  { id: 3, title: "Traings", amount: "$100", description: "Contribute towards Empowering Urban Development", image: "/research.jpg" },
+  { id: 3, title: "Trainings", amount: "$100", description: "Contribute towards Empowering Urban Development", image: "/research.jpg" },
 ];
 
 const Donate = () => {
