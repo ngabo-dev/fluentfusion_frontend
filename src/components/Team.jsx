@@ -46,7 +46,7 @@ const Team = () => {
                   <h4 class="text-gray-800 text-base font-bold">
                    Plan. Julien NSANZIMANA
                   </h4>
-                  <p class="text-gray-600 text-xs mt-1">Founder & Direct</p>
+                  <p class="text-gray-600 text-xs mt-1">Founder & Director</p>
 
                   <div class="mt-4">
                     <p class="text-gray-600 text-sm leading-relaxed">
