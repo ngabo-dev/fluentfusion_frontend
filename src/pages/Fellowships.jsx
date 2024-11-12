@@ -36,7 +36,11 @@ const Fellowships = () => {
 
     // Process or send the form data to an API
     console.log('Form Data Submitted:', formData);
-    // You could replace this console log with an API call to submit data
+
+    // Reset form fields
+    e.target.reset();
+    setPhone('');
+    setCountry('');
   };
 
   return (
