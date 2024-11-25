@@ -33,7 +33,8 @@ const LoginForm = () => {
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
-        background: "linear-gradient(135deg, #6B73FF, #000DFF)",
+        background: "linear-gradient(to right, #ffb6c1, #8ec5fc)",
+        
         fontFamily: "'Poppins', sans-serif",
       }}
     >
@@ -46,6 +47,7 @@ const LoginForm = () => {
           width: "100%",
           maxWidth: "400px",
           textAlign: "center",
+          marginTop: "50px"
         }}
       >
         <h2 style={{ marginBottom: "20px", fontSize: "1.8rem", color: "#333" }}>Log In</h2>
