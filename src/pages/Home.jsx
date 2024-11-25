@@ -64,7 +64,7 @@ const Home = () => {
 
                 {/* Join Us Button */}
                 <a
-                  href="#"
+                  href="/LoginForm"
                   className="mt-8 sm:mt-12 bg-pink-600 hover:bg-opacity-80 text-white py-3 px-6 rounded-lg text-lg lg:text-xl transition duration-300 ease-in-out transform hover:scale-105 hover:shadow-xl inline-block"
                 >
                   Get Started

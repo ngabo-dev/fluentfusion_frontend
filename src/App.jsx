@@ -9,7 +9,7 @@ import Contact from "./pages/Contact";
 import Footer from "./components/Footer";
 import Fellowships from "./pages/Fellowships";
 import About from "./pages/About";
-import Blogs from './pages/Blogs';
+import Courses from './pages/Courses';
 import UrbanizationPage from './pages/UrbanizationPage';
 import Environment from './pages/Environment';
 import Communities from './pages/Communities';
@@ -34,6 +34,8 @@ import Juliemodel from './components/Juliemodel';
 import HyacintheModel from './components/HyacintheModel';
 import FideliModel from './components/FideliModel';
 import InnocentModel from './components/InnocentModel';
+import LoginForm from './components/LoginForm';
+import SignUpForm from './components/SignUpForm';
 
 
 function App() {
@@ -45,8 +47,10 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/fellowship" element={<Fellowships />} />
           <Route path="/aboutme" element={<About />} />
-          <Route path="/blogs" element={<Blogs />} />
+          <Route path="/Courses" element={<Courses />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/LoginForm" element={<LoginForm />} />
+          <Route path="/SignUpForm" element={<SignUpForm />} />
           <Route path="/urbanization" element={<UrbanizationPage />} />
           <Route path="/environment" element={<Environment />} />
           <Route path="/communities" element={<Communities />} />

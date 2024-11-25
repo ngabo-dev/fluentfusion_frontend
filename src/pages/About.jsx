@@ -33,7 +33,7 @@ const About = () => {
             Jean Pierre  <span className="text-black">NIYONGABO</span>
             </h3>
             <p className="text-black font-light text-base leading-relaxed mt-4 animate__animated animate__fadeInLeft animate__delay-1s">
-            I'm skilled software developer with hands-on on various projects using HTML, CSS, JavaScript, React js,next js,python,django and tailwind css.
+            I'm skilled software developer with hands-on experience on various projects using HTML, CSS, JavaScript, React js,next js,python,django and tailwind css.
             </p>
           </div>
 
@@ -49,9 +49,6 @@ const About = () => {
         </div>
       </div>
       <OurMission />
-
-
-
 
 
   

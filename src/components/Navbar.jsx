@@ -58,8 +58,8 @@ const Navbar = () => {
           {/* Consultancy dropdown */}
 
 
-          <Link to="/blogs" className={`link font-semibold text-lg mx-3 ${active === "event" ? "text-green-600 underline" : ""}`} onClick={() => changePage("eveblogsnt")}>
-            Cources
+          <Link to="/Courses" className={`link font-semibold text-lg mx-3 ${active === "event" ? "text-green-600 underline" : ""}`} onClick={() => changePage("eveCoursesnt")}>
+            Courses
           </Link>
           <Link to="/fellowship" className={`link font-semibold text-lg mx-3 ${active === "fellowship" ? "text-green-600" : ""}`} onClick={() => changePage("fellowship")}>
             Resources
@@ -70,7 +70,7 @@ const Navbar = () => {
 
 
           {/* Add Contact Link Here for Mobile */}
-          <Link to="/contact" className={`link font-semibold text-lg  px-4 py-2 bg-pink-600 text-white rounded hover:bg-pink-700 transition ${active === "contact" ? "text-green-600" : ""}`} onClick={() => changePage("contact")}>
+          <Link to="/LoginForm" className={`link font-semibold text-lg  px-4 py-2 bg-pink-600 text-white rounded hover:bg-pink-700 transition ${active === "LoginForm" ? "text-green-600" : ""}`} onClick={() => changePage("LoginForm")}>
             Sign Up/Login
           </Link>
         </div>
