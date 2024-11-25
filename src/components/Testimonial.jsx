@@ -5,25 +5,25 @@ const testimonialsData = [
   {
     name: "Dyna",
     role: "Software Engineer",
-    message: "NGU-Link Hub has transformed our city's growth with innovative, sustainable solutions and a global network of urban stakeholders.",
+    message: "Interactive platform made learning engaging and super effective!",
     image: "/dyna.jpg",
   },
   {
     name: "Jean",
     role: "Government Official",
-    message: "NGU-Link Hub gave us insights, resources, and expertise, helping tackle urban challenges and improve citizens' quality of life.",
+    message: "FluentFusion's community kept me motivated throughout my journey!",
     image: "/jean.jpg",
   },
   {
     name: "Djamilla",
     role: "Technology Provider",
-    message: "NGU-Link Hub connected us with global city leaders, fostering collaboration, innovation, and showcasing our solutions.",
+    message: "Dynamic methods tailored to my unique learning style!",
     image: "/djamilla.jpg",
   },
   {
     name: "Joel",
     role: "Community Leader",
-    message: "The innovative approaches from NGU-Link Hub have greatly improved our community's infrastructure.",
+    message: "Supportive environment helped me achieve my language goals!",
     image: "/joel.jpg",
   },
 ];

@@ -3,7 +3,7 @@ import 'animate.css';
 import Testimonial from '../components/Testimonial';
 import Joinus from '../components/Joinus';
 import Whatwedo from '../components/Whatwedo';
-import Partners from '../components/Partners';
+// import Partners from '../components/Partners';
 
 const Home = () => {
   const [activeVideo, setActiveVideo] = useState(0); // State to track the active video
@@ -56,8 +56,10 @@ const Home = () => {
               
               {/* Text Section */}
               <div className="text-center sm:text-center md:text-left mt-60 sm:mt-20">
-                <h2 className="text-2xl sm:text-3xl lg:text-4xl text-pink-600 font-extrabold mb-6 leading-relaxed">
-                  NGU-Link Hub unites global stakeholders to build smarter, sustainable, and inclusive cities
+                <h2 className="text-1xl sm:text-3xl lg:text-3xl text-pink-600 font-extrabold mb-6 leading-relaxed">
+                  Unlock the world of languages with FLUENTFUSION. Your personalized dashboard is designed to guide you through your learning experience, making it engaging and effective.
+
+
                 </h2>
 
                 {/* Join Us Button */}
@@ -65,7 +67,7 @@ const Home = () => {
                   href="#"
                   className="mt-8 sm:mt-12 bg-pink-600 hover:bg-opacity-80 text-white py-3 px-6 rounded-lg text-lg lg:text-xl transition duration-300 ease-in-out transform hover:scale-105 hover:shadow-xl inline-block"
                 >
-                  Join Us
+                  Get Started
                 </a>
               </div>
 
@@ -85,7 +87,7 @@ const Home = () => {
       <Whatwedo className="sm:mt-44" />
       <Joinus />
       <Testimonial />
-      <Partners />
+      {/* <Partners /> */}
     </>
   );
 };

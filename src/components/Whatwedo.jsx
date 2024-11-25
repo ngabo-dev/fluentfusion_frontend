@@ -44,8 +44,14 @@ const Whatwedo = () => {
           <h2 className="text-pink-600 text-4xl md:text-5xl font-extrabold mb-6 md:!leading-[55px] capitalize">
             What we do
           </h2>
+          <h2 className='font-bold leading-relaxed text-xl mt-4'>Innovative Learning Experience</h2>
           <p className="text-black text-base font-light leading-relaxed">
-          NGU-Link Hub stands for Next Generation Urban Hub. It is an international hub based in Rwanda that brings together Urban planners, technology providers, governments, Communities and other stakeholders to share knowledge, resources, and strategies to address next-generation urban challenges. 
+          At FLUENTFUSION, we strive to provide an engaging and interactive learning environment. Our dashboard is designed to cater to various learning styles, ensuring that every user can find the method that works best for them.
+          </p>
+
+          <p>
+          <h2 className='font-bold leading-relaxed text-xl mt-4'>Community and Support</h2>
+          Learning a language can be challenging, but you don't have to do it alone. FLUENTFUSION fosters a supportive community where users can connect, share experiences, and access resources that enhance their learning journey.
           </p>
         </div>
         <div

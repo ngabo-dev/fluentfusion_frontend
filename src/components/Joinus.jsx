@@ -39,18 +39,17 @@ const Joinus = () => {
         {/* Content section */}
         <div className={`max-md:text-center ${isVisible ? 'animate__animated animate__fadeInRight' : ''}`}>
           <h3 className="text-white font-semibold md:text-3xl text-2xl md:leading-10 capitalize">
-            Be a part with us
+           
           </h3>
           <p className="mt-4 font-light text-base text-white p-3.5 leading-relaxed">
-            Join us in shaping the future of our cities! At NGU Link hub, we believe that collective action is key to addressing the complex challenges of urbanization. Here’s how you can be part of our mission to create resilient, inclusive, and smart cities.
+          Tailored Language Courses
+          We understand that each learner has unique needs. Our platform offers personalized course recommendations, allowing users to focus on specific language skills and topics that align with their goals.
           </p>
           <div className="font-[sans-serif] space-x-12 space-y-4">
             <button type="button" className="px-5 py-2.5 rounded-lg tracking-wider font-light text-base text-white p-3.5 outline-none bg-pink-600 hover:bg-pink-500 active:bg-pink-600 capitalize">
-              Participate in our events
+              Enroll in our Courses
             </button>
-            <button type="button" className="px-5 py-2.5 rounded-lg tracking-wider font-light text-base text-white p-3.5 outline-none bg-pink-600 hover:bg-pink-500 active:bg-pink-600 capitalize">
-              Join us
-            </button>
+
           </div>
         </div>
       </div>
